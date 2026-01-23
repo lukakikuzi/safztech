@@ -9,13 +9,13 @@ import { Badge } from "@/components/ui/badge";
 import Project01Img from "../../../public/images/e-commerce-project-img.png";
 import Project02Img from "../../../public/images/ai-chatbot-project-img.png";
 import Project03Img from "../../../public/images/admin-dashboard-project-img.png";
+import Project04Img from "../../../public/images/allfences.png";
+
+
 
 function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="bg-background section-padding-standard"
-    >
+    <section id="projects" className="bg-background section-padding-standard">
       <div className="layout-standard section-padding-standard">
         <div className="lg:mb-[6rem] mb-[4rem] relative flex flex-col text-center items-center w-full max-lg:gap-4">
           <h1 className="absolute text-[9rem] font-bold tracking-widest text-white/10 select-none -top-[4.2rem] max-lg:hidden">
@@ -127,6 +127,38 @@ function ProjectsSection() {
                 <Badge>VUE.JS</Badge>
                 <span>PYTHON</span>
                 <span>MONGODB</span>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECT 04 */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="lg:order-2">
+              <div className="aspect-video rounded-lg overflow-hidden border-2 border-border relative">
+                <motion.div
+                  initial={{ y: 0 }}
+                  whileHover={{ y: "-10%" }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  className="h-full w-full"
+                >
+                  <Image
+                    src={Project04Img}
+                    alt="AI Chatbot"
+                    className="w-full h-auto object-cover"
+                  />
+                </motion.div>
+              </div>
+            </div>
+            <div className="lg:order-1">
+              <h3 className="text-2xl font-light mb-4 tracking-wide text-heading font-poppins">
+                ALLFENCES
+              </h3>
+              <p className="mb-6 leading-relaxed">
+                Professional residential and commercial fence installation. Wood, vinyl, chain link, aluminum, and steel — built for Canadian weather.
+              </p>
+              <div className="flex gap-4 text-sm text-white/50 tracking-wider">
+                <Badge>NextJs</Badge>
+                <span>Tailwind</span>
               </div>
             </div>
           </div>
