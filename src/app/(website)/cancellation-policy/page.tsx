@@ -2,7 +2,6 @@ import React from "react";
 import { Metadata } from "next";
 
 import CancellationPolicyPage from "@/containers/cancellation-policy-page";
-
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
