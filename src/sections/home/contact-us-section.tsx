@@ -26,10 +26,23 @@ function ContactUsSection() {
     message: "",
     agreeToComms: false,
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", service: "", message: "", agreeToComms: false });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -164,10 +177,22 @@ function ContactUsSection() {
 
               <Button
                 type="submit"
-                className="w-full hover:bg-primary-hover h-14 text-base font-semibold tracking-wider uppercase transition-colors"
+                disabled={status === "loading"}
+                className="w-full hover:bg-primary-hover h-14 text-base font-semibold tracking-wider uppercase transition-colors disabled:opacity-60"
               >
-                Send Message
+                {status === "loading" ? "Sending..." : "Send Message"}
               </Button>
+
+              {status === "success" && (
+                <p className="text-green-400 text-sm text-center">
+                  Message sent successfully! We&apos;ll get back to you within 24 hours.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-400 text-sm text-center">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              )}
             </form>
           </div>
 

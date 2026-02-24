@@ -1,23 +1,15 @@
 "use client";
 
-import { TrustbarSectionContent } from "@/contents/home-page-content";
-
 export default function TrustbarSection() {
   return (
-    <section className="py-20">
-      <div className="layout-standard">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
-          {TrustbarSectionContent.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-light text-heading mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm font-semibold tracking-wider uppercase">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className="py-16 border-y border-border overflow-hidden">
+      <div className="layout-standard text-center space-y-3">
+        <p className="text-2xl md:text-3xl lg:text-4xl font-light text-heading tracking-wide">
+          A TEAM OF HIGHLY EXPERIENCED PROFESSIONALS
+        </p>
+        <p className="text-foreground text-base md:text-lg tracking-widest uppercase">
+          Turning complex ideas into clean, powerful digital products — since day one.
+        </p>
       </div>
     </section>
   );

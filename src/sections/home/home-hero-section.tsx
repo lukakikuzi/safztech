@@ -35,13 +35,13 @@ function HomeHeroSection() {
 
           <div className="lg:text-right">
             <p className="text-heading text-lg leading-relaxed max-w-md lg:ml-auto uppercase">
-              A premium tech agency crafting websites
+              A premium tech agency crafting websites.
               <br />
-              software solutions that elevate brands.
+              Software solutions that elevate brands.
               <br />
-              Partner with us to transform your ideas
+              Partner with us to transform your ideas.
               <br />
-              client-converting digital realities.
+              Client-converting digital realities.
             </p>
           </div>
         </div>

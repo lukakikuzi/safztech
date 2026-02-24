@@ -17,7 +17,7 @@ export const TrustbarSectionContent = [
 export const OurServicesSectionContent = [
   {
     img: Service01Img,
-    title: "Website Design & Development",
+    title: "Web Development",
   },
   {
     img: Service02Img,
@@ -25,19 +25,19 @@ export const OurServicesSectionContent = [
   },
   {
     img: Service03Img,
-    title: "Social Media Management",
+    title: "Digital Marketing Services",
   },
   {
     img: Service04Img,
-    title: "Branding & Graphic Design",
+    title: "E-commerce Setup (Amazon, Etsy, Ebay, Shopify, Tiktok Shop)",
   },
   {
     img: Service05Img,
-    title: "Search Engine Optimization (SEO)",
+    title: "Logo & UI/UX Design",
   },
   {
     img: Service06Img,
-    title: "Paid Advertising",
+    title: "YouTube Automation",
   },
   {
     img: Service07Img,
