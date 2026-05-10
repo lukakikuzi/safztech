@@ -1,5 +1,6 @@
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import WhatsAppButton from "@/components/layouts/whatsapp-button";
 
 export default function WebsiteLayout({
   children,
@@ -11,6 +12,7 @@ export default function WebsiteLayout({
       <Header />
       {children}
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

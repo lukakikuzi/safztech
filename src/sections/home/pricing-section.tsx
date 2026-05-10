@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { PricingSectionContent } from "@/contents/home-page-content";
 
@@ -57,15 +58,16 @@ function PricingSection() {
                 ))}
               </div>
 
-              <button
-                className={`w-full py-3 rounded-full text-sm tracking-wide uppercase transition-all ${
+              <Link
+                href="/free-audit"
+                className={`w-full py-3 rounded-full text-sm tracking-wide uppercase transition-all flex items-center justify-center ${
                   pkg.buttonType === "solid"
                     ? "bg-primary text-black font-semibold hover:bg-primary-hover"
                     : "bg-white hover:bg-white/80 text-black font-semibold"
                 }`}
               >
                 GET STARTED
-              </button>
+              </Link>
             </div>
           ))}
         </div>

@@ -19,21 +19,26 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  await transporter.sendMail({
-    from: `"SAFZTECH Contact Form" <${process.env.GMAIL_USER}>`,
-    to: process.env.RECEIVER_EMAIL,
-    subject: `New Contact Form Submission from ${name}`,
-    html: `
-      <h2>New Contact Form Submission</h2>
-      <table style="width:100%; border-collapse:collapse;">
-        <tr><td style="padding:8px; font-weight:bold;">Name</td><td style="padding:8px;">${name}</td></tr>
-        <tr><td style="padding:8px; font-weight:bold;">Email</td><td style="padding:8px;">${email}</td></tr>
-        <tr><td style="padding:8px; font-weight:bold;">Phone</td><td style="padding:8px;">${phone || "Not provided"}</td></tr>
-        <tr><td style="padding:8px; font-weight:bold;">Service</td><td style="padding:8px;">${service || "Not selected"}</td></tr>
-        <tr><td style="padding:8px; font-weight:bold;">Message</td><td style="padding:8px;">${message}</td></tr>
-      </table>
-    `,
-  });
+  try {
+    await transporter.sendMail({
+      from: `"SAFZTECH Contact Form" <${process.env.GMAIL_USER}>`,
+      to: process.env.RECEIVER_EMAIL,
+      subject: `New Lead: ${name} — ${service || "General Enquiry"}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><td style="padding:8px; font-weight:bold;">Name</td><td style="padding:8px;">${name}</td></tr>
+          <tr><td style="padding:8px; font-weight:bold;">Email</td><td style="padding:8px;">${email}</td></tr>
+          <tr><td style="padding:8px; font-weight:bold;">Phone</td><td style="padding:8px;">${phone || "Not provided"}</td></tr>
+          <tr><td style="padding:8px; font-weight:bold;">Service</td><td style="padding:8px;">${service || "Not selected"}</td></tr>
+          <tr><td style="padding:8px; font-weight:bold;">Message</td><td style="padding:8px;">${message}</td></tr>
+        </table>
+      `,
+    });
+  } catch (err) {
+    console.error("Email send failed:", err);
+    return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
+  }
 
   return NextResponse.json({ success: true });
 }

@@ -4,24 +4,26 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_FRONTEND_URL || "https://www.safztech.com";
 
 export const defaultMetadata: Metadata = {
-  title: "Safztech - Your Vision, Engineered to Perfection",
+  title: "SAFZTECH — Premium Software House & Digital Growth Partner",
   description:
-    "Safztech is a premium tech agency delivering custom websites, software solutions, and digital experiences that bring your vision to life with precision and innovation.",
+    "SAFZTECH builds high-converting websites, mobile apps & custom software — then markets them with SEO, paid ads & conversion optimization. 150+ businesses served, $2.5B+ in revenue created.",
 
   applicationName: "Safztech",
-  creator: "TechSaws",
+  creator: "SAFZTECH",
   generator: "Next.js",
   keywords: [
     "Safztech",
     "Software Development Agency",
-    "Full Stack Development",
-    "SaaS Development",
+    "Digital Marketing Agency",
+    "Lead Generation",
+    "SEO Services",
+    "Custom Web Development",
     "Mobile App Development",
-    "AI Integration",
-    "Web Design",
-    "DevOps Services",
+    "E-Commerce Development",
+    "Conversion Rate Optimization",
+    "SaaS Development",
+    "Full Stack Development",
     "UI UX Design",
-    "Custom App Development",
   ],
 
   alternates: {
@@ -75,9 +77,9 @@ export const defaultMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    title: "Safztech - Your Vision, Engineered to Perfection",
+    title: "SAFZTECH — Premium Software House & Digital Growth Partner",
     description:
-      "Safztech is a premium tech agency delivering custom websites, software solutions, and digital experiences that bring your vision to life with precision and innovation.",
+      "SAFZTECH builds high-converting websites, mobile apps & custom software — then markets them with SEO, paid ads & conversion optimization. 150+ businesses served, $2.5B+ in revenue created.",
     siteName: "Safztech",
     images: [
       {
@@ -91,11 +93,11 @@ export const defaultMetadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Safztech - Your Vision, Engineered to Perfection",
+    title: "SAFZTECH — Premium Software House & Digital Growth Partner",
     description:
-      "Safztech is a premium tech agency delivering custom websites, software solutions, and digital experiences that bring your vision to life with precision and innovation.",
+      "SAFZTECH builds high-converting websites, mobile apps & custom software — then markets them with SEO, paid ads & conversion optimization. 150+ businesses served, $2.5B+ in revenue created.",
     images: [`${BASE_URL}/social/twitter-preview.jpg`],
-    creator: "@TechSaws",
+    creator: "@safztech",
   },
 
   robots: {

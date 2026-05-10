@@ -46,6 +46,7 @@ export default function RootLayout({
         cz-shortcut-listen="true"
       >
         {children}
+        <script src="//code.tidio.co/dcjhhvqtoybvdangel3ugecdicartvq7.js" async />
       </body>
     </html>
   );
