@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
+  FlaskConical,
   Scissors,
   Wrench,
   Stethoscope,
@@ -18,9 +20,17 @@ import {
 
 const industries = [
   {
+    Icon: FlaskConical,
+    name: "Peptides & Research Chemicals",
+    desc: "Niche e-commerce, compliance & payment setup",
+    href: "https://www.peptideingenious.com/",
+    external: true,
+  },
+  {
     Icon: Scissors,
     name: "Salons & Spas",
     desc: "Local lead gen & booking systems",
+    href: "/industries/salons-spas",
   },
   {
     Icon: Wrench,
@@ -100,24 +110,46 @@ function IndustriesSection() {
 
         {/* Industry grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {industries.map(({ Icon, name, desc }) => (
-            <div
-              key={name}
-              className="border border-border bg-card p-6 flex flex-col items-center text-center gap-3 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 cursor-default group"
-            >
-              <div className="w-10 h-10 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                <Icon className="w-5 h-5 text-primary" />
+          {industries.map(({ Icon, name, desc, href, external }) => {
+            const cardClasses =
+              "border border-border bg-card p-6 flex flex-col items-center text-center gap-3 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group";
+
+            const cardContent = (
+              <>
+                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-heading font-semibold text-sm font-poppins">
+                    {name}
+                  </p>
+                  <p className="text-paragraph text-xs mt-1 leading-snug">
+                    {desc}
+                  </p>
+                </div>
+              </>
+            );
+
+            if (href) {
+              return (
+                <Link
+                  key={name}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  className={`${cardClasses} cursor-pointer`}
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={name} className={`${cardClasses} cursor-default`}>
+                {cardContent}
               </div>
-              <div>
-                <p className="text-heading font-semibold text-sm font-poppins">
-                  {name}
-                </p>
-                <p className="text-paragraph text-xs mt-1 leading-snug">
-                  {desc}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

@@ -3,6 +3,7 @@ import { FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
   { label: "About", href: "/#about" },
+  { label: "Services", href: "/services" },
   { label: "Software Solutions", href: "/software-solutions" },
   { label: "Digital Marketing", href: "/digital-marketing" },
   { label: "Case Studies", href: "/case-studies" },

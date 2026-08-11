@@ -8,7 +8,7 @@ import FullScreenMenu from "./full-screen-menu";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/#pricing" },
 ];

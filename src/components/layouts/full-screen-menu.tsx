@@ -8,6 +8,7 @@ import { FullScreenMenuProps } from "@/interfaces/components.layouts-interfaces"
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
+  { name: "Services", href: "/services" },
   { name: "Software Solutions", href: "/software-solutions" },
   { name: "Digital Marketing", href: "/digital-marketing" },
   { name: "Case Studies", href: "/case-studies" },

@@ -3,7 +3,6 @@ import React from "react";
 import HomeHeroSection from "@/sections/home/home-hero-section";
 import TrustbarSection from "@/sections/home/trustbar-section";
 import AboutSection from "@/sections/home/about-section";
-import OurServicesSection from "@/sections/home/our-services-section";
 import SynergySection from "@/sections/home/synergy-section";
 import ProcessSection from "@/sections/home/process-section";
 import ProjectsSection from "@/sections/home/projects-section";
@@ -20,7 +19,6 @@ function HomePage() {
       <HomeHeroSection />
       <TrustbarSection />
       <AboutSection />
-      <OurServicesSection />
       <SynergySection />
       <ProcessSection />
       <ProjectsSection />
