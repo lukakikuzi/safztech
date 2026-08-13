@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  CalendarClock,
   Search,
-  Palette,
-  Heart,
-  MousePointerClick,
-  Star,
+  ShieldCheck,
   Database,
+  Video,
+  Star,
+  BellRing,
   PhoneMissed,
   MapPinOff,
+  FileWarning,
   UserX,
-  MessageSquareWarning,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Healthcare Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Patient portals, HIPAA-conscious websites, EHR integration and local SEO built for clinics and healthcare providers. Fill your schedule, not just your waiting room.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "27%", label: "Average patient no-show rate" },
+  { value: "38%", label: "No-show reduction with online self-scheduling" },
+  { value: "$200", label: "Average revenue lost per missed appointment" },
+  { value: "$150B", label: "Annual cost of no-shows to U.S. healthcare" },
 ];
 
 const problems = [
   {
     Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    title: "Missed Calls, Missed Appointments",
+    desc: "Patients calling after hours or during peak times who can't get through often book with the next provider on the list instead.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Invisible for Specialty & Local Search",
+    desc: "If your Google Business Profile and specialty pages aren't optimised, you're not even in the running when patients search nearby.",
+  },
+  {
+    Icon: FileWarning,
+    title: "Unsecured Forms & Intake",
+    desc: "Generic contact forms and email intake create compliance risk. Patient data needs to be handled with real care, not an afterthought.",
   },
   {
     Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
-  },
-  {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    title: "No-Shows Nobody's Following Up On",
+    desc: "Without automated reminders and recall systems, a meaningful share of booked appointments simply never show up.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: CalendarClock,
+    title: "Patient Portal & Online Scheduling",
+    tagline: "Let patients book without picking up the phone.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "We build patient-facing scheduling systems with provider availability, appointment types, and automated confirmations, so booking doesn't depend on front-desk hours.",
+    examples: ["24/7 online scheduling", "Provider & appointment-type calendars", "Automated confirmations", "New patient intake flow"],
+    timeline: "3–6 weeks",
   },
   {
     Icon: Search,
     title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    tagline: "Show up when patients search for your specialty nearby.",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
+      "We optimise your Google Business Profile, build out specialty and location pages, and target the exact terms patients search when choosing a provider.",
+    examples: ["Google Business Profile optimisation", "Specialty & location landing pages", "Local keyword targeting", "Citation & directory building"],
     timeline: "Ongoing (3-month minimum)",
   },
   {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    Icon: ShieldCheck,
+    title: "HIPAA-Conscious Website & Intake",
+    tagline: "A site built with patient data handled properly.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
+      "Secure intake forms, encrypted data handling practices, and a website architecture designed around patient privacy, not a template with a contact form bolted on.",
+    examples: ["Secure patient intake forms", "Encrypted data handling", "Privacy-conscious architecture", "Consent & disclosure pages"],
+    timeline: "4–8 weeks",
+  },
+  {
+    Icon: Database,
+    title: "EHR / EMR & Practice Management Integration",
+    tagline: "One system that knows every patient's history.",
+    description:
+      "We connect your website and scheduling to the EHR and practice management software you already run, so bookings flow straight into patient records.",
+    examples: ["EHR / EMR integration", "Practice management sync", "Patient history access", "Staff scheduling dashboards"],
     timeline: "3–6 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Video,
+    title: "Telehealth Platform Integration",
+    tagline: "See patients wherever they are.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
-  },
-  {
-    Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
-    description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
-    timeline: "Live within 1–2 weeks",
+      "We integrate secure telehealth video visits directly into your booking flow, so virtual appointments feel as simple as in-person ones.",
+    examples: ["Secure video visit integration", "Virtual waiting rooms", "Telehealth-specific booking flow", "Follow-up automation"],
+    timeline: "2–4 weeks",
   },
   {
     Icon: Star,
     title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    tagline: "Your next patient is reading your reviews right now.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every visit, plus monitoring and response support, so your online reputation reflects the care you actually provide.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
   },
   {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
+    Icon: BellRing,
+    title: "Patient Recall & Appointment Reminders",
+    tagline: "Cut no-shows before they happen.",
     description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
+      "SMS and email reminders, recall campaigns for overdue checkups, and automated follow-ups that keep patients on schedule and coming back.",
+    examples: ["SMS & email reminders", "Recall & checkup campaigns", "No-show follow-up automation", "Patient re-engagement sequences"],
+    timeline: "1–2 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Epic", "athenahealth", "Cerner", "DrChrono", "Kareo", "SimplePractice",
 ];
 
 const process = [
@@ -130,31 +129,31 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current booking flow & no-show rate",
       "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Competitor & specialty gap analysis",
       "Prioritised growth roadmap",
     ],
   },
   {
     number: "02",
     title: "Build",
-    timeline: "Weeks 2–5",
+    timeline: "Weeks 2–6",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Patient portal & website build",
+      "EHR / practice management integration",
+      "Intake forms & telehealth setup",
       "QA tested before going live",
     ],
   },
   {
     number: "03",
     title: "Launch",
-    timeline: "Weeks 6–7",
+    timeline: "Weeks 7–8",
     deliverables: [
-      "Go live to clients",
+      "Go live to patients",
       "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
+      "Reminder & recall automation turned on",
       "Review request automation turned on",
     ],
   },
@@ -163,15 +162,15 @@ const process = [
     title: "Grow",
     timeline: "Month 2+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Ongoing local SEO & content optimisation",
+      "Recall campaign performance tracking",
+      "Patient acquisition reporting",
+      "Typical outcome: consistently full schedule",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function HealthcarePage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Healthcare
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Fill Your Schedule, Not Just Your Waiting Room
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Patient portals, local SEO, and HIPAA-conscious websites built
+            for clinics and healthcare providers, so new patients find you
+            and existing ones keep showing up.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: DialogHealth Patient No-Show Statistics, DexCare Patient No-Show Rates report
           </p>
         </div>
       </section>
@@ -232,15 +231,14 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Schedules Stay Empty
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Care. It&apos;s the Access.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most practices don&apos;t lose patients over quality of care.
+              They lose them to friction most staff never see happening.
             </p>
           </div>
 
@@ -275,7 +273,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Healthcare Providers
             </h2>
           </div>
 
@@ -321,6 +319,13 @@ export default function SalonsSpasPage() {
               </div>
             ))}
           </div>
+
+          <p className="text-paragraph/60 text-xs text-center mt-10 max-w-2xl mx-auto">
+            We build with HIPAA-conscious security practices throughout. We
+            are not a law firm and this is not legal or compliance advice;
+            confirm your specific regulatory requirements with qualified
+            counsel.
+          </p>
         </div>
       </section>
 
@@ -328,7 +333,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            EHR & Practice Management Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +356,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A FULL SCHEDULE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how clinics and practices
+              actually operate, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +399,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Fill Your Schedule?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
             We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            presence, and no-show rate, and show you exactly where patients
+            are slipping away before they ever call.
           </p>
           <Link
             href="/free-audit"

@@ -3,100 +3,109 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  LayoutTemplate,
   Search,
-  Palette,
-  Heart,
+  CalendarCheck,
+  Workflow,
+  BookOpen,
   MousePointerClick,
   Star,
-  Database,
-  PhoneMissed,
   MapPinOff,
-  UserX,
-  MessageSquareWarning,
+  FileX,
+  CalendarX2,
+  ShieldQuestion,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Professional Services Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Websites, local SEO, consultation booking and content marketing built for law firms, accountants and consultants. Win clients before the first call.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "98%", label: "Research online reviews before hiring" },
+  { value: "92%", label: "Research their issue online before contacting a firm" },
+  { value: "80%", label: "Talk to 3 or more firms before deciding" },
+  { value: "4★", label: "Minimum rating most consumers require to consider hiring" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    Icon: ShieldQuestion,
+    title: "Weak Online Credibility",
+    desc: "A dated or generic website quietly signals \"small operation\" before a prospect ever reads a word of your expertise.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Invisible for Expertise & Local Search",
+    desc: "If your site isn't built around your specialty and location, you're not in the running when clients search for exactly what you do.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: CalendarX2,
+    title: "No Easy Way to Book a Consultation",
+    desc: "Prospects expect to book a call or request a consultation online, not send an email and wait days for a reply.",
   },
   {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    Icon: FileX,
+    title: "No Content Proving Your Expertise",
+    desc: "Without articles, guides, or case studies, prospects have nothing to read before deciding you're the right firm to trust.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: LayoutTemplate,
+    title: "Website & Brand Authority Build",
+    tagline: "A site that reads as the obvious choice.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "We build websites designed around credibility and trust signals, so prospects decide you're the right firm before they ever call.",
+    examples: ["Firm & attorney/advisor bio pages", "Practice area / service pages", "Credentials & case results", "Mobile-first design"],
+    timeline: "4–8 weeks",
   },
   {
     Icon: Search,
-    title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    title: "Local SEO & Expertise Content",
+    tagline: "Rank for what you actually specialise in.",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
+      "We build out practice-area and local pages targeting the exact terms clients search when they need your specific expertise nearby.",
+    examples: ["Practice-area landing pages", "Local keyword targeting", "Google Business Profile optimisation", "FAQ & expertise content"],
     timeline: "Ongoing (3-month minimum)",
   },
   {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    Icon: CalendarCheck,
+    title: "Consultation Booking & Intake Forms",
+    tagline: "Make it effortless to take the next step.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
-    timeline: "3–6 weeks",
+      "Online consultation booking and secure intake forms that turn a curious visitor into a scheduled call without a single phone tag.",
+    examples: ["Online consultation booking", "Secure client intake forms", "Automated confirmations", "Calendar & staff sync"],
+    timeline: "2–4 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Workflow,
+    title: "CRM & Client Portal Integration",
+    tagline: "One system that knows every client and every case.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
+      "We connect your website to the CRM and practice management software you already run, so leads and clients flow into one place.",
+    examples: ["CRM integration", "Client portal setup", "Document & e-signature integration", "Billing system sync"],
+    timeline: "2–4 weeks",
+  },
+  {
+    Icon: BookOpen,
+    title: "Content Marketing & Thought Leadership",
+    tagline: "Prove your expertise before the first meeting.",
+    description:
+      "Articles, guides, and case studies built around client questions, so prospects arrive already trusting you as the expert.",
+    examples: ["Educational articles & guides", "Case studies & results", "FAQ content", "Newsletter content"],
+    timeline: "Ongoing"
   },
   {
     Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    title: "Paid Advertising",
+    tagline: "Predictable consultations while organic compounds.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
+      "Google and LinkedIn campaigns targeted to your practice area and service radius, built to fill your calendar with qualified consultations.",
+    examples: ["Google Search ads", "LinkedIn Ads", "Geo-targeted local ads", "Retargeting campaigns"],
     timeline: "Live within 1–2 weeks",
   },
   {
@@ -104,24 +113,14 @@ const services = [
     title: "Review & Reputation Management",
     tagline: "Your next client is reading your reviews right now.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every engagement, plus monitoring and response support, so your reputation reflects the work you actually do.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
-  },
-  {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
-    description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Clio", "QuickBooks", "Calendly", "HubSpot", "DocuSign", "PracticePanther",
 ];
 
 const process = [
@@ -130,48 +129,48 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current site & consultation conversion",
       "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Competitor & positioning analysis",
       "Prioritised growth roadmap",
     ],
   },
   {
     number: "02",
     title: "Build",
-    timeline: "Weeks 2–5",
+    timeline: "Weeks 2–6",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Website & booking build",
+      "CRM & client portal integration",
+      "First content assets produced",
       "QA tested before going live",
     ],
   },
   {
     number: "03",
     title: "Launch",
-    timeline: "Weeks 6–7",
+    timeline: "Weeks 7–8",
     deliverables: [
-      "Go live to clients",
+      "Go live to prospective clients",
       "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
-      "Review request automation turned on",
+      "First ad campaigns launched",
+      "Intake automation turned on",
     ],
   },
   {
     number: "04",
     title: "Grow",
-    timeline: "Month 2+",
+    timeline: "Month 3+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Ongoing content & SEO production",
+      "Ad & funnel optimisation",
+      "Expanded practice-area content",
+      "Typical outcome: a full, qualified calendar",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function ProfessionalServicesPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Professional Services
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Win Clients Before the First Call
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Websites, local SEO, and content marketing built for law
+            firms, accountants, and consultants, so prospects trust you
+            before they ever pick up the phone.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: iLawyerMarketing 2024 Consumer Study, Juris Digital Legal Research Survey
           </p>
         </div>
       </section>
@@ -232,15 +231,14 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Prospects Choose Someone Else
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely Your Expertise. It&apos;s Your First Impression.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most firms don&apos;t lose clients on competence. They lose
+              them to a website that doesn&apos;t earn trust fast enough.
             </p>
           </div>
 
@@ -275,7 +273,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Firms & Consultants
             </h2>
           </div>
 
@@ -328,7 +326,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Practice Management Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -354,8 +352,8 @@ export default function SalonsSpasPage() {
               FROM AUDIT TO A FULL CALENDAR
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how firms and consultants
+              actually win clients, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +392,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Win Clients Before the First Call?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current website, local search
+            presence, and consultation flow, and show you exactly where
+            prospects are choosing someone else.
           </p>
           <Link
             href="/free-audit"

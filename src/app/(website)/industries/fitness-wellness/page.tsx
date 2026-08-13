@@ -3,38 +3,38 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  CalendarCheck,
   Search,
   Palette,
+  Smartphone,
   Heart,
   MousePointerClick,
   Star,
-  Database,
   PhoneMissed,
   MapPinOff,
-  UserX,
-  MessageSquareWarning,
+  UserMinus,
+  CalendarX2,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Fitness & Wellness Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Class booking systems, member apps, local SEO and retention marketing built for gyms, studios and wellness businesses. Fill every class, keep every member.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "33.6%", label: "Average annual gym membership churn" },
+  { value: "50%", label: "Of new members quit before month six" },
+  { value: "80%", label: "Cancel odds if a member attends fewer than 4x in month one" },
+  { value: "3–5%", label: "Typical monthly churn rate" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    Icon: UserMinus,
+    title: "High Membership Churn",
+    desc: "Without a retention system, most gyms and studios quietly lose a large share of members every single year.",
   },
   {
     Icon: MapPinOff,
@@ -42,86 +42,85 @@ const problems = [
     desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: CalendarX2,
+    title: "No Online Class Booking",
+    desc: "Members expect to book and manage classes from their phone, not call the front desk during business hours.",
   },
   {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    Icon: PhoneMissed,
+    title: "Trial Leads Who Never Convert",
+    desc: "Without automated follow-up, most free trial and drop-in leads simply never come back to sign up.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: CalendarCheck,
+    title: "Class Booking & Membership Management",
+    tagline: "Booking that works at 6am and midnight.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "Online class booking, membership management, and waitlists that let members book anytime, without calling the front desk.",
+    examples: ["24/7 class booking", "Membership & package management", "Waitlist automation", "Instructor & schedule management"],
+    timeline: "2–5 weeks",
   },
   {
     Icon: Search,
     title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    tagline: "Show up when someone searches \"gym near me.\"",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
+      "We optimise your Google Business Profile, local listings, and website so you rank in the map pack for the classes and services you offer.",
     examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
     timeline: "Ongoing (3-month minimum)",
   },
   {
     Icon: Palette,
     title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    tagline: "A site that matches the energy of your studio.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
+      "Class schedules, trainer bios, and membership pricing built into a design that reflects your brand, not a generic gym template.",
+    examples: ["Class schedule & pricing pages", "Trainer & instructor profiles", "Membership comparison pages", "Mobile-first design"],
     timeline: "3–6 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Smartphone,
+    title: "Member App & Portal Integration",
+    tagline: "Give members a reason to check in daily.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
+      "We integrate member-facing apps and portals for booking, progress tracking, and community, so your gym stays top of mind between visits.",
+    examples: ["Member app integration", "Progress & workout tracking", "In-app messaging", "Community & challenge features"],
+    timeline: "2–4 weeks",
+  },
+  {
+    Icon: Heart,
+    title: "Loyalty & Referral Programs",
+    tagline: "Turn members into your best marketing channel.",
+    description:
+      "Referral rewards, streak challenges, and loyalty perks that give members a reason to stay and bring friends along.",
+    examples: ["Referral reward programs", "Streak & challenge campaigns", "Loyalty point systems", "Automated rebooking prompts"],
     timeline: "2–3 weeks",
   },
   {
     Icon: MousePointerClick,
     title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    tagline: "Fill open class slots this week.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
+      "Google and Meta ads geo-targeted to your area, promoting free trials and class passes to people actively searching or scrolling nearby.",
+    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Trial & promo campaigns"],
     timeline: "Live within 1–2 weeks",
   },
   {
     Icon: Star,
     title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    tagline: "Your next member is reading your reviews right now.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every class or session, plus monitoring and response support, so your rating becomes a growth channel.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
-  },
-  {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
-    description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Mindbody", "Glofox", "Zen Planner", "Trainerize", "Vagaro", "WellnessLiving",
 ];
 
 const process = [
@@ -130,7 +129,7 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current booking flow & churn rate",
       "Local SEO & Google Business Profile audit",
       "Competitor gap analysis",
       "Prioritised growth roadmap",
@@ -142,8 +141,8 @@ const process = [
     timeline: "Weeks 2–5",
     deliverables: [
       "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Member app / portal integration",
+      "Loyalty & referral setup",
       "QA tested before going live",
     ],
   },
@@ -152,7 +151,7 @@ const process = [
     title: "Launch",
     timeline: "Weeks 6–7",
     deliverables: [
-      "Go live to clients",
+      "Go live to members",
       "Google Business Profile & local SEO live",
       "First local ad campaigns launched",
       "Review request automation turned on",
@@ -164,14 +163,14 @@ const process = [
     timeline: "Month 2+",
     deliverables: [
       "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
+      "Retention & churn-reduction campaigns",
       "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Typical outcome: consistently full classes",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function FitnessWellnessPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Fitness & Wellness
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Fill Every Class. Keep Every Member.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Class booking systems, local SEO, and retention marketing
+            built for gyms, studios, and wellness businesses, so new
+            members find you and regulars keep showing up.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Source: HFA 2025 Fitness Industry Benchmarking Report
           </p>
         </div>
       </section>
@@ -232,15 +231,15 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Members Don&apos;t Renew
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Workout. It&apos;s the Experience.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most gyms and studios don&apos;t lose members over
+              programming. They lose them to friction most owners never
+              see happening.
             </p>
           </div>
 
@@ -275,7 +274,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Gyms & Wellness Studios
             </h2>
           </div>
 
@@ -328,7 +327,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Booking Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,10 +350,10 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A FULL SCHEDULE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
+              A proven process built around how gyms and studios actually
               operate, with full transparency at every step.
             </p>
           </div>
@@ -394,12 +393,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Fill Every Class?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
             We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            presence, and churn rate, and show you exactly where members
+            are slipping away.
           </p>
           <Link
             href="/free-audit"

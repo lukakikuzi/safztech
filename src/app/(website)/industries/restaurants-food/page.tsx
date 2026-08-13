@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  ShoppingBag,
   Search,
-  Palette,
-  Heart,
+  UtensilsCrossed,
+  Workflow,
+  Gift,
   MousePointerClick,
   Star,
-  Database,
-  PhoneMissed,
+  PercentCircle,
   MapPinOff,
-  UserX,
+  ImageOff,
   MessageSquareWarning,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Restaurant & Food Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Direct online ordering, local SEO, POS integration and loyalty programs built for restaurants. Keep your margin instead of paying it to delivery apps.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "15–35%", label: "Commission taken by third-party delivery apps" },
+  { value: "70%", label: "Consumers prefer ordering direct from the restaurant" },
+  { value: "75%", label: "Of restaurant traffic is now off-premises" },
+  { value: "67%", label: "Prefer ordering direct from a restaurant's own site" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    Icon: PercentCircle,
+    title: "Third-Party Apps Eating Your Margin",
+    desc: "Every order through a delivery app hands over 15 to 30 percent, and you never get the customer's contact details.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Invisible for \"Near Me\" Searches",
+    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone's searching for dinner nearby.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: ImageOff,
+    title: "No Direct Online Ordering",
+    desc: "Without your own ordering system, every order goes through a platform that owns the customer relationship, not you.",
   },
   {
     Icon: MessageSquareWarning,
     title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    desc: "A few unanswered bad reviews can quietly cost you more covers than any ad campaign could win back.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: ShoppingBag,
+    title: "Direct Online Ordering",
+    tagline: "Keep your margin instead of paying it to an app.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "We build direct online ordering systems on your own website, so customers order straight from you without a 15 to 30 percent commission.",
+    examples: ["Direct online ordering", "Delivery & pickup scheduling", "Menu & modifier management", "Contactless payment"],
+    timeline: "2–5 weeks",
   },
   {
     Icon: Search,
     title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    tagline: "Show up when someone searches \"restaurant near me.\"",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
+      "We optimise your Google Business Profile, menu listings, and website so you rank in the map pack, not buried under delivery app listings.",
+    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Menu schema & citations", "Review-driven ranking signals"],
     timeline: "Ongoing (3-month minimum)",
   },
   {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    Icon: UtensilsCrossed,
+    title: "Website & Menu Design",
+    tagline: "A menu that makes people hungry before they arrive.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
-    timeline: "3–6 weeks",
+      "Mobile-first websites with photography-forward menus, hours, and location details that make ordering or booking a table effortless.",
+    examples: ["Digital menu design", "Photography-forward layout", "Hours, location & reservation info", "Mobile-first design"],
+    timeline: "3–5 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Workflow,
+    title: "POS & Delivery Integration",
+    tagline: "One system that knows every order.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
+      "We connect your online ordering to your point-of-sale and kitchen display, so online orders flow straight into the kitchen without double entry.",
+    examples: ["POS integration", "Kitchen display system sync", "Third-party delivery sync", "Inventory & 86'd item tracking"],
     timeline: "2–3 weeks",
+  },
+  {
+    Icon: Gift,
+    title: "Loyalty & Rewards Programs",
+    tagline: "Turn occasional guests into weekly regulars.",
+    description:
+      "Points-based loyalty, punch cards, and repeat-order incentives that give guests a reason to order direct instead of browsing an app.",
+    examples: ["Points & rewards programs", "Digital punch cards", "Birthday & anniversary offers", "Referral programs"],
+    timeline: "2 weeks",
   },
   {
     Icon: MousePointerClick,
     title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    tagline: "Fill empty tables and slow shifts.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
+      "Google and Meta ads geo-targeted to your area, promoting specials and off-peak offers to people actively searching or scrolling nearby.",
     examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
     timeline: "Live within 1–2 weeks",
   },
   {
     Icon: Star,
     title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    tagline: "Your next table is reading your reviews right now.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every visit or order, plus monitoring and response support, so your rating becomes a growth channel.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
-  },
-  {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
-    description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Toast", "Square", "ChowNow", "Clover", "OpenTable", "DoorDash Drive",
 ];
 
 const process = [
@@ -130,7 +129,7 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current ordering flow & margin loss",
       "Local SEO & Google Business Profile audit",
       "Competitor gap analysis",
       "Prioritised growth roadmap",
@@ -141,9 +140,9 @@ const process = [
     title: "Build",
     timeline: "Weeks 2–5",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Online ordering & website build",
+      "POS & delivery integration",
+      "Loyalty program setup",
       "QA tested before going live",
     ],
   },
@@ -152,7 +151,7 @@ const process = [
     title: "Launch",
     timeline: "Weeks 6–7",
     deliverables: [
-      "Go live to clients",
+      "Go live to guests",
       "Google Business Profile & local SEO live",
       "First local ad campaigns launched",
       "Review request automation turned on",
@@ -165,13 +164,13 @@ const process = [
     deliverables: [
       "Ongoing local SEO & ad optimisation",
       "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Seasonal & off-peak campaigns",
+      "Typical outcome: consistently full tables",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function RestaurantsFoodPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Restaurants & Food
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Keep Your Margin. Skip the Commission.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Direct online ordering, local SEO, and loyalty programs built
+            for restaurants, so you stop handing your margin to delivery
+            apps.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: Owner.com Food Delivery Statistics, Restaurant Business Online, Toast Food Delivery Trends 2026
           </p>
         </div>
       </section>
@@ -232,14 +231,14 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Margins Disappear
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Food. It&apos;s Who Owns the Order.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
+              Most restaurants don&apos;t lose money on quality. They lose
+              it to commissions and friction most owners never see
               happening.
             </p>
           </div>
@@ -275,7 +274,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Restaurants & Food Brands
             </h2>
           </div>
 
@@ -328,7 +327,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            POS & Ordering Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,10 +350,10 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A FULL DINING ROOM
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
+              A proven process built around how restaurants actually
               operate, with full transparency at every step.
             </p>
           </div>
@@ -394,12 +393,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Stop Paying Away Your Margin?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current ordering setup, local search
+            presence, and reviews, and show you exactly where revenue is
+            leaking out.
           </p>
           <Link
             href="/free-audit"

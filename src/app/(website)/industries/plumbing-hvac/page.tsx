@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
-  Search,
-  Palette,
-  Heart,
   MousePointerClick,
+  Search,
+  FileText,
+  Workflow,
   Star,
-  Database,
   PhoneMissed,
+  Snowflake,
+  PhoneCall,
+  CalendarX2,
   MapPinOff,
-  UserX,
-  MessageSquareWarning,
+  ClipboardX,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Plumbing & HVAC Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Lead generation, local SEO, dispatch integration and review management built for plumbing and HVAC companies. Answer more calls, book more jobs.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "88%", label: "Contractors who take longer than 5 minutes to respond" },
+  { value: "78%", label: "Jobs won by whichever company responds first" },
+  { value: "3.7 hrs", label: "Average home-service lead response time" },
+  { value: "391%", label: "More conversions responding within 60 seconds" },
 ];
 
 const problems = [
   {
     Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    title: "Missed Emergency Calls",
+    desc: "Every after-hours call that goes to voicemail is a burst pipe or dead AC unit calling your competitor next.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Invisible for \"Near Me\" Searches",
+    desc: "If your Google Business Profile and service-area pages aren't optimised, you're not in the running when someone searches nearby.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: CalendarX2,
+    title: "No Online Booking or Quote Requests",
+    desc: "Customers expect to request a quote or book a slot online now, not wait on hold during a plumbing emergency.",
   },
   {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    Icon: ClipboardX,
+    title: "Disorganised Dispatch & Scheduling",
+    desc: "Double-bookings, wasted drive time, and no real-time job tracking quietly cost you jobs every week.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: MousePointerClick,
+    title: "Lead Generation & Local Ads",
+    tagline: "Show up the second someone has a plumbing emergency.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "Google Local Services Ads, PPC, and geo-targeted campaigns built around emergency and seasonal search intent, so you're the first call, not the third quote.",
+    examples: ["Google Local Services Ads", "Emergency-intent PPC campaigns", "Seasonal HVAC ad campaigns", "Geo-targeted service-area ads"],
+    timeline: "Live within 1–2 weeks",
   },
   {
     Icon: Search,
     title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    tagline: "Rank for \"plumber near me\" and \"AC repair near me.\"",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
+      "We optimise your Google Business Profile, build out service-area pages, and target the exact terms homeowners search when something breaks.",
+    examples: ["Google Business Profile optimisation", "Service-area landing pages", "Local keyword targeting", "Citation & directory building"],
     timeline: "Ongoing (3-month minimum)",
   },
   {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    Icon: FileText,
+    title: "Website & Instant Quote Requests",
+    tagline: "A site built for someone who needs help right now.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
+      "Mobile-first websites with instant quote request forms, financing information, and service pages that make booking easy under pressure.",
+    examples: ["Instant quote request forms", "Financing & pricing pages", "Service-area pages", "Click-to-call on every page"],
     timeline: "3–6 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Workflow,
+    title: "CRM & Dispatch Integration",
+    tagline: "One system that knows every job and every truck.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
+      "We connect your website and marketing to the dispatch and CRM software you already run, so leads flow straight into jobs, not lost emails.",
+    examples: ["Dispatch software integration", "Job & technician tracking", "Automated job confirmations", "Customer history & notes"],
+    timeline: "2–4 weeks",
   },
   {
-    Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    Icon: PhoneCall,
+    title: "Call Tracking & Missed-Call Text-Back",
+    tagline: "Turn a missed call into a booked job automatically.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
-    timeline: "Live within 1–2 weeks",
+      "Call tracking numbers show you which ads and pages actually generate calls, and missed-call text-back keeps a lead warm even when no one can answer.",
+    examples: ["Call tracking numbers", "Missed-call text-back automation", "Call recording & analytics", "Source attribution reporting"],
+    timeline: "1–2 weeks",
   },
   {
     Icon: Star,
     title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    tagline: "Your rating decides who gets the call, not just who ranks.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every completed job, plus monitoring and response support, so your reputation becomes a lead source, not a liability.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
   },
   {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
+    Icon: Snowflake,
+    title: "Seasonal & Maintenance Plan Marketing",
+    tagline: "Keep the phone ringing between emergencies.",
     description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
+      "Email and SMS campaigns for HVAC tune-ups, plumbing inspections, and seasonal maintenance plans that generate revenue outside of breakdown calls.",
+    examples: ["Seasonal tune-up campaigns", "Maintenance plan promotion", "Email & SMS automation", "Repeat-customer reminders"],
+    timeline: "2–3 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "ServiceTitan", "Housecall Pro", "Jobber", "FieldEdge", "ServiceFusion", "Workiz",
 ];
 
 const process = [
@@ -130,9 +129,9 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current lead flow & missed-call rate",
       "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Competitor & service-area gap analysis",
       "Prioritised growth roadmap",
     ],
   },
@@ -141,9 +140,9 @@ const process = [
     title: "Build",
     timeline: "Weeks 2–5",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Website & quote request build",
+      "Dispatch / CRM integration",
+      "Call tracking & text-back setup",
       "QA tested before going live",
     ],
   },
@@ -152,9 +151,9 @@ const process = [
     title: "Launch",
     timeline: "Weeks 6–7",
     deliverables: [
-      "Go live to clients",
+      "Go live to customers",
       "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
+      "First Local Services Ads campaigns launched",
       "Review request automation turned on",
     ],
   },
@@ -164,14 +163,14 @@ const process = [
     timeline: "Month 2+",
     deliverables: [
       "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Seasonal maintenance campaigns",
+      "Call & lead source reporting",
+      "Typical outcome: consistently full schedule",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function PlumbingHvacPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Plumbing & HVAC
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Answer Every Call. Book Every Job.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Lead generation, local SEO, and dispatch-integrated websites
+            built for plumbing and HVAC companies, so emergencies find you
+            first, not your competitor.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: Ainora HVAC Service Call Statistics 2026, PipelineOn Home Service Marketing Statistics, CaseyResponse Lead Response Time Statistics 2026
           </p>
         </div>
       </section>
@@ -232,15 +231,14 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Jobs Slip Through the Cracks
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Work. It&apos;s the Response Time.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most plumbing and HVAC companies don&apos;t lose jobs on
+              quality. They lose them to whoever answers first.
             </p>
           </div>
 
@@ -275,7 +273,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Plumbing & HVAC Companies
             </h2>
           </div>
 
@@ -328,7 +326,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Dispatch & CRM Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +349,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A FULL SCHEDULE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how plumbing and HVAC companies
+              actually operate, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +392,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Stop Losing Jobs to Voicemail?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current lead flow, local search
+            presence, and dispatch process, and show you exactly where
+            jobs are slipping away before they ever call.
           </p>
           <Link
             href="/free-audit"

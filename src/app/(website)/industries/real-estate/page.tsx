@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  Building2,
   Search,
-  Palette,
-  Heart,
+  Zap,
+  Workflow,
+  Camera,
   MousePointerClick,
   Star,
-  Database,
   PhoneMissed,
   MapPinOff,
+  ListX,
   UserX,
-  MessageSquareWarning,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Real Estate Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "IDX/MLS websites, lead capture, CRM automation and local SEO built for real estate agents and brokerages. Respond first, close more deals.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "78%", label: "Buyers work with the first agent who responds" },
+  { value: "47 min", label: "Median agent response time (top 10%: under 3 min)" },
+  { value: "21×", label: "More likely to qualify a lead responding in 5 min" },
+  { value: "80%", label: "Of sales need 5+ follow-up touches" },
 ];
 
 const problems = [
   {
     Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    title: "Slow Lead Response",
+    desc: "A lead that doesn't hear back within minutes is already talking to another agent by the time you call.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Invisible for Neighborhood Search",
+    desc: "If your site isn't built around local, neighborhood-level search, you're not in the running when buyers search nearby.",
+  },
+  {
+    Icon: ListX,
+    title: "Outdated or Missing Listings",
+    desc: "A website without live IDX/MLS integration shows stale listings, and buyers bounce straight back to Zillow.",
   },
   {
     Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
-  },
-  {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    title: "No Follow-Up System",
+    desc: "Without CRM-driven nurture sequences, most leads go quiet for months and quietly close with someone else.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: Building2,
+    title: "IDX / MLS Website Integration",
+    tagline: "Live listings that update themselves, not you.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
-  },
-  {
-    Icon: Search,
-    title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
-    description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
-    timeline: "Ongoing (3-month minimum)",
-  },
-  {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
-    description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
+      "We build websites with real-time IDX/MLS feeds, so buyers browse current listings on your site instead of bouncing to Zillow or Realtor.com.",
+    examples: ["Real-time IDX/MLS sync", "Advanced search & filters", "Saved search & alerts", "Map-based listing search"],
     timeline: "3–6 weeks",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Search,
+    title: "Local SEO & Neighborhood Pages",
+    tagline: "Rank for the neighborhoods you actually sell in.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
+      "We build out neighborhood and community pages targeting the exact local searches buyers and sellers use, not generic city-wide keywords.",
+    examples: ["Neighborhood landing pages", "Local keyword targeting", "Google Business Profile optimisation", "Market report content"],
+    timeline: "Ongoing (3-month minimum)",
+  },
+  {
+    Icon: Zap,
+    title: "Lead Capture & Instant Response",
+    tagline: "Respond before the lead even closes the tab.",
+    description:
+      "Instant-response forms, chat widgets, and automated texts fire the moment a lead comes in, so you're the first agent they hear from.",
+    examples: ["Instant lead notifications", "Automated text & email response", "Property inquiry forms", "Home valuation lead magnets"],
+    timeline: "1–2 weeks",
+  },
+  {
+    Icon: Workflow,
+    title: "CRM & Lead Nurture Automation",
+    tagline: "Every lead followed up with, automatically.",
+    description:
+      "We connect your website to the CRM you already run and build nurture sequences that keep leads warm for months, not days.",
+    examples: ["CRM integration", "Drip email & SMS sequences", "Lead scoring & segmentation", "Agent task automation"],
+    timeline: "2–4 weeks",
+  },
+  {
+    Icon: Camera,
+    title: "Virtual Tours & Property Media",
+    tagline: "Let buyers walk through before they ever visit.",
+    description:
+      "We integrate 3D virtual tours, video walkthroughs, and high-quality photo galleries directly into your listing pages.",
+    examples: ["3D virtual tour integration", "Video walkthrough embeds", "Photo gallery optimisation", "Drone & aerial media support"],
+    timeline: "1–2 weeks",
   },
   {
     Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    title: "Paid Advertising for Listings",
+    tagline: "Put your best listings in front of active buyers.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
+      "Google and Meta ad campaigns built around specific listings and buyer/seller intent, geo-targeted to the markets you actually work.",
+    examples: ["Listing-specific ad campaigns", "Buyer & seller lead ads", "Geo-targeted local ads", "Retargeting campaigns"],
     timeline: "Live within 1–2 weeks",
   },
   {
     Icon: Star,
     title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    tagline: "Your next client is checking your reviews right now.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
+      "Automated review requests after every closing, plus monitoring and response support, so your reputation becomes a lead source.",
     examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
     timeline: "1–2 weeks",
-  },
-  {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
-    description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Zillow Premier Agent", "Follow Up Boss", "kvCORE", "BoomTown", "Chime", "Realtor.com",
 ];
 
 const process = [
@@ -130,9 +129,9 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
+      "Review current lead flow & response time",
       "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Competitor & market gap analysis",
       "Prioritised growth roadmap",
     ],
   },
@@ -141,9 +140,9 @@ const process = [
     title: "Build",
     timeline: "Weeks 2–5",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "IDX/MLS website build",
+      "CRM & lead capture integration",
+      "Neighborhood page build-out",
       "QA tested before going live",
     ],
   },
@@ -152,10 +151,10 @@ const process = [
     title: "Launch",
     timeline: "Weeks 6–7",
     deliverables: [
-      "Go live to clients",
+      "Go live to buyers & sellers",
       "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
-      "Review request automation turned on",
+      "First listing ad campaigns launched",
+      "Nurture automation turned on",
     ],
   },
   {
@@ -163,15 +162,15 @@ const process = [
     title: "Grow",
     timeline: "Month 2+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Ongoing local SEO & content optimisation",
+      "Lead source & conversion reporting",
+      "Seasonal market campaigns",
+      "Typical outcome: a consistent, warm pipeline",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function RealEstatePage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Real Estate
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Respond First. Close More Deals.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            IDX-integrated websites, lead capture, and CRM automation built
+            for agents and brokerages, so leads hear from you first and
+            never go cold.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: NAR 2025 Home Buyers and Sellers Generational Trends Report, Tom Ferry 2025 Agent Productivity Report
           </p>
         </div>
       </section>
@@ -232,15 +231,14 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Deals Slip Away
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Pitch. It&apos;s the Follow-Up.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most agents don&apos;t lose deals on negotiation skills. They
+              lose them to slow response times and leads that go cold.
             </p>
           </div>
 
@@ -275,7 +273,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Agents & Brokerages
             </h2>
           </div>
 
@@ -328,7 +326,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            CRM & Listing Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +349,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A FULL PIPELINE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how agents and brokerages
+              actually work, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +392,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Stop Losing Leads to Slow Follow-Up?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current lead flow, response time, and
+            local search presence, and show you exactly where deals are
+            slipping away before they ever call.
           </p>
           <Link
             href="/free-audit"

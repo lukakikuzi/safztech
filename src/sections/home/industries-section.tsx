@@ -36,56 +36,67 @@ const industries = [
     Icon: Wrench,
     name: "Plumbing & HVAC",
     desc: "Lead generation & CRM automation",
+    href: "/industries/plumbing-hvac",
   },
   {
     Icon: Stethoscope,
     name: "Healthcare",
     desc: "Custom portals & patient apps",
+    href: "/industries/healthcare",
   },
   {
     Icon: Home,
     name: "Real Estate",
     desc: "CRM, listings & lead generation",
+    href: "/industries/real-estate",
   },
   {
     Icon: ShoppingBag,
     name: "E-Commerce",
     desc: "Platform build & paid growth",
+    href: "/industries/ecommerce",
   },
   {
     Icon: Code2,
     name: "B2B & SaaS",
     desc: "Custom software & content strategy",
+    href: "/industries/b2b-saas",
   },
   {
     Icon: Dumbbell,
     name: "Fitness & Wellness",
     desc: "Apps, booking & digital marketing",
+    href: "/industries/fitness-wellness",
   },
   {
     Icon: Utensils,
     name: "Restaurants & Food",
     desc: "Online ordering & local SEO",
+    href: "/industries/restaurants-food",
   },
   {
     Icon: Hammer,
     name: "Home Services",
     desc: "Lead gen, CRM & paid ads",
+    href: "/industries/home-services",
   },
   {
     Icon: Briefcase,
     name: "Professional Services",
     desc: "Websites & content marketing",
+    href: "/industries/professional-services",
   },
   {
     Icon: Package,
     name: "Supplements & Wellness",
     desc: "E-commerce stores & paid ads",
+    href: "/industries/supplements-wellness",
   },
   {
     Icon: Users,
     name: "Agencies",
     desc: "White-label software & growth",
+    href: "/industries/agencies",
   },
 ];
 

@@ -3,175 +3,174 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  Code2,
   Search,
-  Palette,
-  Heart,
-  MousePointerClick,
-  Star,
-  Database,
-  PhoneMissed,
-  MapPinOff,
+  Gauge,
+  Users2,
+  Zap,
+  Wrench,
+  LifeBuoy,
+  ClipboardX,
   UserX,
-  MessageSquareWarning,
+  TrendingDown,
+  AlertTriangle,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "White-Label Services for Agencies | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "White-label web, app and SEO delivery for agencies, so you can take on more clients without hiring. Your brand, our delivery.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "73%", label: "Of agencies already use white-label services" },
+  { value: "2.3×", label: "Faster growth outsourcing 40 to 60% of delivery" },
+  { value: "42%", label: "Higher client retention with white-label partnerships" },
+  { value: "0", label: "Clients who ever hear our name" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
-  },
-  {
-    Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    Icon: ClipboardX,
+    title: "Overloaded In-House Capacity",
+    desc: "Your team is at capacity, but saying no to new work means losing revenue and, sometimes, the client entirely.",
   },
   {
     Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    title: "Inconsistent Freelancer Quality",
+    desc: "Freelancers disappear mid-project, miss deadlines, or deliver work you have to redo, putting your reputation on the line.",
   },
   {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    Icon: TrendingDown,
+    title: "Turning Away Revenue",
+    desc: "Every dev, app, or SEO request you can't fulfil is revenue and a client relationship handed to someone else.",
+  },
+  {
+    Icon: AlertTriangle,
+    title: "No Scalable Delivery System",
+    desc: "Without a reliable delivery partner, growth means constant hiring, training, and management overhead.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: Code2,
+    title: "White-Label Web & App Development",
+    tagline: "Your brand on the proposal, our team on delivery.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "Full website and application builds delivered under your agency's name, with no client-facing contact from our side, ever.",
+    examples: ["Website & web app builds", "Mobile app development", "E-commerce builds", "Custom software projects"],
+    timeline: "Per project scope",
   },
   {
     Icon: Search,
-    title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    title: "White-Label SEO & Content",
+    tagline: "Scale your SEO offering without hiring a team.",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
-    timeline: "Ongoing (3-month minimum)",
+      "SEO strategy, content production, and link building delivered under your brand, with reporting formatted the way your clients expect.",
+    examples: ["SEO strategy & execution", "Content production", "Link building", "White-labeled reporting"],
+    timeline: "Ongoing engagements",
   },
   {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
+    Icon: Gauge,
+    title: "Reseller Dashboard & Reporting",
+    tagline: "Client-ready reporting without the manual work.",
     description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
-    timeline: "3–6 weeks",
+      "Branded dashboards and reports you can hand straight to clients, so project status and results never require manual compilation.",
+    examples: ["White-labeled dashboards", "Automated client reports", "Project status tracking", "Custom branding options"],
+    timeline: "Set up within days",
   },
   {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
+    Icon: Users2,
+    title: "Dedicated Account Management",
+    tagline: "One point of contact who knows every project.",
     description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
+      "A dedicated account manager on our side means you're never chasing updates across a scattered freelancer team.",
+    examples: ["Dedicated account manager", "Regular status updates", "Direct Slack/email access", "Escalation handling"],
+    timeline: "From day one",
   },
   {
-    Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    Icon: Zap,
+    title: "Rush & Overflow Capacity",
+    tagline: "Say yes to the deadline you'd normally decline.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
-    timeline: "Live within 1–2 weeks",
+      "When a client needs something delivered faster than your in-house team can manage, we absorb the overflow without dropping quality.",
+    examples: ["Rush project delivery", "Overflow capacity on demand", "Flexible scaling up or down", "No long-term commitment required"],
+    timeline: "As needed",
   },
   {
-    Icon: Star,
-    title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    Icon: Wrench,
+    title: "Custom Software for Agency Clients",
+    tagline: "Take on the projects your team can't build alone.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
-    examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
-    timeline: "1–2 weeks",
+      "Complex custom software and integrations built to your specification, so you can pitch bigger projects with confidence.",
+    examples: ["Custom software builds", "Third-party API integrations", "Internal tools & dashboards", "Legacy system modernisation"],
+    timeline: "Per project scope",
   },
   {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
+    Icon: LifeBuoy,
+    title: "Ongoing Maintenance & Support",
+    tagline: "Keep every client site running, under your brand.",
     description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
+      "White-label maintenance, updates, and support plans that let you offer ongoing retainers without staffing a support team.",
+    examples: ["White-labeled maintenance plans", "Security & update management", "Uptime monitoring", "Client support handling"],
+    timeline: "Ongoing engagements",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Slack", "Asana", "ClickUp", "Figma", "GitHub", "Notion",
 ];
 
 const process = [
   {
     number: "01",
-    title: "Audit & Strategy",
+    title: "Discovery & Scope",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
-      "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
-      "Prioritised growth roadmap",
+      "Understand your service offerings & gaps",
+      "Define white-label workflow & branding",
+      "Agree on pricing & margin structure",
+      "Set up communication channels",
     ],
   },
   {
     number: "02",
-    title: "Build",
-    timeline: "Weeks 2–5",
+    title: "First Project",
+    timeline: "Per scope",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
-      "QA tested before going live",
+      "Kick off first client project",
+      "Dedicated account manager assigned",
+      "Regular status updates delivered",
+      "QA tested before handoff",
     ],
   },
   {
     number: "03",
-    title: "Launch",
-    timeline: "Weeks 6–7",
+    title: "Scale",
+    timeline: "Ongoing",
     deliverables: [
-      "Go live to clients",
-      "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
-      "Review request automation turned on",
+      "Take on additional client projects",
+      "Reporting dashboards branded & live",
+      "Rush/overflow capacity available",
+      "Consistent delivery quality maintained",
     ],
   },
   {
     number: "04",
-    title: "Grow",
-    timeline: "Month 2+",
+    title: "Grow Together",
+    timeline: "Month 3+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Expand into new service lines",
+      "Volume-based pricing improvements",
+      "Priority scheduling for your projects",
+      "Typical outcome: capacity to take on 3x the clients",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function AgenciesPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Agencies
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Your Brand. Our Delivery.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            White-label web, app, and SEO delivery for agencies, so you
+            can take on more clients and bigger projects without hiring
+            a single new employee.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: E2M Solutions White-Label Industry Report, industry outsourcing benchmarks
           </p>
         </div>
       </section>
@@ -232,15 +231,15 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Agencies Turn Away Revenue
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely Demand. It&apos;s Delivery Capacity.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most agencies don&apos;t lose clients over strategy. They
+              lose them, or turn them away, when delivery capacity runs
+              out.
             </p>
           </div>
 
@@ -272,10 +271,10 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              What We Build
+              What We Deliver
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              White-Label Services for Agencies
             </h2>
           </div>
 
@@ -324,11 +323,11 @@ export default function SalonsSpasPage() {
         </div>
       </section>
 
-      {/* Platforms we integrate with */}
+      {/* Tools we work within */}
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Tools We Collaborate In
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +350,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM FIRST PROJECT TO SCALED DELIVERY
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how agency partnerships
+              actually work, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +393,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Stop Turning Away Clients?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current capacity and service gaps,
+            and show you exactly where a white-label partner unlocks
+            more revenue.
           </p>
           <Link
             href="/free-audit"

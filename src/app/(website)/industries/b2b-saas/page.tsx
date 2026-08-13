@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
-  Search,
-  Palette,
-  Heart,
+  LayoutTemplate,
+  Rocket,
+  FileText,
+  Workflow,
   MousePointerClick,
-  Star,
-  Database,
-  PhoneMissed,
-  MapPinOff,
-  UserX,
-  MessageSquareWarning,
+  BookOpen,
+  Sparkles,
+  ClockAlert,
+  MousePointerBan,
+  FileX,
+  Unplug,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "B2B & SaaS Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Websites, demo funnels, content marketing and CRM integration built for B2B and SaaS companies. Shorten your sales cycle and grow organic pipeline.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "80%", label: "Of the buyer journey happens before contacting sales" },
+  { value: "71%", label: "Of B2B buyers start research with a Google search" },
+  { value: "94%", label: "Of buying groups rank their shortlist before any seller call" },
+  { value: "64%", label: "Prefer thought leadership over promotional content" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    Icon: ClockAlert,
+    title: "Long, Unqualified Sales Cycles",
+    desc: "Without a website that pre-sells and pre-qualifies, sales spends weeks on calls that were never going to close.",
   },
   {
-    Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    Icon: MousePointerBan,
+    title: "A Site That Doesn't Convert Demos",
+    desc: "Traffic arrives, reads the homepage, and leaves. Without a real funnel, most visitors never request a demo or trial.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: FileX,
+    title: "No Content Driving Organic Pipeline",
+    desc: "Without SEO and content built around buyer intent, you're entirely dependent on paid ads and outbound for every lead.",
   },
   {
-    Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    Icon: Unplug,
+    title: "Disconnected Marketing & CRM Stack",
+    desc: "Leads fall through the cracks when your website, CRM, and marketing automation don't actually talk to each other.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: LayoutTemplate,
+    title: "Website & Landing Page Build",
+    tagline: "A site that pre-sells before the first call.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
+      "We build marketing sites and landing pages structured around your actual buying process, not a generic template every SaaS site uses.",
+    examples: ["Marketing website build", "Product & pricing pages", "Comparison & alternative pages", "Landing page systems"],
+    timeline: "4–8 weeks",
+  },
+  {
+    Icon: Rocket,
+    title: "Demo & Trial Funnel Optimisation",
+    tagline: "Turn more visitors into qualified demos.",
+    description:
+      "We test and rebuild your demo request and trial signup flow based on real behaviour data, so fewer qualified visitors slip away.",
+    examples: ["Demo request flow optimisation", "Trial signup & onboarding UX", "A/B testing", "Funnel analytics setup"],
+    timeline: "Ongoing (60-day minimum)",
+  },
+  {
+    Icon: FileText,
+    title: "Content Marketing & SEO",
+    tagline: "Pipeline that doesn't depend on ad spend.",
+    description:
+      "Bottom-of-funnel and educational content built around what your buyers actually search, so organic traffic turns into real pipeline.",
+    examples: ["Buyer-intent SEO content", "Comparison & alternative content", "Technical SEO fixes", "Link building"],
+    timeline: "Ongoing (6-month minimum)",
+  },
+  {
+    Icon: Workflow,
+    title: "CRM & Marketing Automation Integration",
+    tagline: "No lead ever falls through the cracks again.",
+    description:
+      "We connect your website and forms to the CRM and marketing automation stack you already run, with lead scoring and routing built in.",
+    examples: ["CRM integration", "Marketing automation setup", "Lead scoring & routing", "Sales handoff workflows"],
     timeline: "2–4 weeks",
-  },
-  {
-    Icon: Search,
-    title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
-    description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
-    timeline: "Ongoing (3-month minimum)",
-  },
-  {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
-    description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
-    timeline: "3–6 weeks",
-  },
-  {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
-    description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
   },
   {
     Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
+    title: "Paid Advertising",
+    tagline: "Predictable pipeline while organic compounds.",
     description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
+      "LinkedIn and Google campaigns built around your actual ICP and buying committee, not broad targeting that burns budget.",
+    examples: ["LinkedIn Ads", "Google Search & retargeting", "ABM campaigns", "Landing page pairing"],
     timeline: "Live within 1–2 weeks",
   },
   {
-    Icon: Star,
-    title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    Icon: BookOpen,
+    title: "Case Studies & Sales Enablement",
+    tagline: "Content that closes deals sales can't.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
-    examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
-    timeline: "1–2 weeks",
+      "Customer case studies, comparison sheets, and one-pagers that give your sales team what they need to close, not just talk about the product.",
+    examples: ["Customer case studies", "Comparison & battlecards", "Sales one-pagers", "ROI calculators"],
+    timeline: "2–4 weeks",
   },
   {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
+    Icon: Sparkles,
+    title: "Product-Led Onboarding Flows",
+    tagline: "Get free/trial users to their first win faster.",
     description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
+      "Onboarding flows and in-app messaging designed to get new users to activation and value quickly, so more trials convert to paid.",
+    examples: ["Onboarding flow design", "In-app messaging", "Activation tracking", "Trial-to-paid conversion optimisation"],
+    timeline: "3–6 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "HubSpot", "Salesforce", "Intercom", "Segment", "Stripe", "Webflow",
 ];
 
 const process = [
@@ -130,48 +129,48 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
-      "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Review current funnel & demo conversion rate",
+      "Content & SEO gap analysis",
+      "Competitor & positioning analysis",
       "Prioritised growth roadmap",
     ],
   },
   {
     number: "02",
     title: "Build",
-    timeline: "Weeks 2–5",
+    timeline: "Weeks 2–7",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Website & funnel build",
+      "CRM & marketing automation integration",
+      "First content assets produced",
       "QA tested before going live",
     ],
   },
   {
     number: "03",
     title: "Launch",
-    timeline: "Weeks 6–7",
+    timeline: "Weeks 8–9",
     deliverables: [
-      "Go live to clients",
-      "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
-      "Review request automation turned on",
+      "Go live to the market",
+      "SEO foundations live",
+      "First paid campaigns launched",
+      "Lead scoring & routing turned on",
     ],
   },
   {
     number: "04",
     title: "Grow",
-    timeline: "Month 2+",
+    timeline: "Month 3+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Ongoing content & SEO production",
+      "Funnel & ad optimisation",
+      "Sales enablement content expansion",
+      "Typical outcome: a predictable pipeline",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function B2bSaasPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · B2B & SaaS
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Shorten the Sales Cycle. Grow the Pipeline.
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Websites, demo funnels, and content marketing built for B2B
+            and SaaS companies, so qualified pipeline doesn&apos;t depend
+            entirely on outbound and ad spend.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: 6sense 2025 B2B Buyer Experience Report, Sopro B2B Buyer Statistics
           </p>
         </div>
       </section>
@@ -232,15 +231,15 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Pipeline Stalls
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Product. It&apos;s the Funnel.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most B2B and SaaS companies don&apos;t lose deals on
+              features. They lose them to a site and funnel that never
+              earns the demo.
             </p>
           </div>
 
@@ -275,7 +274,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for B2B & SaaS Companies
             </h2>
           </div>
 
@@ -328,7 +327,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +350,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO A PREDICTABLE PIPELINE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how B2B and SaaS companies
+              actually grow, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +393,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Stop Relying on Outbound Alone?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current funnel, content, and CRM setup,
+            and show you exactly where qualified pipeline is slipping
+            away.
           </p>
           <Link
             href="/free-audit"

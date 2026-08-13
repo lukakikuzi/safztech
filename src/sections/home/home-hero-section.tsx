@@ -9,6 +9,8 @@ const trustMetrics = [
   { value: "$2.5B+", label: "In Revenue Created" },
 ];
 
+const videoSrc = process.env.NEXT_PUBLIC_VIDEO_URL || "/videos/home-hero-bg-vido.mp4";
+
 function HomeHeroSection() {
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +24,7 @@ function HomeHeroSection() {
         loop
         muted
       >
-        <source src="/videos/home-hero-bg-vido.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
       </video>
 
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-5" />

@@ -3,125 +3,124 @@ import Link from "next/link";
 import {
   Check,
   ArrowRight,
-  Calendar,
+  ShoppingCart,
+  ShieldCheck,
   Search,
-  Palette,
-  Heart,
+  Repeat,
+  Mail,
   MousePointerClick,
   Star,
-  Database,
-  PhoneMissed,
+  BadgeAlert,
   MapPinOff,
-  UserX,
+  RefreshCcwDot,
   MessageSquareWarning,
 } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
-  title: "Salons & Spas Website & Growth Services | SAFZTECH",
+  title: "Supplements & Wellness Website & Growth Services | SAFZTECH",
   description:
-    "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
+    "Compliant store builds, subscription systems, SEO and retention marketing built for supplement and wellness brands. Grow without risking your ad accounts.",
 });
 
 const stats = [
-  { value: "30%", label: "Average share of salon bookings made online" },
-  { value: "30%", label: "Highest no-show rate of any appointment business" },
-  { value: "20%", label: "No-show reduction just from a card on file" },
-  { value: "59%", label: "Online booking share at top-earning salons" },
+  { value: "$209.5B", label: "Global dietary supplement market size (2025)" },
+  { value: "$72B", label: "U.S. supplement market size (2025)" },
+  { value: "25%", label: "Of category revenue now sold online" },
+  { value: "13%", label: "CAGR for online & subscription supplement sales" },
 ];
 
 const problems = [
   {
-    Icon: PhoneMissed,
-    title: "Missed Calls, Missed Bookings",
-    desc: "Every unanswered call while you're mid-service is a client who just booked somewhere else instead.",
+    Icon: BadgeAlert,
+    title: "Ad Accounts at Risk",
+    desc: "Health claims that push too far can get your ad account flagged or banned, cutting off your biggest growth channel overnight.",
   },
   {
     Icon: MapPinOff,
-    title: "Invisible on Local Search",
-    desc: "If your Google Business Profile isn't optimised, you're not even in the running when someone searches nearby.",
+    title: "Buried in a Crowded Search",
+    desc: "Without real SEO, you're competing for visibility against thousands of supplement brands with bigger ad budgets.",
   },
   {
-    Icon: UserX,
-    title: "One-Time Clients Who Never Return",
-    desc: "Without a loyalty system or rebooking prompts, most first-time clients simply never come back.",
+    Icon: RefreshCcwDot,
+    title: "No Subscription or Repeat System",
+    desc: "Without a subscription flow, most first-time buyers never reorder, and your customer acquisition cost never pays back.",
   },
   {
     Icon: MessageSquareWarning,
-    title: "Reviews Nobody's Managing",
-    desc: "A few unanswered bad reviews can quietly cost you more bookings than any ad campaign could win back.",
+    title: "Weak Trust Signals",
+    desc: "No third-party testing info, no real reviews, and no transparent labeling quietly costs you conversions in a skeptical category.",
   },
 ];
 
 const services = [
   {
-    Icon: Calendar,
-    title: "Online Booking & Scheduling",
-    tagline: "Stop losing clients to a phone that goes to voicemail.",
+    Icon: ShoppingCart,
+    title: "Compliant Store Build",
+    tagline: "A store built to convert and stay compliant.",
     description:
-      "We build booking systems clients can use at 11pm on their phone, with synced calendars, staff availability, deposits, and automated reminders that cut no-shows.",
-    examples: ["24/7 online booking", "Staff & service calendars", "Deposit & cancellation policies", "SMS/email reminders"],
-    timeline: "2–4 weeks",
+      "Custom Shopify or headless builds with proper disclaimers, labeling, and claims review baked into the product pages from day one.",
+    examples: ["Shopify / custom store builds", "Compliant claims & disclaimers", "Ingredient & label transparency pages", "Checkout optimisation"],
+    timeline: "4–8 weeks",
   },
   {
-    Icon: Search,
-    title: "Local SEO & Google Business Profile",
-    tagline: "Show up when someone searches \"salon near me.\"",
+    Icon: ShieldCheck,
+    title: "Compliant Paid Advertising",
+    tagline: "Grow on ads without losing your account.",
     description:
-      "Most salon bookings start with a local search. We optimise your Google Business Profile, local listings, and website so you rank in the map pack, not page 3.",
-    examples: ["Google Business Profile optimisation", "Local keyword targeting", "Citation building", "Review-driven ranking signals"],
-    timeline: "Ongoing (3-month minimum)",
-  },
-  {
-    Icon: Palette,
-    title: "Website & Brand Design",
-    tagline: "A site that makes your work look as good as it is.",
-    description:
-      "Portfolio-style galleries, service menus with pricing, staff bios, and a design that matches your salon's actual vibe, not a generic template every salon uses.",
-    examples: ["Service menu & pricing pages", "Before/after galleries", "Staff & stylist profiles", "Mobile-first design"],
-    timeline: "3–6 weeks",
-  },
-  {
-    Icon: Heart,
-    title: "Loyalty & Membership Programs",
-    tagline: "Turn one-time visitors into monthly regulars.",
-    description:
-      "We set up membership tiers, package deals, and points-based loyalty programs that give clients a reason to rebook instead of trying a new place.",
-    examples: ["Membership tiers & packages", "Points & rewards systems", "Referral programs", "Automated rebooking prompts"],
-    timeline: "2–3 weeks",
-  },
-  {
-    Icon: MousePointerClick,
-    title: "Local Paid Advertising",
-    tagline: "Fill empty chair-time this week, not next quarter.",
-    description:
-      "Google and Meta ads geo-targeted to your service radius, promoting your highest-margin services to people actively searching or scrolling nearby.",
-    examples: ["Google Search & Maps ads", "Instagram & Facebook ads", "Geo-targeted radius targeting", "Promo/offer campaigns"],
+      "We know which platforms, claim structures, and creative approaches keep your ad accounts safe while still driving real growth.",
+    examples: ["Compliant ad creative review", "Platform-safe claim structures", "Google & Meta campaign management", "Account risk monitoring"],
     timeline: "Live within 1–2 weeks",
   },
   {
-    Icon: Star,
-    title: "Review & Reputation Management",
-    tagline: "Your next client is reading your reviews right now.",
+    Icon: Search,
+    title: "SEO & Content Marketing",
+    tagline: "Visibility that doesn't depend on ad spend.",
     description:
-      "We set up automated review requests after every visit, monitor new reviews, and help you respond, so your rating becomes a growth channel, not an afterthought.",
-    examples: ["Automated review requests", "Review monitoring & alerts", "Response templates", "Reputation dashboards"],
+      "Ingredient, benefit, and comparison content built around what buyers actually search, so organic traffic compounds over time.",
+    examples: ["Ingredient & benefit content", "Comparison & buying guides", "Technical SEO fixes", "Link building"],
+    timeline: "Ongoing (6-month minimum)",
+  },
+  {
+    Icon: Repeat,
+    title: "Subscription & Loyalty Programs",
+    tagline: "Turn a single sale into recurring revenue.",
+    description:
+      "Subscription offers, points-based loyalty, and reorder reminders that give customers a reason to stay subscribed instead of shopping around.",
+    examples: ["Subscribe & save offers", "Points & rewards programs", "Reorder reminder flows", "VIP & tiered memberships"],
+    timeline: "2–3 weeks",
+  },
+  {
+    Icon: Mail,
+    title: "Email & SMS Retention Marketing",
+    tagline: "Keep customers engaged between orders.",
+    description:
+      "Abandoned cart flows, education sequences, and winback campaigns that recover lost sales and build long-term customer relationships.",
+    examples: ["Abandoned cart sequences", "Educational email flows", "Winback campaigns", "Segmented broadcast campaigns"],
+    timeline: "2–4 weeks",
+  },
+  {
+    Icon: MousePointerClick,
+    title: "Review & UGC Management",
+    tagline: "Let real customers do the convincing.",
+    description:
+      "Automated review requests, UGC collection, and third-party testing badges that build the trust a skeptical category demands.",
+    examples: ["Automated review requests", "UGC & testimonial collection", "Third-party testing display", "Reputation dashboards"],
     timeline: "1–2 weeks",
   },
   {
-    Icon: Database,
-    title: "POS & CRM Integration",
-    tagline: "One system that knows every client's history.",
+    Icon: Star,
+    title: "Label & Claims Compliance Review",
+    tagline: "Grow with confidence, not exposure.",
     description:
-      "We connect your booking site to your point-of-sale and client records, so staff see visit history, preferences, and purchase patterns at a glance.",
-    examples: ["POS integration", "Client history & notes", "Purchase & visit tracking", "Staff dashboards"],
-    timeline: "2–4 weeks",
+      "We review your product pages and marketing claims against platform and advertising guidelines, so growth doesn't come with unnecessary risk.",
+    examples: ["Claims & label review", "Platform policy alignment", "Disclaimer & disclosure audit", "Ongoing compliance monitoring"],
+    timeline: "1–2 weeks",
   },
 ];
 
 const platforms = [
-  "Vagaro", "Fresha", "Square Appointments", "Mindbody",
-  "GlossGenius", "Booksy", "Schedulicity", "Zenoti",
+  "Shopify", "Recharge", "Klaviyo", "Bold Subscriptions", "Yotpo", "TrustPilot",
 ];
 
 const process = [
@@ -130,48 +129,48 @@ const process = [
     title: "Audit & Strategy",
     timeline: "Week 1",
     deliverables: [
-      "Review current booking flow & drop-off points",
-      "Local SEO & Google Business Profile audit",
-      "Competitor gap analysis",
+      "Review current claims & compliance risk",
+      "SEO & competitor gap analysis",
+      "Retention & subscription audit",
       "Prioritised growth roadmap",
     ],
   },
   {
     number: "02",
     title: "Build",
-    timeline: "Weeks 2–5",
+    timeline: "Weeks 2–7",
     deliverables: [
-      "Booking system & website build",
-      "POS / CRM integration",
-      "Loyalty & membership setup",
+      "Store build or optimisation",
+      "Subscription & loyalty setup",
+      "Email/SMS flow setup",
       "QA tested before going live",
     ],
   },
   {
     number: "03",
     title: "Launch",
-    timeline: "Weeks 6–7",
+    timeline: "Weeks 8–9",
     deliverables: [
-      "Go live to clients",
-      "Google Business Profile & local SEO live",
-      "First local ad campaigns launched",
-      "Review request automation turned on",
+      "Go live to customers",
+      "SEO foundations live",
+      "First compliant ad campaigns launched",
+      "Retention flows turned on",
     ],
   },
   {
     number: "04",
     title: "Grow",
-    timeline: "Month 2+",
+    timeline: "Month 3+",
     deliverables: [
-      "Ongoing local SEO & ad optimisation",
-      "Loyalty program performance tracking",
-      "Seasonal promo campaigns",
-      "Typical outcome: consistently full calendar",
+      "Ongoing content & SEO production",
+      "Ad & subscription optimisation",
+      "Ongoing compliance monitoring",
+      "Typical outcome: 2–3× revenue growth",
     ],
   },
 ];
 
-export default function SalonsSpasPage() {
+export default function SupplementsWellnessPage() {
   return (
     <main className="pt-20">
 
@@ -179,15 +178,15 @@ export default function SalonsSpasPage() {
       <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
-            Industries · Salons & Spas
+            Industries · Supplements & Wellness
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-4xl">
-            Fill Every Chair, Not Just Your Calendar
+            Grow Without Risking Your Ad Accounts
           </h1>
           <p className="text-foreground text-xl leading-relaxed mb-10 max-w-2xl">
-            Booking systems, local SEO, and branded websites built for
-            salons and spas, so new clients find you, and regulars keep
-            coming back.
+            Compliant store builds, subscription systems, and retention
+            marketing built for supplement and wellness brands, so growth
+            doesn&apos;t come with unnecessary risk.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -222,7 +221,7 @@ export default function SalonsSpasPage() {
             ))}
           </div>
           <p className="text-paragraph/50 text-xs text-center mt-8">
-            Sources: Blvd Salon Industry Statistics 2026, Zenoti Beauty & Wellness Industry Statistics 2025, NoShowCost.com
+            Sources: Grand View Research U.S. Dietary Supplements Market Report, Polaris Market Research
           </p>
         </div>
       </section>
@@ -232,15 +231,15 @@ export default function SalonsSpasPage() {
         <div className="layout-standard section-padding-standard">
           <div className="mb-16 text-center">
             <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-4">
-              Why Salons Lose Business
+              Why Growth Stalls in This Category
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              It&apos;s Rarely the Service. It&apos;s the Systems.
+              It&apos;s Rarely the Product. It&apos;s the Risk.
             </h2>
             <p className="text-paragraph text-lg max-w-2xl mx-auto mt-4">
-              Most salons and spas don&apos;t lose clients because of bad
-              work. They lose them to friction most owners never see
-              happening.
+              Most supplement brands don&apos;t stall because of quality.
+              They stall because of ad restrictions and trust gaps most
+              owners never plan for.
             </p>
           </div>
 
@@ -275,7 +274,7 @@ export default function SalonsSpasPage() {
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              Services for Salons & Spas
+              Services for Supplement & Wellness Brands
             </h2>
           </div>
 
@@ -321,6 +320,13 @@ export default function SalonsSpasPage() {
               </div>
             ))}
           </div>
+
+          <p className="text-paragraph/60 text-xs text-center mt-10 max-w-2xl mx-auto">
+            We help you build and market with compliance in mind. We are
+            not a law firm and this is not legal or regulatory advice;
+            confirm your specific claims and labeling requirements with
+            qualified counsel.
+          </p>
         </div>
       </section>
 
@@ -328,7 +334,7 @@ export default function SalonsSpasPage() {
       <section className="py-14 border-b border-border">
         <div className="layout-standard">
           <p className="text-heading text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
-            Booking & POS Platforms We Work With
+            Platforms We Work With
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {platforms.map((platform) => (
@@ -351,11 +357,11 @@ export default function SalonsSpasPage() {
               How It Works
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-              FROM AUDIT TO A FULL CALENDAR
+              FROM AUDIT TO COMPOUNDING REVENUE
             </h2>
             <p className="text-paragraph text-lg max-w-2xl">
-              A proven process built around how salons and spas actually
-              operate, with full transparency at every step.
+              A proven process built around how supplement and wellness
+              brands actually grow, with full transparency at every step.
             </p>
           </div>
 
@@ -394,12 +400,12 @@ export default function SalonsSpasPage() {
       <section className="section-padding-standard bg-secondary-background">
         <div className="layout-standard section-padding-standard text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins mb-6">
-            Ready to Fill Your Chairs?
+            Ready to Grow Without the Risk?
           </h2>
           <p className="text-paragraph text-lg mb-10 max-w-xl mx-auto">
-            We&apos;ll look at your current booking flow, local search
-            presence, and website, and show you exactly where you&apos;re
-            losing clients before they ever call.
+            We&apos;ll look at your current claims, ad accounts, and
+            retention flows, and show you exactly where risk and revenue
+            are hiding.
           </p>
           <Link
             href="/free-audit"
