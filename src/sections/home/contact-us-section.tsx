@@ -164,7 +164,7 @@ function ContactUsSection() {
                   className="border-border border-2 data-[state=checked]:bg-primary data-[state=checked]:text-black mt-1"
                 />
                 <label htmlFor="agree" className="text-sm leading-relaxed">
-                  I agree to receive communications from CHRIS K. You can
+                  I agree to receive communications from SAFZTECH. You can
                   unsubscribe at any time.See our{" "}
                   <Link
                     href={"/privacy-policy"}
