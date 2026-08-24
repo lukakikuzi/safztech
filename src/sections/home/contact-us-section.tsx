@@ -164,14 +164,23 @@ function ContactUsSection() {
                   className="border-border border-2 data-[state=checked]:bg-primary data-[state=checked]:text-black mt-1"
                 />
                 <label htmlFor="agree" className="text-sm leading-relaxed">
-                  I agree to receive communications from SAFZTECH. You can
-                  unsubscribe at any time.See our{" "}
+                  I agree to receive SMS/text messages from SAFZTECH about
+                  support and service updates. Msg frequency varies. Reply
+                  STOP to opt out. See our{" "}
+                  <Link
+                    href={"/terms-conditions"}
+                    className="text-white underline cursor-pointer"
+                  >
+                    Terms of Service
+                  </Link>{" "}
+                  and{" "}
                   <Link
                     href={"/privacy-policy"}
                     className="text-white underline cursor-pointer"
                   >
-                    Privacy Policy.
+                    Privacy Policy
                   </Link>
+                  .
                 </label>
               </div>
 
