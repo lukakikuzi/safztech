@@ -99,6 +99,32 @@ function TermsConditionsPage() {
             entire agreement between the parties.
           </p>
         </div>
+
+        <div>
+          <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
+            9. SMS/Text Messaging Program
+          </h2>
+          <div className="space-y-4 leading-relaxed">
+            <p>
+              By providing your phone number and opting in via our website
+              contact form, you agree to receive SMS/text messages from
+              SAFZTECH related to support and service updates, including
+              responses to inquiries, scheduling of audits/consultations, and
+              account or project updates.
+            </p>
+            <p>Message frequency varies. Message and data rates may apply.</p>
+            <p>
+              Consent to receive SMS messages is not a condition of
+              purchasing any goods or services.
+            </p>
+            <p>
+              You may opt out of receiving text messages at any time by
+              replying STOP to any message. For help, reply HELP or contact us
+              at info@safztech.com.
+            </p>
+            <p>Carriers are not liable for delayed or undelivered messages.</p>
+          </div>
+        </div>
       </div>
     </main>
   );

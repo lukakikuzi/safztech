@@ -58,7 +58,30 @@ function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
-            5. Data Retention
+            5. SMS Communication
+          </h2>
+          <div className="space-y-4 leading-relaxed">
+            <p>
+              If you provide your phone number and opt in through our website
+              contact form, we collect and use your mobile number to send you
+              SMS/text messages related to support and service updates, as
+              described in our Terms &amp; Conditions.
+            </p>
+            <p>
+              We do not share, sell, or disclose mobile opt-in data or phone
+              numbers collected for SMS purposes with any third parties or
+              affiliates for marketing or promotional purposes.
+            </p>
+            <p>
+              You may withdraw consent at any time by replying STOP to any
+              message we send.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
+            6. Data Retention
           </h2>
           <p className="leading-relaxed">
             Information is retained only as long as necessary for service
@@ -68,7 +91,7 @@ function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
-            6. Data Security
+            7. Data Security
           </h2>
           <p className="leading-relaxed">
             Company employs SSL encryption and industry-standard security
@@ -79,7 +102,7 @@ function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
-            7. Disclosure
+            8. Disclosure
           </h2>
           <p className="leading-relaxed">
             Data may be disclosed if required by law or to protect
@@ -89,7 +112,7 @@ function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
-            8. Rights of Users
+            9. Rights of Users
           </h2>
           <p className="leading-relaxed">
             Clients may request access, correction, or deletion of their
@@ -99,7 +122,7 @@ function PrivacyPolicyPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-4 text-heading font-poppins">
-            9. Changes to Policy
+            10. Changes to Policy
           </h2>
           <p className="leading-relaxed">
             Company reserves the right to amend this Policy with notice on the
