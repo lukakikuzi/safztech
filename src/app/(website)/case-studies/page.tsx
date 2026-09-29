@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight } from "lucide-react";
@@ -10,8 +10,141 @@ import Project01Img from "../../../../public/images/e-commerce-project-img.png";
 import Project02Img from "../../../../public/images/ai-chatbot-project-img.png";
 import Project03Img from "../../../../public/images/admin-dashboard-project-img.png";
 import Project04Img from "../../../../public/images/allfences.png";
+import KallcorImg from "../../../../public/images/KALLCOR.webp";
+import GalaxyPeptidesImg from "../../../../public/images/Galaxy-Peptides.webp";
+import LcaMerchandiseImg from "../../../../public/images/LCA-MERCHANDISE.webp";
+import LostCoastAminosImg from "../../../../public/images/Lost-Coast-Aminos.webp";
+import InnoAminosImg from "../../../../public/images/INNO-AMINOS.webp";
 
-const caseStudies = [
+interface CaseStudyResult {
+  value: string;
+  label: string;
+  sub: string;
+}
+
+interface CaseStudy {
+  img: StaticImageData;
+  imgAlt: string;
+  type: string;
+  client: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  results: CaseStudyResult[];
+  stack: string[];
+  timeline?: string;
+  quote?: string;
+  quoteName?: string;
+}
+
+const caseStudies: CaseStudy[] = [
+  {
+    img: Project04Img,
+    imgAlt: "AllFences Canada website",
+    type: "Digital Growth",
+    client: "AllFences Canada",
+    industry: "Home Services · Canada",
+    challenge:
+      "Zero online presence after 8 years in business. Every lead came from word-of-mouth — no website, no Google presence, no way to scale or predict revenue.",
+    solution:
+      "We built a fast, conversion-focused Next.js website, optimised every page for local SEO, set up Google Business Profile, launched targeted Google Ads for high-intent searches, and built a simple CRM to track and follow up on every lead.",
+    results: [
+      { value: "40+", label: "Monthly Leads", sub: "from Google alone" },
+      { value: "#1", label: "Google Ranking", sub: "fence installation Toronto" },
+      { value: "+65%", label: "Revenue Increase", sub: "in first 6 months" },
+      { value: "6 wks", label: "Time to Results", sub: "from first call" },
+    ],
+    stack: ["Next.js", "Tailwind CSS", "Google Ads", "Local SEO", "CRM"],
+    timeline: "6 weeks",
+    quote: "I had no idea what I was missing. In 6 weeks we went from no online presence to ringing phones every day. Booked out 3 weeks in advance.",
+    quoteName: "Mike T., Owner",
+  },
+  {
+    img: KallcorImg,
+    imgAlt: "Kallcor research peptides storefront",
+    type: "E-Commerce Build",
+    client: "Kallcor",
+    industry: "Research Peptides · USA",
+    challenge:
+      "A research-peptide supplier needed a storefront that stays clearly compliant, restricted to qualified adults and unmistakably research-use-only, while still giving labs a smooth way to browse, order, and verify batch quality.",
+    solution:
+      "Built from scratch — a WordPress e-commerce site with a 21+ qualification gate, research-use-only messaging throughout, customer accounts and cart, a searchable batch Certificate of Analysis database, an affiliate program, and an on-site AI research assistant.",
+    results: [
+      { value: "21+", label: "Age Gate", sub: "qualified-researcher verification" },
+      { value: "5-stage", label: "Production Protocol", sub: "documented, synthesis to distribution" },
+      { value: "COA", label: "Batch Certificates", sub: "searchable certificate database" },
+      { value: "AI", label: "Research Assistant", sub: "built into the site" },
+    ],
+    stack: ["Built From Scratch", "WordPress", "E-Commerce", "Compliance Gate", "AI Assistant"],
+  },
+  {
+    img: GalaxyPeptidesImg,
+    imgAlt: "Galaxy Peptides storefront",
+    type: "E-Commerce Build",
+    client: "Galaxy Peptides",
+    industry: "Research Peptides · USA",
+    challenge:
+      "A growing research-peptide catalog needed a store that could present many products and strengths clearly, publish lab-testing proof, and stay usable for every visitor.",
+    solution:
+      "Built and managed a WordPress storefront with product variants and pricing, third-party lab results, customer accounts and cart, full legal pages (purchase agreement, terms, shipping & returns), multiple payment options, and a set of accessibility modes for different needs.",
+    results: [
+      { value: "10", label: "Products Listed", sub: "with strengths & variant pricing" },
+      { value: "5", label: "Accessibility Modes", sub: "epilepsy-safe, ADHD-friendly & more" },
+      { value: "3", label: "Ways to Pay", sub: "cards, Venmo & Zelle" },
+    ],
+    stack: ["WordPress", "E-Commerce", "Accessibility", "Lab Results"],
+  },
+  {
+    img: LcaMerchandiseImg,
+    imgAlt: "LCA Merchandise storefront",
+    type: "E-Commerce Build",
+    client: "LCA Merchandise",
+    industry: "Lifestyle & Research Supplies · USA",
+    challenge:
+      "A brand spanning apparel, lab-organization gear, research supplies and skincare needed one storefront that keeps very different product lines easy to browse and buy.",
+    solution:
+      "Built from scratch on WordPress, with category filtering, quick-view and add-to-cart, sale pricing, customer accounts, and a peptide calculator, so apparel, vial cases, research supplies and skincare all live in one clean shopping experience.",
+    results: [
+      { value: "4", label: "Product Lines", sub: "apparel, cases, supplies & skincare" },
+      { value: "Filters", label: "Category Browsing", sub: "quick-view & add-to-cart" },
+      { value: "Sale", label: "Promo Pricing", sub: "discounts shown on product cards" },
+    ],
+    stack: ["Built From Scratch", "WordPress", "E-Commerce", "Product Filtering"],
+  },
+  {
+    img: LostCoastAminosImg,
+    imgAlt: "Lost Coast Aminos storefront",
+    type: "Merchant Payments",
+    client: "Lost Coast Aminos",
+    industry: "Research Peptides · USA",
+    challenge:
+      "A research-grade peptide brand could not get a mainstream processor to approve card payments for its category, leaving a store that could list products and certificates of analysis but not reliably take an order.",
+    solution:
+      "We resolved the merchant-account problem so the store could accept card payments, on a research-use-only storefront with a 21+ age gate, required research accounts for purchases, and batch-level certificates of analysis available for download.",
+    results: [
+      { value: "Cards", label: "Payments Unblocked", sub: "merchant approval issue resolved" },
+      { value: "21+", label: "Age Gate", sub: "plus required research accounts" },
+      { value: "COA", label: "Batch Certificates", sub: "downloadable by batch number" },
+    ],
+    stack: ["WordPress", "Merchant Account", "Payment Gateway", "Compliance Gate"],
+  },
+  {
+    img: InnoAminosImg,
+    imgAlt: "Inno Aminos storefront",
+    type: "Merchant Payments",
+    client: "Inno Aminos",
+    industry: "Research Peptides · USA",
+    challenge:
+      "Research-peptide stores sit in a category most mainstream card processors refuse to underwrite. Inno Aminos had a compliant, research-use-only storefront but no reliable way to actually accept card payments — merchant approval was the blocker, not the website.",
+    solution:
+      "We worked through the merchant-account problem with them so card payments could run on a storefront built around research-use-only compliance, a 21+ age gate, clear \"not for human or animal use\" messaging, per-product certificates of analysis, and accounts with a standard cart-to-checkout flow.",
+    results: [
+      { value: "Cards", label: "Payments Unblocked", sub: "merchant approval issue resolved" },
+      { value: "21+", label: "Age Gate", sub: "research-use-only storefront" },
+      { value: "COA", label: "Per-Product Certificates", sub: "published on the store" },
+    ],
+    stack: ["Merchant Account", "Payment Gateway", "E-Commerce", "Compliance Gate"],
+  },
   {
     img: Project01Img,
     imgAlt: "Pulse Peptides e-commerce platform",
@@ -75,33 +208,14 @@ const caseStudies = [
     quote: "We went from dreading Monday reporting to actually enjoying it. The dashboard pays for itself every single month.",
     quoteName: "Sarah M., Director",
   },
-  {
-    img: Project04Img,
-    imgAlt: "AllFences Canada website",
-    type: "Digital Growth",
-    client: "AllFences Canada",
-    industry: "Home Services · Canada",
-    challenge:
-      "Zero online presence after 8 years in business. Every lead came from word-of-mouth — no website, no Google presence, no way to scale or predict revenue.",
-    solution:
-      "We built a fast, conversion-focused Next.js website, optimised every page for local SEO, set up Google Business Profile, launched targeted Google Ads for high-intent searches, and built a simple CRM to track and follow up on every lead.",
-    results: [
-      { value: "40+", label: "Monthly Leads", sub: "from Google alone" },
-      { value: "#1", label: "Google Ranking", sub: "fence installation Toronto" },
-      { value: "+65%", label: "Revenue Increase", sub: "in first 6 months" },
-      { value: "6 wks", label: "Time to Results", sub: "from first call" },
-    ],
-    stack: ["Next.js", "Tailwind CSS", "Google Ads", "Local SEO", "CRM"],
-    timeline: "6 weeks",
-    quote: "I had no idea what I was missing. In 6 weeks we went from no online presence to ringing phones every day. Booked out 3 weeks in advance.",
-    quoteName: "Mike T., Owner",
-  },
 ];
 
 const typeBadgeStyle: Record<string, string> = {
   "Software + Growth": "bg-primary/15 text-primary border border-primary/30",
   "Custom Software": "bg-blue-500/10 text-blue-400 border border-blue-500/20",
   "Digital Growth": "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
+  "E-Commerce Build": "bg-purple-500/10 text-purple-400 border border-purple-500/20",
+  "Merchant Payments": "bg-orange-500/10 text-orange-400 border border-orange-500/20",
 };
 
 export default function CaseStudiesPage() {
@@ -172,9 +286,11 @@ export default function CaseStudiesPage() {
                         {s}
                       </span>
                     ))}
-                    <span className="flex items-center gap-1 text-xs text-paragraph ml-auto">
-                      <Clock className="w-3 h-3" /> {study.timeline}
-                    </span>
+                    {study.timeline && (
+                      <span className="flex items-center gap-1 text-xs text-paragraph ml-auto">
+                        <Clock className="w-3 h-3" /> {study.timeline}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -197,12 +313,14 @@ export default function CaseStudiesPage() {
               </div>
 
               {/* Testimonial */}
-              <div className="border border-primary/20 bg-primary/5 p-8">
-                <p className="text-foreground text-lg italic leading-relaxed mb-4">
-                  &ldquo;{study.quote}&rdquo;
-                </p>
-                <p className="text-primary font-semibold text-sm">&mdash; {study.quoteName}</p>
-              </div>
+              {study.quote && (
+                <div className="border border-primary/20 bg-primary/5 p-8">
+                  <p className="text-foreground text-lg italic leading-relaxed mb-4">
+                    &ldquo;{study.quote}&rdquo;
+                  </p>
+                  <p className="text-primary font-semibold text-sm">&mdash; {study.quoteName}</p>
+                </div>
+              )}
 
             </div>
           ))}
