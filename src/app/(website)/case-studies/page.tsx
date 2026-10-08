@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -218,6 +218,48 @@ const typeBadgeStyle: Record<string, string> = {
   "Merchant Payments": "bg-orange-500/10 text-orange-400 border border-orange-500/20",
 };
 
+function ScrollImage({
+  img,
+  alt,
+  className = "",
+}: {
+  img: StaticImageData;
+  alt: string;
+  className?: string;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [distance, setDistance] = useState(0);
+
+  const measure = () => {
+    if (!containerRef.current || !imageRef.current) return;
+    setDistance(
+      Math.max(0, imageRef.current.offsetHeight - containerRef.current.clientHeight)
+    );
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseEnter={measure}
+      className={`aspect-video rounded-lg overflow-hidden border border-border relative ${className}`}
+    >
+      <motion.div
+        ref={imageRef}
+        animate={{ y: 0 }}
+        whileHover={{ y: -distance }}
+        transition={{
+          duration: Math.min(Math.max(distance / 300, 2), 12),
+          ease: "easeInOut",
+        }}
+        className="w-full"
+      >
+        <Image src={img} alt={alt} className="w-full h-auto block" />
+      </motion.div>
+    </div>
+  );
+}
+
 export default function CaseStudiesPage() {
   return (
     <main className="pt-20">
@@ -247,20 +289,11 @@ export default function CaseStudiesPage() {
 
               {/* Image + meta */}
               <div className={`grid lg:grid-cols-2 gap-12 items-center mb-12 ${idx % 2 !== 0 ? "lg:grid-flow-col-dense" : ""}`}>
-                <div className={`aspect-video rounded-lg overflow-hidden border border-border relative ${idx % 2 !== 0 ? "lg:col-start-2" : ""}`}>
-                  <motion.div
-                    initial={{ y: 0 }}
-                    whileHover={{ y: "-25%" }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                    className="h-full w-full"
-                  >
-                    <Image
-                      src={study.img}
-                      alt={study.imgAlt}
-                      className="w-full h-auto object-cover"
-                    />
-                  </motion.div>
-                </div>
+                <ScrollImage
+                  img={study.img}
+                  alt={study.imgAlt}
+                  className={idx % 2 !== 0 ? "lg:col-start-2" : ""}
+                />
 
                 <div className={idx % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
                   <div className="flex items-center gap-3 mb-4">

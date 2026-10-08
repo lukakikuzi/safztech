@@ -8,6 +8,8 @@ const navLinks = [
   { label: "Software Solutions", href: "/software-solutions" },
   { label: "Digital Marketing", href: "/digital-marketing" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Our Team", href: "/team" },
+  { label: "Referral Program", href: "/referral-program" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Free Audit", href: "/free-audit" },
   { label: "Contact", href: "/#contact" },
