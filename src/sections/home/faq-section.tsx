@@ -35,9 +35,18 @@ function FaqSection() {
             <div
               key={index}
               className="border border-border bg-card overflow-hidden"
+              onPointerEnter={(e) => {
+                if (e.pointerType === "mouse") setOpenIndex(index);
+              }}
+              onPointerLeave={(e) => {
+                if (e.pointerType === "mouse") setOpenIndex(null);
+              }}
             >
               <button
-                onClick={() => toggle(index)}
+                onClick={(e) => {
+                  if ((e.nativeEvent as PointerEvent).pointerType === "mouse") return;
+                  toggle(index);
+                }}
                 className="w-full flex justify-between items-center px-6 py-5 text-left gap-4"
               >
                 <span className="text-heading font-medium font-poppins">

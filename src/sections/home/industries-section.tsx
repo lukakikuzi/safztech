@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import DraggableMarquee from "@/components/ui/draggable-marquee";
 import {
   FlaskConical,
   Scissors,
@@ -120,21 +121,22 @@ function IndustriesSection() {
         </div>
 
         {/* Industry grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {industries.map(({ Icon, name, desc, href, external }) => {
+        <div className="overflow-hidden -mx-[var(--layout-px)] px-[var(--layout-px)] [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <DraggableMarquee loop={false}>
+            {industries.map(({ Icon, name, desc, href, external }) => {
             const cardClasses =
-              "border border-border bg-card p-6 flex flex-col items-center text-center gap-3 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group";
+              "flex-shrink-0 w-[270px] sm:w-[300px] mr-5 cursor-[inherit] border border-border bg-card p-8 flex flex-col items-center text-center gap-4 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group";
 
             const cardContent = (
               <>
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-5 h-5 text-primary" />
+                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <p className="text-heading font-semibold text-sm font-poppins">
+                  <p className="text-heading font-semibold text-base font-poppins">
                     {name}
                   </p>
-                  <p className="text-paragraph text-xs mt-1 leading-snug">
+                  <p className="text-paragraph text-sm mt-1.5 leading-snug">
                     {desc}
                   </p>
                 </div>
@@ -148,7 +150,7 @@ function IndustriesSection() {
                   href={href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noopener noreferrer" : undefined}
-                  className={`${cardClasses} cursor-pointer`}
+                  className={cardClasses}
                 >
                   {cardContent}
                 </Link>
@@ -156,11 +158,12 @@ function IndustriesSection() {
             }
 
             return (
-              <div key={name} className={`${cardClasses} cursor-default`}>
+              <div key={name} className={cardClasses}>
                 {cardContent}
               </div>
             );
           })}
+          </DraggableMarquee>
         </div>
 
       </div>

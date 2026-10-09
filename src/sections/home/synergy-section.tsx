@@ -42,7 +42,7 @@ function SynergySection() {
         {/* Header */}
         <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Our Advantage
+            Our Advantages
           </p>
           <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
             WHY BOTH BEATS EITHER

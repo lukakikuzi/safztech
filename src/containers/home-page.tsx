@@ -4,6 +4,7 @@ import HomeHeroSection from "@/sections/home/home-hero-section";
 import TrustbarSection from "@/sections/home/trustbar-section";
 import AboutSection from "@/sections/home/about-section";
 import SynergySection from "@/sections/home/synergy-section";
+import OurServicesSection from "@/sections/home/our-services-section";
 import ProcessSection from "@/sections/home/process-section";
 import ProjectsSection from "@/sections/home/projects-section";
 import TestimonialsSection from "@/sections/home/testimonials-section";
@@ -19,9 +20,10 @@ function HomePage() {
       <HomeHeroSection />
       <TrustbarSection />
       <AboutSection />
-      <SynergySection />
-      <ProcessSection />
       <ProjectsSection />
+      <SynergySection />
+      <OurServicesSection />
+      <ProcessSection />
       <TestimonialsSection />
       <IndustriesSection />
       <PricingSection />

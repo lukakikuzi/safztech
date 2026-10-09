@@ -106,20 +106,32 @@ export default {
   },
 
   plugins: [
-    function ({ addComponents }: PluginAPI) {
+    function ({ addBase, addComponents }: PluginAPI) {
+      addBase({
+        ":root": {
+          "--layout-px": "1.25rem",
+          "@screen md": { "--layout-px": "2rem" },
+          "@screen lg": { "--layout-px": "3rem" },
+        },
+      });
+
       addComponents({
         ".layout-standard": {
-          maxWidth: "1536px",
-          width: "90%",
+          maxWidth: "calc(1536px + 2 * var(--layout-px))",
+          width: "100%",
           marginLeft: "auto",
           marginRight: "auto",
+          paddingLeft: "var(--layout-px)",
+          paddingRight: "var(--layout-px)",
         },
 
         ".page-layout-standard": {
-          maxWidth: "1536px",
-          width: "90%",
+          maxWidth: "calc(1536px + 2 * var(--layout-px))",
+          width: "100%",
           marginLeft: "auto",
           marginRight: "auto",
+          paddingLeft: "var(--layout-px)",
+          paddingRight: "var(--layout-px)",
           display: "flex",
           flexDirection: "column",
           gap: "3rem",

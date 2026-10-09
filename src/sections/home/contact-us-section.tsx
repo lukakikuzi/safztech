@@ -46,7 +46,7 @@ function ContactUsSection() {
   };
 
   return (
-    <section className="section-padding-standard bg-background">
+    <section id="contact" className="section-padding-standard bg-background scroll-mt-20">
       <div className="layout-standard section-padding-standard">
         <div className="lg:mb-[6rem] mb-[4rem] relative flex flex-col text-center items-center w-full max-lg:gap-2">
           <h1 className="absolute text-[9rem] font-bold tracking-widest text-white/10 select-none -top-[3.8rem] max-lg:hidden">

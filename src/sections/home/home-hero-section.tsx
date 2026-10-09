@@ -1,13 +1,9 @@
 "use client";
 
 import React from "react";
+import GrowthDashboard from "@/components/home/growth-dashboard";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
-const trustMetrics = [
-  { value: "150+", label: "Businesses Trusted SAFZTECH" },
-  { value: "500K+", label: "Leads Generated" },
-  { value: "$2.5B+", label: "In Revenue Created" },
-];
 
 const videoSrc = process.env.NEXT_PUBLIC_VIDEO_URL || "/videos/home-hero-bg-vido.mp4";
 
@@ -68,22 +64,8 @@ function HomeHeroSection() {
             </div>
           </div>
 
-          {/* Right — Trust Metrics */}
-          <div className="flex flex-col gap-4 lg:items-end">
-            {trustMetrics.map((metric) => (
-              <div
-                key={metric.value}
-                className="border border-white/10 bg-white/5 backdrop-blur-sm px-8 py-5 w-full lg:max-w-[300px]"
-              >
-                <div className="text-4xl font-bold text-primary font-poppins mb-1">
-                  {metric.value}
-                </div>
-                <div className="text-heading text-sm tracking-widest uppercase">
-                  {metric.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Right — Growth dashboard */}
+          <GrowthDashboard />
         </div>
 
         {/* Scroll indicator */}

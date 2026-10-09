@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Code2, TrendingUp, Check, ArrowRight } from "lucide-react";
+import {
+  ServiceIntroCards,
+  ServicePillarCards,
+} from "@/components/services/service-intro-cards";
 
 const softwareServices = [
   "Custom Web Applications",
@@ -23,7 +25,7 @@ const growthServices = [
 
 function OurServicesSection() {
   return (
-    <section id="services" className="bg-secondary-background section-padding-standard">
+    <section id="services" className="border-t border-border section-padding-standard">
       <div className="layout-standard section-padding-standard">
 
         {/* Section Header */}
@@ -43,85 +45,12 @@ function OurServicesSection() {
           </p>
         </div>
 
-        {/* Two Pillars */}
-        <div className="grid lg:grid-cols-2 gap-6 mb-8">
+        <ServiceIntroCards />
 
-          {/* Pillar 1: Software Solutions */}
-          <div className="border border-border bg-card p-8 lg:p-10 flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                <Code2 className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-xs tracking-widest text-paragraph uppercase mb-0.5">
-                  Pillar 01
-                </p>
-                <h3 className="text-xl font-bold text-heading font-poppins">
-                  SOFTWARE SOLUTIONS
-                </h3>
-              </div>
-            </div>
-
-            <p className="text-primary text-sm font-medium mb-6 italic">
-              "Build once, scale forever"
-            </p>
-
-            <ul className="space-y-3 mb-8 flex-1">
-              {softwareServices.map((service) => (
-                <li key={service} className="flex items-center gap-3 text-foreground">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                  {service}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/software-solutions"
-              className="flex items-center gap-2 text-primary text-sm font-semibold hover:gap-4 transition-all duration-200 group"
-            >
-              Explore Software Solutions
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
-          {/* Pillar 2: Digital Growth */}
-          <div className="border border-primary/30 bg-primary/5 p-8 lg:p-10 flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-primary/20 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                <TrendingUp className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-xs tracking-widest text-paragraph uppercase mb-0.5">
-                  Pillar 02
-                </p>
-                <h3 className="text-xl font-bold text-heading font-poppins">
-                  DIGITAL GROWTH
-                </h3>
-              </div>
-            </div>
-
-            <p className="text-primary text-sm font-medium mb-6 italic">
-              "Continuous Growth Engine"
-            </p>
-
-            <ul className="space-y-3 mb-8 flex-1">
-              {growthServices.map((service) => (
-                <li key={service} className="flex items-center gap-3 text-foreground">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                  {service}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/digital-marketing"
-              className="flex items-center gap-2 text-primary text-sm font-semibold hover:gap-4 transition-all duration-200 group"
-            >
-              Explore Digital Growth
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
+        <ServicePillarCards
+          softwareServices={softwareServices}
+          growthServices={growthServices}
+        />
 
         {/* Synergy Banner */}
         <div className="border border-border bg-card p-8 text-center">

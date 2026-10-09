@@ -23,7 +23,7 @@ function PricingSection() {
           {PricingSectionContent.map((pkg, idx) => (
             <div
               key={idx}
-              className={`border p-8 rounded-lg transition-colors ${
+              className={`border p-8 rounded-lg transition-colors flex flex-col ${
                 pkg.popular
                   ? "border-white/30 bg-card relative"
                   : "border-border hover:border-primary"
@@ -49,7 +49,7 @@ function PricingSection() {
                 </p>
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-8 flex-1">
                 {pkg.features.map((feature, fIdx) => (
                   <div key={fIdx} className="flex items-center gap-3">
                     <div className="w-1 h-1 bg-white rounded-full"></div>

@@ -28,7 +28,7 @@ function TestimonialsSection() {
           {TestimonialsSectionContent.map((t) => (
             <div
               key={t.name}
-              className="border border-border bg-card p-8 flex flex-col gap-5"
+              className="border border-border bg-card p-8 flex flex-col gap-5 transition-all duration-300 ease-out hover:scale-105 hover:z-10 hover:border-primary/60 hover:shadow-[0_0_35px_rgba(255,215,0,0.28)]"
             >
               {/* Stars */}
               <div className="flex gap-1">
