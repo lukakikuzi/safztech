@@ -46,19 +46,19 @@ function ServiceCard({
         </div>
         <div>
           {eyebrow && (
-            <p className="text-sm tracking-widest text-paragraph uppercase mb-0.5">
+            <p className="text-xs tracking-widest text-paragraph uppercase mb-0.5">
               {eyebrow}
             </p>
           )}
-          <h3 className="text-3xl lg:text-4xl font-bold text-heading font-poppins">{title}</h3>
+          <h3 className="text-3xl font-bold text-heading font-poppins">{title}</h3>
         </div>
       </div>
 
-      <p className="relative text-primary text-lg font-medium mb-6">{tagline}</p>
+      <p className="relative text-primary text-sm font-medium mb-6">{tagline}</p>
 
-      <ul className="relative space-y-4 mb-8 flex-1">
+      <ul className="relative space-y-3 mb-8 flex-1">
         {points.map((point) => (
-          <li key={point} className="flex items-center gap-3 text-heading text-lg font-medium">
+          <li key={point} className="flex items-center gap-3 text-heading font-medium">
             <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 border border-primary/40">
               <Check className="w-3.5 h-3.5 text-primary" strokeWidth={3} />
             </span>
@@ -69,10 +69,10 @@ function ServiceCard({
 
       <Link
         href={href}
-        className="relative group flex items-center gap-2 text-primary text-base font-semibold hover:gap-4 transition-all duration-200"
+        className="relative group flex items-center gap-2 text-primary text-sm font-semibold hover:gap-4 transition-all duration-200"
       >
         {cta}
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </Link>
     </div>
   );
