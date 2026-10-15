@@ -1,12 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+import { toast } from "@/lib/toast";
+import { emailError, fieldError, messageError, nameError, phoneError } from "@/lib/form-validation";
 
 const inputClass =
   "w-full bg-input border border-border text-foreground px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-paragraph/50";
 
 export default function ReferralForm() {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -15,12 +19,59 @@ export default function ReferralForm() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const setError = (name: string, msg?: string) =>
+    setErrors((prev) => {
+      if (msg) return { ...prev, [name]: msg };
+      if (!prev[name]) return prev;
+      const { [name]: _removed, ...rest } = prev;
+      return rest;
+    });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (errors[e.target.name]) setError(e.target.name);
+  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setError(name, name === "audience" ? (value.trim() ? messageError(value.trim()) : undefined) : fieldError(name, value));
+  };
+
+  const field = (name: string) => ({
+    name,
+    onChange: handleChange,
+    onBlur: handleBlur,
+    "aria-invalid": errors[name] ? true : undefined,
+  });
+
+  const cls = (name: string, extra = "") => `${inputClass} ${errors[name] ? "!border-destructive" : ""} ${extra}`;
+
+  const errorText = (name: string) =>
+    errors[name] ? (
+      <p role="alert" className="mt-1.5 text-sm text-destructive">
+        {errors[name]}
+      </p>
+    ) : null;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const found: Record<string, string> = {};
+    const checks: [string, string | undefined][] = [
+      ["name", nameError(form.name.trim())],
+      ["email", emailError(form.email.trim().toLowerCase())],
+      ["phone", form.phone.trim() ? phoneError(form.phone.trim()) : undefined],
+      ["audience", messageError(form.audience.trim())],
+    ];
+    for (const [key, msg] of checks) if (msg) found[key] = msg;
+    setErrors(found);
+    if (Object.keys(found).length) {
+      e.currentTarget.querySelector<HTMLElement>(`[name="${Object.keys(found)[0]}"]`)?.focus();
+      return;
+    }
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
@@ -35,87 +86,75 @@ export default function ReferralForm() {
           message: form.audience,
         }),
       });
-      setStatus(res.ok ? "success" : "error");
-    } catch {
-      setStatus("error");
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again or email info@safztech.com.");
+      }
+      setForm({ name: "", email: "", phone: "", audience: "" });
+      router.push("/thank-you?type=referral");
+    } catch (err) {
+      setStatus("idle");
+      toast.error("Couldn't send your application", err instanceof Error ? err.message : "Please try again.");
     }
   };
 
-  if (status === "success") {
-    return (
-      <div className="text-center py-10">
-        <div className="w-14 h-14 bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-5">
-          <Check className="w-7 h-7 text-primary" />
-        </div>
-        <h3 className="text-2xl font-semibold text-heading font-poppins mb-2">
-          Application Received
-        </h3>
-        <p className="text-paragraph">
-          Thanks for applying. Our team will be in touch with more information.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm text-heading mb-1.5">Full Name *</label>
           <input
             type="text"
-            name="name"
+            {...field("name")}
             value={form.name}
-            onChange={handleChange}
-            required
+            autoComplete="name"
+            maxLength={80}
             placeholder="John Smith"
-            className={inputClass}
+            className={cls("name")}
           />
+          {errorText("name")}
         </div>
         <div>
           <label className="block text-sm text-heading mb-1.5">Email *</label>
           <input
             type="email"
-            name="email"
+            {...field("email")}
             value={form.email}
-            onChange={handleChange}
-            required
+            autoComplete="email"
+            maxLength={254}
             placeholder="john@company.com"
-            className={inputClass}
+            className={cls("email")}
           />
+          {errorText("email")}
         </div>
       </div>
       <div>
         <label className="block text-sm text-heading mb-1.5">Phone</label>
         <input
           type="tel"
-          name="phone"
+          {...field("phone")}
           value={form.phone}
-          onChange={handleChange}
-          placeholder="+x (xxx) xxx-xxxx"
-          className={inputClass}
+          autoComplete="tel"
+          maxLength={30}
+          placeholder="+1 555 123 4567"
+          className={cls("phone")}
         />
+        {errorText("phone")}
       </div>
       <div>
         <label className="block text-sm text-heading mb-1.5">
           How do you plan to refer clients? *
         </label>
         <textarea
-          name="audience"
+          {...field("audience")}
           value={form.audience}
-          onChange={handleChange}
-          required
+          maxLength={2000}
           rows={4}
           placeholder="Tell us about your network, audience or business."
-          className={`${inputClass} resize-none`}
+          className={cls("audience", "resize-none")}
         />
+        {errorText("audience")}
       </div>
-
-      {status === "error" && (
-        <p className="text-red-400 text-sm">
-          Something went wrong. Please email us at info@safztech.com directly.
-        </p>
-      )}
 
       <button
         type="submit"

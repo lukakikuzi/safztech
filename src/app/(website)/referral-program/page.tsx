@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Handshake } from "lucide-react";
 
 import ReferralForm from "@/components/referral/referral-form";
 import { GetPageMetadata } from "@/utils/meta-data";
@@ -98,8 +97,19 @@ export default function ReferralProgramPage() {
               </Link>
             </div>
 
-            <div className="border border-border bg-card aspect-[4/3] lg:aspect-auto lg:min-h-[22rem] flex items-center justify-center">
-              <Handshake className="w-24 h-24 text-primary/70" strokeWidth={1.25} />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 lg:aspect-auto lg:min-h-[22rem]">
+              <Image
+                src="/images/referral-partnership.webp"
+                alt="Two partners shaking hands to close a deal"
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,170,0,0.28),transparent_55%)] mix-blend-screen" />
+              <span className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/10 px-4 py-2 font-poppins text-sm font-semibold text-white backdrop-blur-[10px] shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.4)]">
+                Refer. Launch. Get paid.
+              </span>
             </div>
           </div>
         </div>

@@ -2,20 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import SectionHeading from "@/components/ui/section-heading";
+import { SERVICE_GROUPS } from "@/data/service-options";
+import { toast } from "@/lib/toast";
+import { emailError, fieldError, messageError, nameError, phoneError } from "@/lib/form-validation";
 
+import { FaWhatsapp } from "react-icons/fa";
 import { Phone, Mail, Clock, Globe } from "lucide-react";
 
 function ContactUsSection() {
@@ -23,26 +21,78 @@ function ContactUsSection() {
     name: "",
     email: "",
     phone: "",
-    service: "",
+    services: [] as string[],
     message: "",
     agreeToComms: false,
   });
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const setError = (name: string, msg?: string) =>
+    setErrors((prev) => {
+      if (msg) return { ...prev, [name]: msg };
+      if (!prev[name]) return prev;
+      const { [name]: _removed, ...rest } = prev;
+      return rest;
+    });
+
+  const bind = (name: "name" | "email" | "phone" | "message") => ({
+    name,
+    value: formData[name],
+    "aria-invalid": errors[name] ? true : undefined,
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [name]: e.target.value });
+      if (errors[name]) setError(name);
+    },
+    onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => setError(name, fieldError(name, e.target.value)),
+  });
+
+  const fieldClass = (name: string, extra = "") =>
+    `bg-input border-2 text-white text-base sm:text-lg transition-colors ${errors[name] ? "border-destructive" : "border-border"} ${extra}`;
+
+  const errorText = (name: string) =>
+    errors[name] ? (
+      <p role="alert" className="text-sm text-destructive">
+        {errors[name]}
+      </p>
+    ) : null;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const found: Record<string, string> = {};
+    const checks: [string, string | undefined][] = [
+      ["name", nameError(formData.name.trim())],
+      ["email", emailError(formData.email.trim().toLowerCase())],
+      ["phone", phoneError(formData.phone.trim())],
+      ["services", formData.services.length ? undefined : "Please choose at least one service."],
+      ["message", formData.message.trim() ? messageError(formData.message.trim()) : undefined],
+    ];
+    for (const [key, msg] of checks) if (msg) found[key] = msg;
+    setErrors(found);
+    if (Object.keys(found).length) {
+      const first = Object.keys(found)[0];
+      form.querySelector<HTMLElement>(first === "services" ? "[data-services]" : `[name="${first}"]`)?.scrollIntoView({ block: "center", behavior: "smooth" });
+      form.querySelector<HTMLElement>(`[name="${first}"]`)?.focus({ preventScroll: true });
+      return;
+    }
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, type: "contact" }),
+        body: JSON.stringify({ ...formData, service: formData.services.join("; "), type: "contact" }),
       });
-      if (!res.ok) throw new Error("Failed");
-      setStatus("success");
-      setFormData({ name: "", email: "", phone: "", service: "", message: "", agreeToComms: false });
-    } catch {
-      setStatus("error");
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again or email info@safztech.com.");
+      }
+      setFormData({ name: "", email: "", phone: "", services: [], message: "", agreeToComms: false });
+      router.push("/thank-you?type=contact");
+    } catch (err) {
+      setStatus("idle");
+      toast.error("Couldn't send your message", err instanceof Error ? err.message : "Please try again.");
     }
   };
 
@@ -56,7 +106,7 @@ function ContactUsSection() {
 
         <div className="grid lg:grid-cols-3 gap-20">
           <div className="space-y-8 lg:col-span-2 col-span-1">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} noValidate className="space-y-8">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <label className="text-sm font-medium text-heading font-poppins uppercase tracking-wider">
@@ -65,12 +115,12 @@ function ContactUsSection() {
                   <Input
                     type="text"
                     placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
+                    autoComplete="name"
+                    maxLength={80}
+                    {...bind("name")}
+                    className={fieldClass("name", "h-14")}
                   />
+                  {errorText("name")}
                 </div>
 
                 <div className="space-y-3">
@@ -80,12 +130,12 @@ function ContactUsSection() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
+                    autoComplete="email"
+                    maxLength={254}
+                    {...bind("email")}
+                    className={fieldClass("email", "h-14")}
                   />
+                  {errorText("email")}
                 </div>
               </div>
 
@@ -95,53 +145,72 @@ function ContactUsSection() {
                 </label>
                 <Input
                   type="tel"
-                  placeholder="+x (xxx) xxx-xxxx"
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                  className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
+                  placeholder="+1 555 123 4567"
+                  autoComplete="tel"
+                  maxLength={30}
+                  {...bind("phone")}
+                  className={fieldClass("phone", "h-14")}
                 />
+                {errorText("phone")}
               </div>
 
               <div className="space-y-3">
                 <label className="text-sm font-medium text-heading font-poppins uppercase tracking-wider">
                   Service You&apos;re Interested In
                 </label>
-                <Select
-                  onValueChange={(value) =>
-                    setFormData({ ...formData, service: value })
-                  }
-                >
-                  <SelectTrigger className="bg-input border-border border-2 text-white h-14 text-sm">
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-black border-border text-heading">
-                    <SelectItem value="web-development">
-                      Web Development
-                    </SelectItem>
-                    <SelectItem value="app-development">
-                      App Development
-                    </SelectItem>
-                    <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                    <SelectItem value="branding">Branding</SelectItem>
-                    <SelectItem value="consulting">Consulting</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div data-services className="space-y-5">
+                  {SERVICE_GROUPS.map((group) => (
+                    <fieldset key={group.title}>
+                      <legend className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-primary">{group.title}</legend>
+                      <div className="flex flex-wrap gap-2.5">
+                        {group.options.map((option) => {
+                          const on = formData.services.includes(option);
+                          return (
+                            <label key={option} className="cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={on}
+                                onChange={() => {
+                                  setFormData({
+                                    ...formData,
+                                    services: on ? formData.services.filter((o) => o !== option) : [...formData.services, option],
+                                  });
+                                  if (errors.services) setError("services");
+                                }}
+                                className="peer sr-only"
+                              />
+                              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm text-foreground transition-colors hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/15 peer-checked:text-heading peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
+                                <span
+                                  aria-hidden
+                                  className={`flex h-4 w-4 items-center justify-center rounded border-2 text-[10px] leading-none ${
+                                    on ? "border-primary bg-primary text-primary-foreground" : "border-paragraph/60"
+                                  }`}
+                                >
+                                  {on ? "✓" : ""}
+                                </span>
+                                {option}
+                              </span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </fieldset>
+                  ))}
+                </div>
+                {errorText("services")}
               </div>
 
               <div className="space-y-3">
                 <label className="text-sm font-medium text-heading font-poppins uppercase tracking-wider">
-                  Your Message
+                  Your Message <span className="normal-case tracking-normal text-paragraph">(optional)</span>
                 </label>
                 <Textarea
                   placeholder="Tell us about your project and requirements..."
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  className="bg-input border-border border-2 text-white min-h-32 text-base sm:text-lg transition-colors resize-none"
+                  maxLength={2000}
+                  {...bind("message")}
+                  className={fieldClass("message", "min-h-32 resize-none")}
                 />
+                {errorText("message")}
               </div>
 
               <div className="flex items-start space-x-3">
@@ -185,16 +254,6 @@ function ContactUsSection() {
                 {status === "loading" ? "Sending..." : "Send Message"}
               </Button>
 
-              {status === "success" && (
-                <p className="text-green-400 text-sm text-center">
-                  Message sent successfully! We&apos;ll get back to you within 24 hours.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-red-400 text-sm text-center">
-                  Something went wrong. Please try again or email us directly.
-                </p>
-              )}
             </form>
           </div>
 
@@ -214,9 +273,28 @@ function ContactUsSection() {
                   <p className="text-sm font-medium uppercase tracking-wider mb-2">
                     Phone
                   </p>
-                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
+                  <a
+                    href="tel:+14252170763"
+                    aria-label="Call +1 425-217-0763"
+                    className="mb-3 flex items-center gap-3 text-lg sm:text-xl font-medium text-heading hover:text-primary transition-colors"
+                  >
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary">
+                      <Phone className="h-4 w-4" />
+                    </span>
+                    +1 425-217-0763
+                  </a>
+                  <a
+                    href="https://wa.me/14196012734"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat on WhatsApp at +1 (419) 601-2734"
+                    className="mb-3 flex items-center gap-3 text-lg sm:text-xl font-medium text-heading hover:text-[#25D366] transition-colors"
+                  >
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+                      <FaWhatsapp className="h-5 w-5" />
+                    </span>
                     +1 (419) 601-2734
-                  </p>
+                  </a>
                   <p className="text-foreground">Mon - Fri, 9am - 6pm EST</p>
                 </div>
               </div>
@@ -231,9 +309,6 @@ function ContactUsSection() {
                   </p>
                   <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     info@safztech.com
-                  </p>
-                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
-                    safztech13@gmail.com
                   </p>
                   <p className="text-foreground">
                     We&apos;ll respond within 24 hours

@@ -7,6 +7,7 @@ import { AlertTriangle, CheckCircle2, Loader2, MailCheck } from "lucide-react";
 import InsightReport, { GLASS } from "@/components/free-audit/insight-report";
 import { clean, emailError, fieldError, nameError, phoneError, websiteError } from "@/lib/form-validation";
 import type { InsightResult, Strategy } from "@/lib/pagespeed";
+import { toast } from "@/lib/toast";
 
 type Step = "url" | "details" | "report";
 type Errors = Record<string, string>;
@@ -89,7 +90,11 @@ export default function FreeAuditFlow() {
       if (id === runId.current) setResults((p) => ({ ...p, [mode]: data as InsightResult }));
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
-      if (id === runId.current) setAnalysisError(err instanceof Error ? err.message : "Something went wrong.");
+      if (id === runId.current) {
+        const msg = err instanceof Error ? err.message : "Something went wrong.";
+        setAnalysisError(msg);
+        toast.error("Website check failed", msg);
+      }
     } finally {
       if (id === runId.current) setLoading((p) => ({ ...p, [mode]: false }));
     }
@@ -172,13 +177,16 @@ export default function FreeAuditFlow() {
           message: `Requested the free website audit for ${withProtocol(analysed).slice(0, 500)}.`,
         }),
       });
-      if (!res.ok) throw new Error("send failed");
       const saved = await res.json().catch(() => null);
+      if (!res.ok) throw new Error(saved?.error || "send failed");
       setLeadId(saved?.id ?? null);
+      toast.success("Details sent", "We'll email your detailed audit shortly.");
       setLead({ firstName: v.name.split(/\s+/)[0], email: v.email });
       setStep("report");
     } catch {
-      setServerError("We couldn't send your details. Please try again, or email us at info@safztech.com.");
+      const msg = "We couldn't send your details. Please try again, or email us at info@safztech.com.";
+      setServerError(msg);
+      toast.error("Couldn't send your details", msg);
     } finally {
       setSending(false);
     }

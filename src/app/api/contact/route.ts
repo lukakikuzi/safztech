@@ -36,12 +36,16 @@ export async function POST(req: NextRequest) {
     email: text(body.email, 254).toLowerCase(),
     phone: text(body.phone, 40),
     website: text(body.website, 500),
-    service: text(body.service, 200),
+    service: text(body.service, 1000),
     message: text(body.message, 5000),
   };
+  if (lead.service.length > 200) {
+    lead.message = `Services: ${lead.service}\n\n${lead.message}`.trim().slice(0, 5000);
+    lead.service = `${lead.service.slice(0, 196)}...`;
+  }
 
-  if (!lead.name || !lead.email || (type === "contact" && !lead.message)) {
-    return NextResponse.json({ error: "Name, email and message are required." }, { status: 400 });
+  if (!lead.name || !lead.email) {
+    return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
     return NextResponse.json({ error: "That email address doesn't look right." }, { status: 400 });

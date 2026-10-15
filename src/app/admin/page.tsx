@@ -178,6 +178,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
         <div className="flex flex-wrap items-center gap-2">
           {[{ label: "All", value: undefined }, ...TYPES.map((t) => ({ label: TYPE_LABEL[t], value: t }))].map((f) => (
             <Link
+              scroll={false}
               key={f.label}
               href={href({ type: f.value, status, q })}
               className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors ${
@@ -190,6 +191,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
           <span className="mx-1 hidden h-5 w-px bg-white/15 sm:block" />
           {[{ label: "Any status", value: undefined }, ...STATUSES.map((s) => ({ label: STATUS_LABEL[s], value: s }))].map((f) => (
             <Link
+              scroll={false}
               key={f.label}
               href={href({ type, status: f.value, q })}
               className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
