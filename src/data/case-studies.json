@@ -24,7 +24,7 @@
     "client": "Kallcor",
     "type": "E-Commerce Build",
     "industry": "Research Peptides · USA",
-    "img": { "src": "/images/KALLCOR.webp", "width": 720, "height": 3912 },
+    "img": { "src": "/images/KALLCOR.webp", "width": 1920, "height": 8682 },
     "imgAlt": "Kallcor research peptides storefront",
     "challenge": "A research-peptide supplier needed a storefront that stays clearly compliant, restricted to qualified adults and unmistakably research-use-only, while still giving labs a smooth way to browse, order, and verify batch quality.",
     "solution": "Built from scratch — a WordPress e-commerce site with a 21+ qualification gate, research-use-only messaging throughout, customer accounts and cart, a searchable batch Certificate of Analysis database, an affiliate program, and an on-site AI research assistant.",
@@ -68,6 +68,7 @@
     "industry": "Research Peptides · USA",
     "img": { "src": "/images/Galaxy-Peptides.webp", "width": 720, "height": 1470 },
     "imgAlt": "Galaxy Peptides storefront",
+    "bgImg": { "src": "/images/case-studies/hero/galaxy-peptides.webp", "width": 2400, "height": 1500 },
     "challenge": "A growing research-peptide catalog needed a store that could present many products and strengths clearly, publish lab-testing proof, and stay usable for every visitor.",
     "solution": "Built and managed a WordPress storefront with product variants and pricing, third-party lab results, customer accounts and cart, full legal pages (purchase agreement, terms, shipping & returns), multiple payment options, and a set of accessibility modes for different needs.",
     "results": [
@@ -107,6 +108,7 @@
     "industry": "Lifestyle & Research Supplies · USA",
     "img": { "src": "/images/LCA-MERCHANDISE.webp", "width": 720, "height": 2967 },
     "imgAlt": "LCA Merchandise storefront",
+    "bgImg": { "src": "/images/case-studies/hero/lca-merchandise.webp", "width": 2400, "height": 1500 },
     "challenge": "A brand spanning apparel, lab-organization gear, research supplies and skincare needed one storefront that keeps very different product lines easy to browse and buy.",
     "solution": "Built from scratch on WordPress, with category filtering, quick-view and add-to-cart, sale pricing, customer accounts, and a peptide calculator, so apparel, vial cases, research supplies and skincare all live in one clean shopping experience.",
     "results": [
@@ -144,6 +146,7 @@
     "industry": "Research Peptides · USA",
     "img": { "src": "/images/Lost-Coast-Aminos.webp", "width": 720, "height": 1829 },
     "imgAlt": "Lost Coast Aminos storefront",
+    "bgImg": { "src": "/images/case-studies/hero/lost-coast-aminos.webp", "width": 2400, "height": 1500 },
     "challenge": "A research-grade peptide brand could not get a mainstream processor to approve card payments for its category, leaving a store that could list products and certificates of analysis but not reliably take an order.",
     "solution": "We resolved the merchant-account problem so the store could accept card payments, on a research-use-only storefront with a 21+ age gate, required research accounts for purchases, and batch-level certificates of analysis available for download.",
     "results": [
@@ -179,6 +182,7 @@
     "industry": "Research Peptides · USA",
     "img": { "src": "/images/INNO-AMINOS.webp", "width": 720, "height": 2049 },
     "imgAlt": "Inno Aminos storefront",
+    "bgImg": { "src": "/images/case-studies/hero/inno-aminos.webp", "width": 2400, "height": 1500 },
     "challenge": "Research-peptide stores sit in a category most mainstream card processors refuse to underwrite. Inno Aminos had a compliant, research-use-only storefront but no reliable way to actually accept card payments — merchant approval was the blocker, not the website.",
     "solution": "We worked through the merchant-account problem with them so card payments could run on a storefront built around research-use-only compliance, a 21+ age gate, clear \"not for human or animal use\" messaging, per-product certificates of analysis, and accounts with a standard cart-to-checkout flow.",
     "results": [
@@ -215,6 +219,7 @@
     "industry": "Research Peptides · USA",
     "img": { "src": "/images/BACK-ROAD-AMINOS.webp", "width": 1920, "height": 3663 },
     "imgAlt": "Backroad Aminos storefront",
+    "bgImg": { "src": "/images/case-studies/hero/backroad-aminos.webp", "width": 2400, "height": 1500 },
     "challenge": "A family-run research peptide shop needed its existing website improved and kept compliant, able to take card and crypto payments, easy to find in search, and clear about lab testing on every batch.",
     "solution": "We improved the existing website, handled FDA compliance work on the site, helped recover the domain, set up credit card processing, added crypto payments, and ran SEO for the store. Every product is positioned for research use only, with lab results posted for each batch.",
     "results": [

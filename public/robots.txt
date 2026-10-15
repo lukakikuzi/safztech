@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow: /admin
+Disallow: /api/
 Disallow: /cgi-bin/
 Sitemap: https://www.safztech.com/sitemap.xml

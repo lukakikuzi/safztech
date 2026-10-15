@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Phone } from "lucide-react";
@@ -33,7 +34,8 @@ function Footer() {
 
           {/* Brand */}
           <div className="space-y-4">
-            <p className="font-poppins text-2xl font-light tracking-wider text-primary">
+            <p className="flex items-center gap-2.5 font-poppins text-2xl font-light tracking-wider text-primary">
+              <Image src="/images/icon.png" alt="" width={36} height={36} className="h-9 w-9 rounded-xl" />
               SAFZTECH
             </p>
             <p className="text-paragraph text-sm leading-relaxed max-w-xs">

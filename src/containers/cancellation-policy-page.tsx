@@ -45,10 +45,10 @@ function CancellationPolicyPage() {
           <p className="leading-relaxed">
             All cancellation requests must be submitted in writing to{" "}
             <a
-              href="mailto:billing@safztech.com"
+              href="mailto:info@safztech.com"
               className="text-white hover:text-gray-300 transition-colors underline"
             >
-              billing@safztech.com
+              info@safztech.com
             </a>
           </p>
         </div>

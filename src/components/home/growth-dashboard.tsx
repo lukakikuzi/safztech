@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Eye,
-  Rocket,
-  UserPlus,
   Users,
   Wallet,
 } from "lucide-react";
@@ -162,28 +160,6 @@ function GrowthDashboard() {
             ))}
           </div>
         </div>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-12 -right-3 lg:-right-8 flex items-center gap-2.5 rounded-lg border border-white/15 bg-black/80 backdrop-blur-md px-3.5 py-2.5 shadow-lg"
-      >
-        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/15 text-primary">
-          <UserPlus className="w-3.5 h-3.5" />
-        </span>
-        <span className="text-heading text-xs">New lead captured</span>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -bottom-5 -left-3 lg:-left-8 flex items-center gap-2.5 rounded-lg border border-white/15 bg-black/80 backdrop-blur-md px-3.5 py-2.5 shadow-lg"
-      >
-        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/15 text-primary">
-          <Rocket className="w-3.5 h-3.5" />
-        </span>
-        <span className="text-heading text-xs">Campaign live</span>
       </motion.div>
     </div>
   );

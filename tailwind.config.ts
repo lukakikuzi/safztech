@@ -59,6 +59,11 @@ export default {
           foreground: "var(--destructive-foreground)",
         },
 
+        contrast: {
+          DEFAULT: "var(--contrast)",
+          deep: "var(--contrast-deep)",
+        },
+
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
@@ -75,6 +80,7 @@ export default {
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
 
       screens: {
@@ -142,8 +148,8 @@ export default {
           paddingBottom: "2rem",
 
           "@screen lg": {
-            paddingTop: "3rem",
-            paddingBottom: "3rem",
+            paddingTop: "4rem",
+            paddingBottom: "4rem",
           },
         },
 

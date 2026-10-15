@@ -24,6 +24,8 @@ export interface CaseStudy {
   type: string;
   industry: string;
   img: CaseStudyImage;
+  /** Sharp 2x capture of the live site's first screen, used for large backgrounds. */
+  bgImg?: CaseStudyImage;
   imgAlt: string;
   challenge: string;
   solution: string;

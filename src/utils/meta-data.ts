@@ -50,13 +50,6 @@ export const defaultMetadata: Metadata = {
         url: "/favicons/logo-96x96.png",
         sizes: "96x96",
       },
-      {
-        rel: "icon",
-        type: "image/png",
-        url: "/favicons/logo.png",
-        sizes: "834x408",
-      },
-      { rel: "icon", type: "image/svg+xml", url: "/favicons/logo.svg" },
       { rel: "icon", type: "image/x-icon", url: "/favicons/favicon.ico" },
       {
         rel: "shortcut icon",

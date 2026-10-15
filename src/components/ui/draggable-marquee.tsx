@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Pause, Play } from "lucide-react";
 
 interface DraggableMarqueeProps {
   /** With loop: two identical halves, wrapped at half the track width. Without loop: a single set. */
@@ -18,11 +19,13 @@ interface DraggableMarqueeProps {
 // auto-scroll never fight each other the way a CSS animation would.
 function DraggableMarquee({ children, speed = 40, loop = true }: DraggableMarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
   const state = useRef({
     x: 0,
     vel: 0,
     dragging: false,
     hovering: false,
+    userPaused: false,
     moved: false,
     startX: 0,
     startPos: 0,
@@ -56,7 +59,7 @@ function DraggableMarquee({ children, speed = 40, loop = true }: DraggableMarque
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       if (!s.dragging) {
-        if (!s.hovering && !reduce) s.x += speed * dt;
+        if (!s.hovering && !s.userPaused && !reduce) s.x += speed * dt;
         s.x += s.vel * dt;
         s.vel *= 0.94;
         if (Math.abs(s.vel) < 1) s.vel = 0;
@@ -99,13 +102,16 @@ function DraggableMarquee({ children, speed = 40, loop = true }: DraggableMarque
     s.startX = s.lastX = e.clientX;
     s.startPos = s.x;
     s.lastT = performance.now();
-    e.currentTarget.setPointerCapture(e.pointerId);
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
     const s = state.current;
     if (!s.dragging) return;
-    if (Math.abs(e.clientX - s.startX) > 5) s.moved = true;
+    // Capture only once it is a real drag; capturing on pointerdown would swallow plain clicks on the cards' links.
+    if (!s.moved && Math.abs(e.clientX - s.startX) > 5) {
+      s.moved = true;
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
     s.x = s.startPos - (e.clientX - s.startX);
     const now = performance.now();
     const dt = (now - s.lastT) / 1000;
@@ -124,33 +130,69 @@ function DraggableMarquee({ children, speed = 40, loop = true }: DraggableMarque
     }
   };
 
+  const togglePause = () => {
+    state.current.userPaused = !state.current.userPaused;
+    setPaused(state.current.userPaused);
+  };
+
+  // Keyboard users tabbing into a card: stop the motion and bring it fully into view.
+  const onFocusCapture = (e: React.FocusEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (!target.matches(":focus-visible")) return;
+    const s = state.current;
+    s.hovering = true;
+    s.vel = 0;
+    const view = e.currentTarget.getBoundingClientRect();
+    const rect = target.getBoundingClientRect();
+    if (rect.left < view.left) s.x += rect.left - view.left;
+    else if (rect.right > view.right) s.x += rect.right - view.right;
+  };
+
   return (
-    <div
-      className="cursor-grab active:cursor-grabbing select-none touch-pan-y"
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={endDrag}
-      onPointerCancel={endDrag}
-      onPointerEnter={(e) => {
-        if (e.pointerType === "mouse") state.current.hovering = true;
-      }}
-      onPointerLeave={() => {
-        state.current.hovering = false;
-      }}
-      onClickCapture={(e) => {
-        if (state.current.moved) {
-          e.preventDefault();
-          e.stopPropagation();
-          state.current.moved = false;
-        }
-      }}
-      onDragStart={(e) => e.preventDefault()}
-    >
-      <div
-        ref={trackRef}
-        className="flex w-max will-change-transform [&_img]:pointer-events-none"
+    <div className="relative">
+      <button
+        type="button"
+        onClick={togglePause}
+        aria-label={paused ? "Play automatic scrolling" : "Pause automatic scrolling"}
+        aria-pressed={paused}
+        className="absolute -top-14 right-0 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-background/90 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
       >
-        {children}
+        {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+      </button>
+
+      <div className="overflow-hidden -mx-[var(--layout-px)] px-[var(--layout-px)] [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <div
+          className="cursor-grab active:cursor-grabbing select-none touch-pan-y"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onPointerEnter={(e) => {
+            if (e.pointerType === "mouse") state.current.hovering = true;
+          }}
+          onPointerLeave={() => {
+            state.current.hovering = false;
+          }}
+          onFocusCapture={onFocusCapture}
+          onBlurCapture={() => {
+            state.current.hovering = false;
+          }}
+          onClickCapture={(e) => {
+            if (state.current.moved) {
+              e.preventDefault();
+              e.stopPropagation();
+              state.current.moved = false;
+            }
+          }}
+          onDragStart={(e) => e.preventDefault()}
+        >
+          <div
+            ref={trackRef}
+            className="flex w-max py-4 will-change-transform [&_img]:pointer-events-none"
+          >
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );

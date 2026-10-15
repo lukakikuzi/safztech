@@ -12,7 +12,7 @@ export default function TrustbarSection() {
               key={stat.label}
               className="flex flex-col items-center text-center px-6"
             >
-              <span className="text-4xl md:text-5xl font-bold text-primary font-poppins leading-none mb-2">
+              <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary font-poppins leading-none mb-2">
                 {stat.number}
               </span>
               <span className="text-xs md:text-sm tracking-widest uppercase text-paragraph">

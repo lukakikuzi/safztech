@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins, Inter, Montserrat } from "next/font/google";
 
 import { GetPageMetadata } from "@/utils/meta-data";
+import KineticEnhancer from "@/components/layouts/kinetic-enhancer";
+import CursorGlow from "@/components/layouts/cursor-glow";
 
 // STYLE SHEETS SOURCE
 import "../styles/globals.css";
@@ -16,6 +18,12 @@ const poppins = Poppins({
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal"],
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+  weight: ["600", "800"],
 });
 const inter = Inter({
   subsets: ["latin"],
@@ -47,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${inter.variable} antialiased`}
+        className={`${poppins.variable} ${inter.variable} ${montserrat.variable} antialiased`}
         cz-shortcut-listen="true"
       >
         <Script
@@ -62,8 +70,10 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-EG7BGEXBGM');
           `}
-        </Script>`
+        </Script>
         {children}
+        <KineticEnhancer />
+        <CursorGlow />
         {/* <script src="//code.tidio.co/dcjhhvqtoybvdangel3ugecdicartvq7.js" async /> */}
       </body>
     </html>

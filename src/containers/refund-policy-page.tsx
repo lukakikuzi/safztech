@@ -50,7 +50,7 @@ function RefundPolicyPage() {
           </h2>
           <p className="leading-relaxed">
             Refund requests must be submitted in writing to
-            billing@safztech.com. Approved refunds will be processed within ten
+            info@safztech.com. Approved refunds will be processed within ten
             (10) business days to the original payment method.
           </p>
         </div>

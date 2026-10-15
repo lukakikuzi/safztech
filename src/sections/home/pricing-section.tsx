@@ -1,29 +1,22 @@
 import React from "react";
 import Link from "next/link";
 
+import SectionHeading from "@/components/ui/section-heading";
 import { PricingSectionContent } from "@/contents/home-page-content";
 
 function PricingSection() {
   return (
     <section id="pricing" className="bg-secondary-background section-padding-standard">
       <div className="layout-standard section-padding-standard">
-        <div className="lg:mb-[6rem] mb-[4rem] relative flex flex-col text-center items-center w-full max-lg:gap-2">
-          <h1 className="absolute text-[9rem] font-bold tracking-widest text-white/10 select-none -top-[4.2rem] max-lg:hidden">
-            PRICING
-          </h1>
-          <h2 className="relative text-4xl md:text-5xl font-medium text-heading font-poppins">
-            OUR PACKAGES
-          </h2>
-          <p className="text-lg font-medium text-heading max-w-3xl">
-            Transparent pricing for quality design and development services.
-          </p>
-        </div>
+        <SectionHeading title="Our packages.">
+          Transparent pricing for quality design and development services.
+        </SectionHeading>
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
           {PricingSectionContent.map((pkg, idx) => (
             <div
               key={idx}
-              className={`border p-8 rounded-lg transition-colors flex flex-col ${
+              className={`border p-8 rounded-2xl transition-colors flex flex-col ${
                 pkg.popular
                   ? "border-white/30 bg-card relative"
                   : "border-border hover:border-primary"

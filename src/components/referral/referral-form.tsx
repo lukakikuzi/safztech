@@ -27,6 +27,7 @@ export default function ReferralForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          type: "referral",
           name: form.name,
           email: form.email,
           phone: form.phone,

@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+
+import SectionHeading from "@/components/ui/section-heading";
 import { FaqSectionContent } from "@/contents/home-page-content";
 
 function FaqSection() {
@@ -12,29 +14,23 @@ function FaqSection() {
   };
 
   return (
-    <section className="section-padding-standard border-t border-border">
-      <div className="layout-standard section-padding-standard">
+    <section className="section-padding-standard">
+      <div className="layout-standard section-padding-standard grid lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-20 items-start">
 
-        {/* Header */}
-        <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
-          <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Got Questions?
-          </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-            FREQUENTLY ASKED QUESTIONS
-          </h2>
-          <p className="text-paragraph text-lg max-w-2xl">
-            Everything you need to know about working with SAFZTECH — from
+        <div className="lg:sticky lg:top-32">
+          <SectionHeading title="Questions, answered." className="mb-0 lg:mb-0">
+            Everything you need to know about working with SAFZTECH, from
             timelines to pricing to results.
-          </p>
+          </SectionHeading>
         </div>
 
         {/* Accordion */}
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="space-y-3">
           {FaqSectionContent.map((faq, index) => (
             <div
               key={index}
-              className="border border-border bg-card overflow-hidden"
+              data-open={openIndex === index}
+              className="faq-item rounded-xl border border-border bg-card overflow-hidden"
               onPointerEnter={(e) => {
                 if (e.pointerType === "mouse") setOpenIndex(index);
               }}
@@ -43,13 +39,16 @@ function FaqSection() {
               }}
             >
               <button
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-panel-${index}`}
+                id={`faq-button-${index}`}
                 onClick={(e) => {
                   if ((e.nativeEvent as PointerEvent).pointerType === "mouse") return;
                   toggle(index);
                 }}
-                className="w-full flex justify-between items-center px-6 py-5 text-left gap-4"
+                className="faq-q w-full flex justify-between items-center px-6 py-5 text-left gap-4 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
-                <span className="text-heading font-medium font-poppins">
+                <span className="faq-text text-heading font-medium font-poppins transition-colors duration-300">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -60,6 +59,10 @@ function FaqSection() {
               </button>
 
               <div
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
+                aria-hidden={openIndex !== index}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openIndex === index
                     ? "max-h-48 opacity-100"

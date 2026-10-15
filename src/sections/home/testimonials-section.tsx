@@ -1,66 +1,25 @@
-"use client";
-
 import React from "react";
-import { Star } from "lucide-react";
+
+import SectionHeading from "@/components/ui/section-heading";
 import { TestimonialsSectionContent } from "@/contents/home-page-content";
+import TestimonialsCarousel from "./testimonials-carousel";
 
 function TestimonialsSection() {
   return (
-    <section className="section-padding-standard border-t border-border">
+    <section className="relative isolate overflow-hidden section-padding-standard">
+      {/* Colour behind the glass so the frosting is visible */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-24 top-[22%] h-72 w-72 rounded-full bg-[rgba(255,122,0,0.2)] blur-3xl" />
+        <div className="absolute -right-24 bottom-[14%] h-72 w-72 rounded-full bg-[rgba(255,215,0,0.16)] blur-3xl" />
+      </div>
+
       <div className="layout-standard section-padding-standard">
+        <SectionHeading title="Trusted by 150+ businesses.">
+          Across software development, lead generation, e-commerce and
+          digital growth, in 20+ industries worldwide.
+        </SectionHeading>
 
-        {/* Header */}
-        <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
-          <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Client Results
-          </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-            TRUSTED BY 150+ BUSINESSES
-          </h2>
-          <p className="text-paragraph text-lg max-w-2xl">
-            Across software development, lead generation, e-commerce, and
-            digital growth — in 20+ industries worldwide.
-          </p>
-        </div>
-
-        {/* Testimonial Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TestimonialsSectionContent.map((t) => (
-            <div
-              key={t.name}
-              className="border border-border bg-card p-8 flex flex-col gap-5 transition-all duration-300 ease-out hover:scale-105 hover:z-10 hover:border-primary/60 hover:shadow-[0_0_35px_rgba(255,215,0,0.28)]"
-            >
-              {/* Stars */}
-              <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-primary text-primary"
-                  />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-foreground leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Attribution */}
-              <div className="border-t border-border pt-5">
-                <p className="text-heading font-semibold font-poppins">
-                  {t.name}
-                </p>
-                <p className="text-paragraph text-sm mt-0.5">
-                  {t.role} · {t.company}
-                </p>
-                <p className="text-primary/70 text-xs tracking-wide mt-1">
-                  {t.industry}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
+        <TestimonialsCarousel items={TestimonialsSectionContent} />
       </div>
     </section>
   );

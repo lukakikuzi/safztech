@@ -2,6 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+
+import SectionHeading from "@/components/ui/section-heading";
 import { Check, Compass, Rocket, TrendingUp, Wrench, type LucideIcon } from "lucide-react";
 
 interface Phase {
@@ -191,26 +193,17 @@ function ProcessSection() {
     <section className="relative overflow-hidden section-padding-standard border-t border-border">
       {/* Side glows: they sit out in the page padding, not behind the cards */}
       <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        <div className="absolute -right-40 top-[38%] w-96 h-96 rounded-full bg-purple-600/25 blur-3xl" />
+        <div className="absolute -right-40 top-[38%] w-96 h-96 rounded-full bg-contrast/20 blur-3xl" />
         <div className="absolute -left-40 top-[22%] w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
         <div className="absolute -left-40 top-[68%] w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
       </div>
 
       <div className="relative z-10 layout-standard section-padding-standard">
 
-        {/* Header */}
-        <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
-          <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            How It Works
-          </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-            FROM VISION TO REVENUE IN 4 PHASES
-          </h2>
-          <p className="text-paragraph text-lg max-w-2xl">
-            A proven, repeatable process that takes you from first call to
-            measurable growth — with full transparency at every step.
-          </p>
-        </div>
+        <SectionHeading title="From vision to revenue in 4 phases.">
+          A proven, repeatable process that takes you from first call to
+          measurable growth, with full transparency at every step.
+        </SectionHeading>
 
         {/* Desktop: winding road */}
         <div

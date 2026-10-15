@@ -39,7 +39,76 @@
     --input: #1f1f22;
     --ring: #ffd700;
 
+    --contrast: #ff7a00;
+    --contrast-deep: #3a1a00;
+
     --radius: 0.65rem;
+  }
+}
+
+@layer components {
+  /* Frosted glass card */
+  .glass-clay {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+    box-shadow:
+      inset 0 1.5px 0 rgba(255, 255, 255, 0.65),
+      inset 0 -1.5px 0 rgba(255, 255, 255, 0.4),
+      0 20px 40px -24px rgba(0, 0, 0, 0.8);
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s ease,
+      border-color 0.4s ease;
+  }
+
+  /* Soft circle of light that follows the cursor (--mx/--my set by CursorGlow) */
+  .glass-clay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      320px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 255, 255, 0.2),
+      transparent 70%
+    );
+  }
+
+  /* Diagonal pane reflection plus two small glints on the edges */
+  .glass-clay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+      radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.9) 0, transparent 7px),
+      radial-gradient(circle at 78% 100%, rgba(255, 255, 255, 0.8) 0, transparent 7px),
+      linear-gradient(115deg, transparent 52%, rgba(255, 255, 255, 0.07) 52%, rgba(255, 255, 255, 0.02) 80%, transparent);
+  }
+
+  .glass-clay:hover::before {
+    opacity: 1;
+  }
+
+  .glass-clay:hover {
+    transform: translateY(-6px);
+    border-color: transparent;
+    box-shadow: 0 28px 48px -24px rgba(0, 0, 0, 0.9);
+  }
+
+  /* A glossy, inflated gold button-like orb for icons and avatars */
+  .clay-orb {
+    border-radius: 9999px;
+    background: #ffd700;
   }
 }
 
@@ -50,10 +119,118 @@
   scroll-behavior: smooth;
 }
 
+/* Inner pages still carry small tracked-caps labels above headings.
+   Soften them into plain sentence-case labels instead of editing 79 spots. */
+[class*="tracking-[0.2em]"][class~="uppercase"] {
+  font-family: var(--font-montserrat), sans-serif;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #9a958b;
+}
+
+/* Kinetic headline typography: Montserrat ExtraBold with tight tracking */
+main :is(h1, h2) {
+  font-family: var(--font-montserrat), sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  text-transform: none !important;
+}
+
+/* One vertical rhythm for every home-page section. The old per-section and nested
+   paddings stacked unevenly, so gaps looked random. Hero keeps its own spacing. */
+main > section:not(:first-child) {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+main > section > .layout-standard.section-padding-standard {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Glass on every card: any bordered .bg-card surface becomes frosted glass */
+.border.bg-card:not(.glass-clay),
+.bg-card.border-border:not(.glass-clay),
+div.border.bg-secondary-background {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035));
+  border-color: transparent;
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  /* the lit top edge is what lifts a card off the near-black page */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 20px 40px -24px rgba(0, 0, 0, 0.8);
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* One shape language everywhere: boxes get soft corners, calls to action are pills.
+   Anything that already sets its own rounded-* is left alone. */
+.border.bg-card:not([class*="rounded"]),
+.border.bg-secondary-background:not([class*="rounded"]),
+.border.bg-primary\/5:not([class*="rounded"]),
+.border.bg-muted:not([class*="rounded"]) {
+  border-radius: 1.25rem;
+}
+
+a.bg-primary:not([class*="rounded"]),
+button.bg-primary:not([class*="rounded"]),
+a.border-primary:not([class*="rounded"]),
+button.border-primary:not([class*="rounded"]) {
+  border-radius: 9999px;
+}
+
+input.bg-input:not([class*="rounded"]),
+textarea.bg-input:not([class*="rounded"]) {
+  border-radius: 0.75rem;
+}
+
+/* Browser surfaces carry the brand too */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+html {
+  scrollbar-color: #3a3a40 var(--background);
+}
+
 body {
   background-color: var(--background);
   color: var(--paragraph);
   font-family: var(--font-inter), sans-serif;
   text-rendering: optimizeLegibility;
   border: var(--border);
+}
+
+/* FAQ: hover, focus and open all light the row up in gold glass with an accent bar */
+div.faq-item.border {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+div.faq-item.border:hover,
+div.faq-item.border:focus-within,
+div.faq-item.border[data-open="true"] {
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.17), rgba(255, 160, 0, 0.05) 60%, rgba(255, 255, 255, 0.03));
+  box-shadow:
+    inset 3px 0 0 #ffd700,
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 22px 44px -26px rgba(255, 170, 0, 0.45);
+  transform: translateX(4px);
+}
+.faq-item:hover .faq-text,
+.faq-item:focus-within .faq-text,
+.faq-item[data-open="true"] .faq-text {
+  color: #ffd84a;
 }

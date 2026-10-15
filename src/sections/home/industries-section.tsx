@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import DraggableMarquee from "@/components/ui/draggable-marquee";
+import SectionHeading from "@/components/ui/section-heading";
 import {
   FlaskConical,
   Scissors,
@@ -103,69 +104,54 @@ const industries = [
 
 function IndustriesSection() {
   return (
-    <section className="section-padding-standard border-t border-border bg-secondary-background">
-      <div className="layout-standard section-padding-standard">
-
-        {/* Header */}
-        <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
-          <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase">
-            Industries
-          </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-heading font-poppins">
-            INDUSTRIES WE SERVE
-          </h2>
-          <p className="text-paragraph text-lg max-w-2xl">
-            We&apos;ve worked across 20+ industries. If you don&apos;t see
-            yours below, chances are we have relevant experience — just ask.
-          </p>
-        </div>
+    <section className="section-padding-standard bg-secondary-background">
+      <div className="layout-standard section-padding-standard !pb-0">
+        <SectionHeading title="Industries we serve.">
+          We&apos;ve worked across 20+ industries. If you don&apos;t see
+          yours below, chances are we have relevant experience, just ask.
+        </SectionHeading>
 
         {/* Industry grid */}
-        <div className="overflow-hidden -mx-[var(--layout-px)] px-[var(--layout-px)] [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <div>
           <DraggableMarquee loop={false}>
             {industries.map(({ Icon, name, desc, href, external }) => {
-            const cardClasses =
-              "flex-shrink-0 w-[270px] sm:w-[300px] mr-5 cursor-[inherit] border border-border bg-card p-8 flex flex-col items-center text-center gap-4 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group";
+              const cardClasses =
+                "group relative mr-5 flex w-[270px] flex-shrink-0 cursor-[inherit] flex-col items-center gap-5 overflow-hidden rounded-[2rem] bg-[linear-gradient(160deg,#26262b_0%,#141417_55%,#0c0c0e_100%)] p-8 text-center transition-all duration-300 hover:-translate-y-1.5 hover:bg-[linear-gradient(160deg,#3a2f10_0%,#1c1608_55%,#0c0c0e_100%)] sm:w-[300px]";
 
-            const cardContent = (
-              <>
-                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <p className="text-heading font-semibold text-base font-poppins">
-                    {name}
-                  </p>
-                  <p className="text-paragraph text-sm mt-1.5 leading-snug">
-                    {desc}
-                  </p>
-                </div>
-              </>
-            );
-
-            if (href) {
-              return (
-                <Link
-                  key={name}
-                  href={href}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
-                  className={cardClasses}
-                >
-                  {cardContent}
-                </Link>
+              const cardContent = (
+                <>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffe56a,#ffb300)] text-primary-foreground transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <p className="font-poppins text-base font-semibold text-heading">{name}</p>
+                    <p className="mt-1.5 text-sm leading-snug text-paragraph">{desc}</p>
+                  </div>
+                </>
               );
-            }
 
-            return (
-              <div key={name} className={cardClasses}>
-                {cardContent}
-              </div>
-            );
-          })}
+              if (href) {
+                return (
+                  <Link
+                    key={name}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    className={cardClasses}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={name} className={cardClasses}>
+                  {cardContent}
+                </div>
+              );
+            })}
           </DraggableMarquee>
         </div>
-
       </div>
     </section>
   );

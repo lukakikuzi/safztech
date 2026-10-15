@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import SectionHeading from "@/components/ui/section-heading";
 
 import { Phone, Mail, Clock, Globe } from "lucide-react";
 
@@ -35,7 +36,7 @@ function ContactUsSection() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: "contact" }),
       });
       if (!res.ok) throw new Error("Failed");
       setStatus("success");
@@ -48,18 +49,10 @@ function ContactUsSection() {
   return (
     <section id="contact" className="section-padding-standard bg-background scroll-mt-20">
       <div className="layout-standard section-padding-standard">
-        <div className="lg:mb-[6rem] mb-[4rem] relative flex flex-col text-center items-center w-full max-lg:gap-2">
-          <h1 className="absolute text-[9rem] font-bold tracking-widest text-white/10 select-none -top-[3.8rem] max-lg:hidden">
-            CONTACT
-          </h1>
-          <h2 className="relative text-4xl md:text-5xl font-medium text-heading font-poppins">
-            BUILD YOUR VISION
-          </h2>
-          <p className="text-lg font-medium text-heading max-w-3xl">
-            Reach out to our expert team for personalized solutions and
-            top-notch web and app development services tailored to your brand.
-          </p>
-        </div>
+        <SectionHeading title="Build your vision.">
+          Reach out to our expert team for personalized solutions and
+          top-notch web and app development services tailored to your brand.
+        </SectionHeading>
 
         <div className="grid lg:grid-cols-3 gap-20">
           <div className="space-y-8 lg:col-span-2 col-span-1">
@@ -76,7 +69,7 @@ function ContactUsSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="bg-input border-border border-2 text-white h-14 text-lg transition-colors"
+                    className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
                   />
                 </div>
 
@@ -91,7 +84,7 @@ function ContactUsSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="bg-input border-border border-2 text-white h-14 text-lg transition-colors"
+                    className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
                   />
                 </div>
               </div>
@@ -107,7 +100,7 @@ function ContactUsSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="bg-input border-border border-2 text-white h-14 text-lg transition-colors"
+                  className="bg-input border-border border-2 text-white h-14 text-base sm:text-lg transition-colors"
                 />
               </div>
 
@@ -147,7 +140,7 @@ function ContactUsSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="bg-input border-border border-2 text-white min-h-32 text-lg transition-colors resize-none"
+                  className="bg-input border-border border-2 text-white min-h-32 text-base sm:text-lg transition-colors resize-none"
                 />
               </div>
 
@@ -207,7 +200,7 @@ function ContactUsSection() {
 
           <div className="space-y-12">
             <div>
-              <h3 className="text-3xl font-semibold font-poppins text-white mb-12 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-semibold font-poppins text-white mb-8 sm:mb-12 tracking-tight">
                 CONTACT INFORMATION
               </h3>
             </div>
@@ -221,7 +214,7 @@ function ContactUsSection() {
                   <p className="text-sm font-medium uppercase tracking-wider mb-2">
                     Phone
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     +1 (419) 601-2734
                   </p>
                   <p className="text-foreground">Mon - Fri, 9am - 6pm EST</p>
@@ -236,10 +229,10 @@ function ContactUsSection() {
                   <p className="text-sm font-medium uppercase tracking-wider mb-2">
                     Email
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     info@safztech.com
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     safztech13@gmail.com
                   </p>
                   <p className="text-foreground">
@@ -256,7 +249,7 @@ function ContactUsSection() {
                   <p className="text-sm font-medium uppercase tracking-wider mb-2">
                     Hours
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     Monday - Friday
                   </p>
                   <p className="text-foreground">9:00 AM - 6:00 PM EST</p>
@@ -271,7 +264,7 @@ function ContactUsSection() {
                   <p className="text-sm font-medium uppercase tracking-wider mb-2">
                     Platforms
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     Facebook -{" "}
                     <Link
                       href={"https://www.facebook.com/safztech"}
@@ -281,7 +274,7 @@ function ContactUsSection() {
                       safztech
                     </Link>
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     Instagram -{" "}
                     <Link
                       href={"https://www.instagram.com/safz.tech"}
@@ -291,7 +284,7 @@ function ContactUsSection() {
                       safz.tech
                     </Link>
                   </p>
-                  <p className="text-xl font-medium text-heading mb-1">
+                  <p className="text-lg sm:text-xl font-medium text-heading mb-1">
                     LinkedIn -{" "}
                     <Link
                       href={"https://www.linkedin.com/company/safztech/"}

@@ -1,7 +1,6 @@
 import React from "react";
 
 import HomeHeroSection from "@/sections/home/home-hero-section";
-import TrustbarSection from "@/sections/home/trustbar-section";
 import AboutSection from "@/sections/home/about-section";
 import SynergySection from "@/sections/home/synergy-section";
 import OurServicesSection from "@/sections/home/our-services-section";
@@ -18,7 +17,6 @@ function HomePage() {
   return (
     <main>
       <HomeHeroSection />
-      <TrustbarSection />
       <AboutSection />
       <ProjectsSection />
       <SynergySection />

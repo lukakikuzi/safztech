@@ -27,7 +27,7 @@ function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`relative overflow-hidden p-8 lg:p-10 flex flex-col border ${
+      className={`relative overflow-hidden rounded-2xl p-8 lg:p-10 flex flex-col border ${
         highlight
           ? "border-primary/40 bg-gradient-to-br from-primary/15 via-primary/5 to-transparent"
           : "border-border bg-gradient-to-br from-white/[0.06] to-transparent"
@@ -41,7 +41,7 @@ function ServiceCard({
       </span>
 
       <div className="relative flex items-center gap-4 mb-5">
-        <div className="w-14 h-14 bg-primary/15 border border-primary/30 flex items-center justify-center flex-shrink-0">
+        <div className="w-14 h-14 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center flex-shrink-0">
           <Icon className="w-6 h-6 text-primary" />
         </div>
         <div>

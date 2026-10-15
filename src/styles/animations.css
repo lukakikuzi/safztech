@@ -9,6 +9,359 @@
   }
 }
 
+@keyframes meteor {
+  0% {
+    opacity: 0;
+    transform: rotate(35deg) translateX(0);
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(35deg) translateX(300px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes aurora-a {
+  0%,
+  100% {
+    transform: translate3d(-8%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10%, 6%, 0) scale(1.15);
+  }
+}
+
+@keyframes aurora-b {
+  0%,
+  100% {
+    transform: translate3d(8%, 6%, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-10%, -5%, 0) scale(0.95);
+  }
+}
+
+@keyframes mote {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-26px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes x-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes word-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(0.45em) scale(0.7);
+    filter: blur(12px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-0.05em) scale(1.12);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+/* Kinetic headings applied site-wide by KineticEnhancer */
+.kn-w {
+  display: inline-block;
+}
+.kn-keywrap {
+  display: inline-block;
+  filter: drop-shadow(0 0 18px rgba(252, 196, 40, 0.7));
+}
+.kn-key {
+  display: inline-block;
+  background-image: linear-gradient(135deg, #ffd84a, #f4a900);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/* On a gold band a gold word would vanish, so the key word turns black */
+.bg-primary .kn-keywrap,
+.on-bright .kn-keywrap {
+  filter: none;
+}
+.bg-primary .kn-key,
+.on-bright .kn-key {
+  background-image: none;
+  -webkit-text-fill-color: #030505;
+  color: #030505;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+.kn-armed .kn-w,
+.kn-armed .kn-key {
+  opacity: 0;
+}
+.kn-armed.kn-in .kn-w {
+  animation: word-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both;
+}
+.kn-armed.kn-in .kn-key {
+  animation: word-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s) both;
+}
+
+.hero-word {
+  display: inline-block;
+  animation: word-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both;
+}
+
+.hero-word-key {
+  display: inline-block;
+  animation: word-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s) both;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translateY(0);
+  }
+  to {
+    transform: scale(1.07) translateY(-1.5%);
+  }
+}
+
+@keyframes ring-progress {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 16s ease-out both;
+}
+
+.animate-ring-progress {
+  stroke-dasharray: 1;
+  animation: ring-progress 7s linear both;
+}
+
+.animate-orbit-spin {
+  animation: orbit-spin 90s linear infinite;
+}
+
+@keyframes arc-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-arc {
+  stroke-dasharray: 1;
+  animation: arc-draw 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+}
+
+.hero-glow-in {
+  animation: hero-fade 2.2s ease-out 1.2s both;
+}
+
+.hero-rise {
+  animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both;
+}
+
+@keyframes scan-reveal {
+  from {
+    clip-path: inset(-80px 100% -80px -80px);
+  }
+  to {
+    clip-path: inset(-80px -80px -80px -80px);
+  }
+}
+
+@keyframes scan-line {
+  from {
+    left: 0%;
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.hero-scan-reveal {
+  animation: scan-reveal 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+}
+
+.hero-scan-line {
+  animation: scan-line 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+}
+
+.animate-meteor {
+  animation: meteor var(--dur, 4s) linear var(--delay, 0s) infinite;
+  opacity: 0;
+}
+.animate-twinkle {
+  animation: twinkle var(--dur, 3s) ease-in-out var(--delay, 0s) infinite;
+}
+.animate-float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+.animate-hero-marquee {
+  animation: hero-marquee 45s linear infinite;
+}
+.animate-aurora-a {
+  animation: aurora-a 22s ease-in-out infinite;
+}
+.animate-aurora-b {
+  animation: aurora-b 28s ease-in-out infinite;
+}
+.animate-mote {
+  animation: mote 6s ease-in-out infinite;
+}
+.animate-x-spin {
+  animation: x-spin 120s linear infinite;
+}
+
+@keyframes wall-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes wall-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-wall-up {
+  animation: wall-up 70s linear infinite;
+}
+
+.animate-wall-down {
+  animation: wall-down 85s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kn-armed.kn-in .kn-w,
+  .kn-armed.kn-in .kn-key,
+  .hero-word,
+  .hero-word-key,
+  .animate-kenburns,
+  .animate-ring-progress,
+  .animate-orbit-spin,
+  .hero-arc,
+  .hero-glow-in,
+  .hero-rise,
+  .hero-scan-reveal,
+  .hero-scan-line,
+  .animate-meteor,
+  .animate-twinkle,
+  .animate-float-y,
+  .animate-hero-marquee,
+  .animate-aurora-a,
+  .animate-aurora-b,
+  .animate-mote,
+  .animate-x-spin,
+  .animate-wall-up,
+  .animate-wall-down,
+  .animate-bounce,
+  .animate-ping,
+  .animate-spin,
+  .animate-scroll {
+    animation: none;
+  }
+}
+
 @keyframes scroll {
   0% {
     opacity: 1;
@@ -22,4 +375,52 @@
     opacity: 0;
     transform: translateY(20px);
   }
+}
+
+/* Hero intro: a blueprint grid and the planet's arc are drawn first, then the planet and sky fade in. */
+@keyframes bp-grid { 0% { opacity: 0; } 20% { opacity: 1; } 65% { opacity: 1; } 100% { opacity: 0.3; } }
+@keyframes bp-draw { 0% { stroke-dashoffset: 1; opacity: 1; } 55% { stroke-dashoffset: 0; opacity: 1; } 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0.4; } }
+@keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes planet-in { from { opacity: 0; transform: translateX(-50%) translateY(40px) scale(0.96); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
+.bp-grid { opacity: 0; animation: bp-grid 1.8s ease-out both; }
+.bp-arc { opacity: 0; stroke-dasharray: 1; stroke-dashoffset: 1; animation: bp-draw 1.6s cubic-bezier(.6,0,.2,1) 0.1s both; }
+.intro-sky { animation: intro-in 1s ease-out 0.9s both; }
+.intro-planet { animation: planet-in 1.2s cubic-bezier(.2,.7,.2,1) 0.6s both; }
+@media (prefers-reduced-motion: reduce) {
+  .bp-grid, .bp-arc, .intro-sky, .intro-planet { animation: none; }
+  .bp-grid { opacity: 0.3; }
+  .bp-arc { opacity: 0.4; stroke-dashoffset: 0; }
+}
+
+/* Blueprint phase for text and sky: outlines first, then they fill in. */
+@keyframes bp-text { 0%, 55% { color: transparent; -webkit-text-stroke: 1px rgba(255,215,0,0.9); } }
+@keyframes bp-key { 0%, 10% { background-size: 0% 100%; } 100% { background-size: 100% 100%; } }
+@keyframes bp-marks { 0% { opacity: 0; } 20%, 55% { opacity: 1; } 100% { opacity: 0; } }
+.bp-text { animation: bp-text 1.8s ease-out 0.2s both; }
+.bp-key { background-repeat: no-repeat; animation: bp-key 1s ease-out 1s both; }
+.bp-marks { opacity: 0; animation: bp-marks 1.9s ease-out 0.2s both; }
+@media (prefers-reduced-motion: reduce) {
+  .bp-text, .bp-key, .bp-marks { animation: none; }
+}
+
+/* About: "build and grow" motion graphic */
+@keyframes ab-line { 0% { transform: scaleX(0); opacity: 0.2; } 18%, 82% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(0); opacity: 0.2; } }
+@keyframes ab-draw { 0% { stroke-dashoffset: 1; } 55%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+@keyframes ab-fade { 0%, 20% { opacity: 0; } 55%, 85% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes ab-bar { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+@keyframes ab-spin { to { transform: rotate(360deg); } }
+@keyframes ab-blink { 50% { opacity: 0; } }
+.ab-line { transform-origin: left center; animation: ab-line 6s ease-in-out var(--d, 0s) infinite; }
+.ab-path { stroke-dasharray: 1; animation: ab-draw 6s ease-in-out infinite; }
+.ab-area { animation: ab-fade 6s ease-in-out infinite; }
+.ab-bar { transform-origin: bottom; animation: ab-bar 3s ease-in-out var(--d, 0s) infinite; }
+.ab-spin { animation: ab-spin 40s linear infinite; }
+.ab-blink { animation: ab-blink 1s steps(2) infinite; }
+@keyframes ab-orbit {
+  from { transform: rotate(calc(var(--a) * 1deg)) translateX(200px) rotate(calc(var(--a) * -1deg)); }
+  to { transform: rotate(calc((var(--a) + 360) * 1deg)) translateX(200px) rotate(calc((var(--a) + 360) * -1deg)); }
+}
+.ab-orbit { animation: ab-orbit 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .ab-line, .ab-path, .ab-area, .ab-bar, .ab-spin, .ab-orbit, .ab-blink { animation: none; }
 }
