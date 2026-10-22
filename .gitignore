@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling and generated agent files
+.claude/
+.impeccable/
+AGENTS.md
+CLAUDE.md
+PRODUCT.md
