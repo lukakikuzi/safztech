@@ -30,10 +30,10 @@ function ClientStoriesSection() {
 
       <div className="layout-standard section-padding-standard relative">
         {featured ? (
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_auto] lg:gap-20">
-            <div className="text-center lg:text-left">
+          <div className="grid items-center gap-12 xl:grid-cols-[1.05fr_auto] xl:gap-20">
+            <div className="text-center xl:text-left">
               {heading}
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start">
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row xl:items-start xl:justify-start">
                 <Link
                   href="/free-audit"
                   className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,215,0,0.55)] bg-gradient-to-br from-[rgba(255,200,0,0.5)] to-[rgba(255,140,0,0.2)] px-8 py-4 font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.5)] backdrop-blur-[10px] transition-all hover:from-[rgba(255,200,0,0.65)]"

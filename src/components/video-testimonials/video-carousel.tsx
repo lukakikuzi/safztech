@@ -29,7 +29,7 @@ export default function VideoCarousel({ items, featured = false }: { items: Vide
   return (
     <>
       <div className="-mx-12 -my-24 snap-x snap-mandatory overflow-x-auto px-12 py-24 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <ul className={`flex w-max items-start gap-7 ${featured ? "mx-auto lg:mx-0" : "mx-auto"}`}>
+        <ul className={`flex w-max items-start gap-7 ${featured ? "mx-auto xl:mx-0" : "mx-auto"}`}>
           {items.map((t, i) => {
             const who = `${t.name ? `${t.name}, ` : ""}${t.company}`;
             return (
