@@ -40,12 +40,10 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 import IndustriesSection from "@/sections/home/industries-section";
 import TechStackTabs from "@/components/services/tech-stack-tabs";
-import {
-  ServiceIntroCards,
-  ServicePillarCards,
-} from "@/components/services/service-intro-cards";
+import { ServicePillarCards } from "@/components/services/service-intro-cards";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/services" },
   title: "Services | SAFZTECH Software, Digital Growth & Peptides E-Commerce",
   description:
     "Custom software, digital growth marketing, and specialised peptides / research-chemical e-commerce builds. See everything SAFZTECH can build and grow for your business.",
@@ -67,6 +65,8 @@ const growthServices = [
   "Social Media Marketing",
   "YouTube Automation",
 ];
+
+const SHOW_FULL_SERVICE_MENU = false;
 
 const specializedServices = [
   {
@@ -272,7 +272,7 @@ export default function ServicesPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Our Services
@@ -319,8 +319,6 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <ServiceIntroCards />
-
           <ServicePillarCards
             softwareServices={softwareServices}
             growthServices={growthServices}
@@ -340,7 +338,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Specialized Development Services */}
+      {SHOW_FULL_SERVICE_MENU && (
       <section className="section-padding-standard border-t border-border">
         <div className="layout-standard section-padding-standard">
           <div className="lg:mb-16 mb-12 flex flex-col items-center text-center gap-4">
@@ -403,6 +401,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Foundations */}
       <section className="section-padding-standard border-t border-border bg-secondary-background">
@@ -656,10 +655,10 @@ export default function ServicesPage() {
             right mix of software and growth services, no matter your niche.
           </p>
           <Link
-            href="/free-audit"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-10 py-4 hover:bg-primary-hover transition-colors text-lg"
           >
-            Get Your Free Audit <ArrowRight className="w-5 h-5" />
+            Tell Us About Your Business <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-paragraph text-sm mt-4">
             Free · No obligation · Response within 2 hours

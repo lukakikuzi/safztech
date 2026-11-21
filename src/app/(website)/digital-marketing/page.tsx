@@ -4,6 +4,7 @@ import { Check, ArrowRight, TrendingUp } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/digital-marketing" },
   title: "Digital Growth Services — SAFZTECH | SEO, Lead Gen & Paid Ads",
   description:
     "Lead generation, SEO, paid advertising, conversion optimisation, email marketing & YouTube automation. Real results: 500K+ leads generated across 150+ clients.",
@@ -90,7 +91,7 @@ export default function DigitalMarketingPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Digital Growth

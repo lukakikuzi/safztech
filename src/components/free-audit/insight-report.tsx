@@ -161,7 +161,7 @@ export default function InsightReport({
               <p className="text-sm text-paragraph">This report covers how fast your site loads. We also review SEO, conversion and lead capture.</p>
             </div>
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-flex whitespace-nowrap rounded-full border border-[rgba(255,215,0,0.55)] bg-gradient-to-br from-[rgba(255,200,0,0.45)] to-[rgba(255,140,0,0.18)] px-7 py-3.5 font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.5)] backdrop-blur-[10px] transition-all hover:from-[rgba(255,200,0,0.6)]"
             >
               Talk to us

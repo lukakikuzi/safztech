@@ -12,7 +12,7 @@ import IndustriesSection from "@/sections/home/industries-section";
 import PricingSection from "@/sections/home/pricing-section";
 import FaqSection from "@/sections/home/faq-section";
 import LeadMagnetSection from "@/sections/home/lead-magnet-section";
-import ContactUsSection from "@/sections/home/contact-us-section";
+import ContactCtaSection from "@/sections/home/contact-cta-section";
 
 function HomePage() {
   return (
@@ -29,7 +29,7 @@ function HomePage() {
       <PricingSection />
       <FaqSection />
       <LeadMagnetSection />
-      <ContactUsSection />
+      <ContactCtaSection />
     </main>
   );
 }

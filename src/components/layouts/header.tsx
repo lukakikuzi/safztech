@@ -6,12 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
+import { SERVICES } from "@/data/services";
+
 import FullScreenMenu from "./full-screen-menu";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
-  { label: "Services", href: "/services", mega: true },
+  { label: "Services", href: "/services", mega: "services" as const },
+  { label: "Software & Apps", href: "/software-solutions", mega: "software" as const },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/#pricing" },
 ];
@@ -43,6 +46,8 @@ const industries = [
   { label: "Professional Services", href: "/industries/professional-services" },
 ];
 
+const softwareServices = SERVICES.filter((s) => s.group === 0);
+
 function MegaLink({ label, href, onNavigate }: { label: string; href: string; onNavigate: () => void }) {
   return (
     <Link
@@ -60,7 +65,8 @@ function Header() {
   const navRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<number>(0);
   const [pill, setPill] = useState<{ left: number; width: number } | null>(null);
-  const [megaOpen, setMegaOpen] = useState(false);
+  const [mega, setMega] = useState<"services" | "software" | null>(null);
+  const megaOpen = mega !== null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -81,14 +87,14 @@ function Header() {
         if (p < 1 || y < lastScrollY.current) setIsVisible(true);
         else {
           setIsVisible(false);
-          setMegaOpen(false);
+          setMega(null);
         }
         lastScrollY.current = y;
       } else {
         setShrink(0);
         if (y > lastScrollY.current && y > 100) {
           setIsVisible(false);
-          setMegaOpen(false);
+          setMega(null);
         } else {
           setIsVisible(true);
         }
@@ -101,21 +107,21 @@ function Header() {
   }, [isHome]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMegaOpen(false);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMega(null);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const openMega = () => {
+  const openMega = (key: "services" | "software") => {
     window.clearTimeout(closeTimer.current);
-    setMegaOpen(true);
+    setMega(key);
   };
   // A short delay so the pointer can cross the gap between the pill and the panel.
   const closeMega = () => {
     window.clearTimeout(closeTimer.current);
-    closeTimer.current = window.setTimeout(() => setMegaOpen(false), 150);
+    closeTimer.current = window.setTimeout(() => setMega(null), 150);
   };
-  const shut = () => setMegaOpen(false);
+  const shut = () => setMega(null);
 
   return (
     <>
@@ -129,7 +135,7 @@ function Header() {
       <header
         onMouseLeave={closeMega}
         style={{ transform: `${isVisible ? "translateY(0)" : "translateY(-150%)"} scale(${1 - 0.08 * shrink})`, transformOrigin: "top center" }}
-        className="fixed inset-x-0 top-3 z-40 mx-auto w-[94%] transition-transform duration-300 md:w-[88%] lg:w-[82%] xl:w-[70%]"
+        className="fixed inset-x-0 top-3 z-40 mx-auto w-[94%] transition-transform duration-300 md:w-[94%] lg:w-[92%] xl:w-[86%] 2xl:w-[76%]"
       >
         <div className="rounded-full border border-white/25 bg-gradient-to-br from-white/[0.16] to-white/[0.04] px-5 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18),inset_0_0_22px_rgba(255,255,255,0.07),0_18px_40px_-14px_rgba(0,0,0,0.55)] backdrop-blur-[10px] backdrop-saturate-[1.6] backdrop-brightness-110 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -165,22 +171,22 @@ function Header() {
                     href={link.href}
                     onMouseEnter={(e) => {
                       target(e);
-                      if (link.mega) openMega();
+                      if (link.mega) openMega(link.mega);
                       else closeMega();
                     }}
                     onFocus={(e) => {
                       target(e);
-                      if (link.mega) openMega();
+                      if (link.mega) openMega(link.mega);
                     }}
                     onBlur={() => setPill(null)}
                     aria-haspopup={link.mega ? "true" : undefined}
-                    aria-expanded={link.mega ? megaOpen : undefined}
-                    className="relative z-10 flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-white xl:px-4 transition-colors duration-300 hover:text-white focus-visible:text-white"
+                    aria-expanded={link.mega ? mega === link.mega : undefined}
+                    className="relative z-10 flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm font-medium text-white xl:px-3 transition-colors duration-300 hover:text-white focus-visible:text-white"
                   >
                     {link.label}
                     {link.mega && (
                       <ChevronDown
-                        className={`h-3.5 w-3.5 transition-transform duration-300 ${megaOpen ? "rotate-180" : ""}`}
+                        className={`h-3.5 w-3.5 transition-transform duration-300 ${mega === link.mega ? "rotate-180" : ""}`}
                       />
                     )}
                   </Link>
@@ -188,10 +194,10 @@ function Header() {
               })}
             </nav>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <Link
                 href="/free-audit"
-                className="hidden whitespace-nowrap lg:block rounded-full border border-[rgba(255,215,0,0.55)] bg-gradient-to-br from-[rgba(255,200,0,0.45)] to-[rgba(255,140,0,0.18)] px-5 py-2 text-sm font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18)] backdrop-blur-[10px] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)] transition-all hover:from-[rgba(255,200,0,0.6)] hover:to-[rgba(255,140,0,0.3)]"
+                className="hidden whitespace-nowrap lg:block rounded-full border border-[rgba(255,215,0,0.55)] bg-gradient-to-br from-[rgba(255,200,0,0.45)] to-[rgba(255,140,0,0.18)] px-4 py-2 text-sm font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18)] backdrop-blur-[10px] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)] transition-all hover:from-[rgba(255,200,0,0.6)] hover:to-[rgba(255,140,0,0.3)]"
               >
                 Get free audit
               </Link>
@@ -211,12 +217,37 @@ function Header() {
 
         {/* Services mega panel (desktop). The padding on top bridges the gap so hover is not lost. */}
         <div
-          onMouseEnter={openMega}
+          onMouseEnter={() => mega && openMega(mega)}
           className={`absolute -inset-x-4 top-full hidden pt-3 lg:-inset-x-12 transition-all duration-300 ease-out md:block ${
             megaOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
           }`}
         >
           <div className="rounded-[2rem] border border-white/25 bg-[rgba(0,0,0,0.28)] bg-gradient-to-br from-white/[0.14] to-white/[0.03] p-7 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18),inset_0_0_22px_rgba(255,255,255,0.07),0_18px_40px_-14px_rgba(0,0,0,0.55)] backdrop-blur-[10px] backdrop-saturate-[1.6] backdrop-brightness-110 [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
+            {mega === "software" ? (
+              <div className="grid grid-cols-[1fr_1.2fr_1.2fr] gap-6">
+                <div className="pr-2">
+                  <p className="font-montserrat text-3xl font-extrabold tracking-tight text-white">Software &amp; Apps</p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/90">
+                    Websites, WordPress, mobile apps and custom software, each with its own detailed page.
+                  </p>
+                  <Link
+                    href="/software-solutions"
+                    onClick={shut}
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
+                  >
+                    All software solutions
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                {[softwareServices.slice(0, 6), softwareServices.slice(6)].map((col, i) => (
+                  <div key={i}>
+                    {col.map((s) => (
+                      <MegaLink key={s.slug} label={s.title} href={`/services/${s.slug}`} onNavigate={shut} />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ) : (
             <div className="grid grid-cols-[1fr_1fr_1.1fr_1.1fr] gap-6">
               <div className="pr-2">
                 <p className="font-montserrat text-3xl font-extrabold tracking-tight text-white">Our Services</p>
@@ -260,6 +291,7 @@ function Header() {
                 ))}
               </div>
             </div>
+            )}
           </div>
         </div>
       </header>

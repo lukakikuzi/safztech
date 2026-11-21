@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { MultiSelect } from "@/components/ui/multi-select";
 import SectionHeading from "@/components/ui/section-heading";
 import { SERVICE_GROUPS } from "@/data/service-options";
 import { toast } from "@/lib/toast";
@@ -158,43 +159,22 @@ function ContactUsSection() {
                 <label className="text-sm font-medium text-heading font-poppins uppercase tracking-wider">
                   Service You&apos;re Interested In
                 </label>
-                <div data-services className="space-y-5">
-                  {SERVICE_GROUPS.map((group) => (
-                    <fieldset key={group.title}>
-                      <legend className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-primary">{group.title}</legend>
-                      <div className="flex flex-wrap gap-2.5">
-                        {group.options.map((option) => {
-                          const on = formData.services.includes(option);
-                          return (
-                            <label key={option} className="cursor-pointer">
-                              <input
-                                type="checkbox"
-                                checked={on}
-                                onChange={() => {
-                                  setFormData({
-                                    ...formData,
-                                    services: on ? formData.services.filter((o) => o !== option) : [...formData.services, option],
-                                  });
-                                  if (errors.services) setError("services");
-                                }}
-                                className="peer sr-only"
-                              />
-                              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm text-foreground transition-colors hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/15 peer-checked:text-heading peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
-                                <span
-                                  aria-hidden
-                                  className={`flex h-4 w-4 items-center justify-center rounded border-2 text-[10px] leading-none ${
-                                    on ? "border-primary bg-primary text-primary-foreground" : "border-paragraph/60"
-                                  }`}
-                                >
-                                  {on ? "✓" : ""}
-                                </span>
-                                {option}
-                              </span>
-                            </label>
-                          );
-                        })}
-                      </div>
-                    </fieldset>
+                <div data-services className="space-y-4">
+                  {SERVICE_GROUPS.map((group, i) => (
+                    <div key={group.title} className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">{group.title}</p>
+                      <MultiSelect
+                        name={i === 0 ? "services" : `services-${i}`}
+                        groups={[group]}
+                        placeholder={`Select ${group.title}`}
+                        value={formData.services.filter((o) => group.options.includes(o))}
+                        invalid={!!errors.services}
+                        onChange={(picked) => {
+                          setFormData({ ...formData, services: [...formData.services.filter((o) => !group.options.includes(o)), ...picked] });
+                          if (errors.services) setError("services");
+                        }}
+                      />
+                    </div>
                   ))}
                 </div>
                 {errorText("services")}

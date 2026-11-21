@@ -6,6 +6,7 @@ import PrivacyPolicyPage from "@/containers/privacy-policy-page";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
+  alternates: { canonical: "/privacy-policy" },
   title: "Privacy Policy | SAFZTECH - Premium Web & Software Agency",
   description:
     "Read SAFZTECH's Privacy Policy to understand how we collect, use, and protect your data. Trust our premium web and software agency for secure and transparent digital solutions.",

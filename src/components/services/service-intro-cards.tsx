@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Check, Code2, Hammer, Rocket, TrendingUp, type LucideIcon } from "lucide-react";
+import { ArrowRight, Check, Code2, TrendingUp, type LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   Icon: LucideIcon;
@@ -78,42 +78,6 @@ function ServiceCard({
   );
 }
 
-export function ServiceIntroCards() {
-  return (
-    <div className="grid lg:grid-cols-2 gap-6 mb-6">
-      <ServiceCard
-        Icon={Hammer}
-        title="Build"
-        watermark="Build"
-        tagline="Software that works as hard as you do."
-        points={[
-          "Websites & web apps built to convert",
-          "Mobile apps for iOS and Android",
-          "E-commerce stores & custom platforms",
-          "Integrations, CRM & automation",
-        ]}
-        href="/software-solutions"
-        cta="See what we build"
-      />
-      <ServiceCard
-        Icon={Rocket}
-        title="Growth"
-        watermark="Growth"
-        tagline="Marketing that keeps your pipeline full."
-        points={[
-          "SEO & content that gets you found",
-          "Google & Meta ad campaigns",
-          "Lead generation & outreach",
-          "Conversion optimisation & email",
-        ]}
-        href="/digital-marketing"
-        cta="See how we grow you"
-        highlight
-      />
-    </div>
-  );
-}
-
 export function ServicePillarCards({
   softwareServices,
   growthServices,
@@ -128,7 +92,7 @@ export function ServicePillarCards({
         eyebrow="Pillar 01"
         title="Software Solutions"
         watermark="Software"
-        tagline="“Build once, scale forever”"
+        tagline="Software that works as hard as you do."
         points={softwareServices}
         href="/software-solutions"
         cta="Explore Software Solutions"
@@ -138,7 +102,7 @@ export function ServicePillarCards({
         eyebrow="Pillar 02"
         title="Digital Growth"
         watermark="Digital"
-        tagline="“Continuous Growth Engine”"
+        tagline="Marketing that keeps your pipeline full."
         points={growthServices}
         href="/digital-marketing"
         cta="Explore Digital Growth"
@@ -148,4 +112,3 @@ export function ServicePillarCards({
   );
 }
 
-export default ServiceIntroCards;

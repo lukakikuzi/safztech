@@ -18,6 +18,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/industries/supplements-wellness" },
   title: "Supplements & Wellness Website & Growth Services | SAFZTECH",
   description:
     "Compliant store builds, subscription systems, SEO and retention marketing built for supplement and wellness brands. Grow without risking your ad accounts.",
@@ -175,7 +176,7 @@ export default function SupplementsWellnessPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Industries · Supplements & Wellness

@@ -15,5 +15,5 @@ export async function GET(req: Request) {
       });
     } catch {}
   }
-  return Response.redirect('https://safztech.com/#contact', 302);
+  return Response.redirect('https://safztech.com/contact', 302);
 }

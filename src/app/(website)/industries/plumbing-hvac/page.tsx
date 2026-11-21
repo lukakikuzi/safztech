@@ -18,6 +18,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/industries/plumbing-hvac" },
   title: "Plumbing & HVAC Website & Growth Services | SAFZTECH",
   description:
     "Lead generation, local SEO, dispatch integration and review management built for plumbing and HVAC companies. Answer more calls, book more jobs.",
@@ -175,7 +176,7 @@ export default function PlumbingHvacPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Industries · Plumbing & HVAC

@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const study = getCaseStudy(slug);
   if (!study) return {};
   return GetPageMetadata({
+    alternates: { canonical: `/case-studies/${slug}` },
     title: `${study.client} Case Study | SAFZTECH`,
     description: study.challenge,
   });

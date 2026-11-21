@@ -6,6 +6,7 @@ import FreeAuditFlow from "@/components/free-audit/free-audit-flow";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
+  alternates: { canonical: "/free-audit" },
   title: "Free Website Audit | SAFZTECH",
   description:
     "Enter your website address and get an instant speed report, then a detailed growth audit from the SAFZTECH team. Free, no obligation.",

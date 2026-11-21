@@ -13,7 +13,7 @@ const navLinks = [
   { label: "Referral Program", href: "/referral-program" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Free Audit", href: "/free-audit" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const legalLinks = [

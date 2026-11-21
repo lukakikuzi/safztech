@@ -14,6 +14,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
+  alternates: { canonical: "/team" },
   title: "Meet Our Team | SAFZTECH - Premium Software House & Digital Growth Partner",
   description:
     "Meet the SAFZTECH team: experienced developers and marketers who build software that sells and marketing that scales.",
@@ -46,7 +47,7 @@ export default function TeamPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border pt-40 pb-28 lg:pt-48 lg:pb-32">
+      <section className="bg-secondary-background border-b border-border pt-28 pb-12 lg:pt-32 lg:pb-16">
         <div className="layout-standard text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-3xl mx-auto">
             Our Team Is Our <em className="text-primary">Greatest</em> Asset
@@ -150,7 +151,7 @@ export default function TeamPage() {
             relationships, and fuel business success online.
           </p>
           <Link
-            href="/#contact"
+            href="/contact"
             className="inline-block bg-primary text-primary-foreground font-semibold tracking-wider uppercase px-8 py-4 hover:bg-primary-hover transition-colors flex-shrink-0"
           >
             Let&apos;s Talk

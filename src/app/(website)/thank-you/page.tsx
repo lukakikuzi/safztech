@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
+  alternates: { canonical: "/thank-you" },
   title: "Thank You | SAFZTECH",
   robots: { index: false, follow: false },
 });

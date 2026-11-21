@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Check, ArrowRight } from "lucide-react";
 
 const auditIncludes = [
@@ -12,11 +13,11 @@ const auditIncludes = [
 ];
 
 function LeadMagnetSection() {
-  const scrollToContact = () =>
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+  const router = useRouter();
+  const scrollToContact = () => router.push("/contact");
 
   return (
-    <section className="on-bright bg-[linear-gradient(135deg,#FFD84A_0%,#F4A900_40%,#F4A900_100%)] text-primary-foreground py-20 lg:py-28">
+    <section id="audit" className="scroll-mt-20 on-bright bg-[linear-gradient(135deg,#FFD84A_0%,#F4A900_40%,#F4A900_100%)] text-primary-foreground py-20 lg:py-28">
       <div className="layout-standard">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
 

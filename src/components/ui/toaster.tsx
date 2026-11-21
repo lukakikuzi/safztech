@@ -32,8 +32,7 @@ export default function Toaster() {
           <div
             key={t.id}
             role={ok ? "status" : "alert"}
-            className="toast-in pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-2xl border border-white/20 bg-[rgba(10,10,12,0.72)] p-4 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.3),0_24px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl"
-            style={{ borderLeft: `3px solid ${ok ? "#34d399" : "#f87171"}` }}
+            className={`toast-in pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-2xl border ${ok ? "border-emerald-400/40" : "border-red-400/40"} bg-[rgba(10,10,12,0.72)] p-4 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.3),0_24px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl`}
           >
             {ok ? (
               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" />

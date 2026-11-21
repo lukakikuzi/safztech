@@ -4,6 +4,7 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_FRONTEND_URL || "https://www.safztech.com";
 
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: "SAFZTECH — Premium Software House & Digital Growth Partner",
   description:
     "SAFZTECH builds high-converting websites, mobile apps & custom software — then markets them with SEO, paid ads & conversion optimization. 150+ businesses served, $2.5B+ in revenue created.",
@@ -27,7 +28,7 @@ export const defaultMetadata: Metadata = {
   ],
 
   alternates: {
-    canonical: BASE_URL,
+    canonical: "/",
   },
 
   icons: {

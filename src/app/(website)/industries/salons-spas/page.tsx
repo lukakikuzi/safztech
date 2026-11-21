@@ -18,6 +18,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/industries/salons-spas" },
   title: "Salons & Spas Website & Growth Services | SAFZTECH",
   description:
     "Online booking systems, local SEO, branded websites, loyalty programs and paid ads built specifically for salons and spas. Fill your chairs, not just your calendar.",
@@ -176,7 +177,7 @@ export default function SalonsSpasPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Industries · Salons & Spas

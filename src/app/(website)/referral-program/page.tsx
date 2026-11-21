@@ -7,6 +7,7 @@ import ReferralForm from "@/components/referral/referral-form";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata: Metadata = GetPageMetadata({
+  alternates: { canonical: "/referral-program" },
   title: "Multi-Tiered Referral Program | SAFZTECH",
   description:
     "Join the SAFZTECH multi-tiered referral program. Whether you're referring one client or 20+, we'll reward your hustle.",
@@ -54,7 +55,7 @@ export default function ReferralProgramPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border pt-40 pb-28 lg:pt-48 lg:pb-32">
+      <section className="bg-secondary-background border-b border-border pt-28 pb-12 lg:pt-32 lg:pb-16">
         <div className="layout-standard text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-heading font-poppins leading-tight mb-6 max-w-3xl mx-auto">
             SAFZTECH Referral Program
@@ -262,7 +263,7 @@ export default function ReferralProgramPage() {
             relationships, and fuel business success online.
           </p>
           <Link
-            href="/#contact"
+            href="/contact"
             className="inline-block bg-primary text-primary-foreground font-semibold tracking-wider uppercase px-8 py-4 hover:bg-primary-hover transition-colors flex-shrink-0"
           >
             Let&apos;s Talk

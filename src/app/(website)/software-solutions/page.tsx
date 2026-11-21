@@ -4,6 +4,7 @@ import { Check, ArrowRight, Clock, DollarSign } from "lucide-react";
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/software-solutions" },
   title: "Software Solutions — SAFZTECH | Custom Web, Mobile & SaaS Development",
   description:
     "Custom web applications, mobile apps, SaaS platforms, e-commerce & CMS solutions. Built to convert visitors into customers. Starting from $499.",
@@ -103,7 +104,7 @@ export default function SoftwareSolutionsPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Software Solutions

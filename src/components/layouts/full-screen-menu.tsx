@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
+import { SERVICES } from "@/data/services";
 import { FullScreenMenuProps } from "@/interfaces/components.layouts-interfaces";
 
 const menuItems = [
@@ -13,6 +14,10 @@ const menuItems = [
     { name: "Software Solutions", href: "/software-solutions" },
     { name: "Digital Marketing", href: "/digital-marketing" },
     { name: "All Services", href: "/services" },
+  ] },
+  { name: "Software & Apps", href: "/software-solutions", sub: [
+    ...SERVICES.filter((s) => s.group === 0).map((s) => ({ name: s.title, href: `/services/${s.slug}` })),
+    { name: "All Software Solutions", href: "/software-solutions" },
   ] },
   { name: "Industries", href: "/services", sub: [
     { name: "E-Commerce", href: "/industries/ecommerce" },
@@ -33,7 +38,7 @@ const menuItems = [
   { name: "Free Audit", href: "/free-audit" },
   { name: "Referral Program", href: "/referral-program" },
   { name: "Our Team", href: "/team" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {

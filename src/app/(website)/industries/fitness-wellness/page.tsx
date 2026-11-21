@@ -18,6 +18,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/industries/fitness-wellness" },
   title: "Fitness & Wellness Website & Growth Services | SAFZTECH",
   description:
     "Class booking systems, member apps, local SEO and retention marketing built for gyms, studios and wellness businesses. Fill every class, keep every member.",
@@ -175,7 +176,7 @@ export default function FitnessWellnessPage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Industries · Fitness & Wellness

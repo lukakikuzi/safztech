@@ -18,6 +18,7 @@ import {
 import { GetPageMetadata } from "@/utils/meta-data";
 
 export const metadata = GetPageMetadata({
+  alternates: { canonical: "/industries/real-estate" },
   title: "Real Estate Website & Growth Services | SAFZTECH",
   description:
     "IDX/MLS websites, lead capture, CRM automation and local SEO built for real estate agents and brokerages. Respond first, close more deals.",
@@ -175,7 +176,7 @@ export default function RealEstatePage() {
     <main className="pt-20">
 
       {/* Hero */}
-      <section className="bg-secondary-background border-b border-border py-24 lg:py-32">
+      <section className="bg-secondary-background border-b border-border py-12 lg:py-16">
         <div className="layout-standard">
           <p className="text-primary text-sm font-semibold tracking-[0.2em] uppercase mb-5">
             Industries · Real Estate

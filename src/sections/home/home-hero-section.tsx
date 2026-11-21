@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import HeroScrollButton from "./hero-scroll-button";
 import HeroPlanet from "./hero-planet";
 import DistantPlanet from "./distant-planet";
 
@@ -164,13 +163,13 @@ function HomeHeroSection() {
             className="hero-rise mt-6 flex flex-wrap justify-center gap-3"
             style={{ ["--d" as string]: "0.9s" }}
           >
-            <HeroScrollButton
-              target="#contact"
+            <Link
+              href="/contact"
               className="group flex items-center gap-2 rounded-full border border-[rgba(255,215,0,0.55)] bg-gradient-to-br from-[rgba(255,200,0,0.45)] to-[rgba(255,140,0,0.18)] px-7 py-3 text-base font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18),0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-[10px] backdrop-saturate-[1.6] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)] transition-all hover:from-[rgba(255,200,0,0.6)] hover:to-[rgba(255,140,0,0.3)]"
             >
               Get Free Growth Audit
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </HeroScrollButton>
+            </Link>
             <Link
               href="/case-studies"
               className="rounded-full border border-white/25 bg-gradient-to-br from-white/[0.16] to-white/[0.04] px-7 py-3 text-base font-semibold text-white shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.55),inset_0_-1.5px_1px_rgba(255,255,255,0.18),0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-[10px] backdrop-saturate-[1.6] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)] transition-all hover:from-white/25 hover:to-white/10"
