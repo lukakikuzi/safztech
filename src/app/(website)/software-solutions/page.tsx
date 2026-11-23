@@ -14,6 +14,7 @@ const services = [
   {
     number: "01",
     title: "Custom Web Applications",
+    slug: "custom-web-applications",
     tagline: "Tailor-made web platforms built for your specific business needs.",
     description:
       "Off-the-shelf tools force your business into their mould. We build platforms that work exactly the way you need — client portals, SaaS dashboards, booking systems, and internal tools that save time and scale with you.",
@@ -30,6 +31,7 @@ const services = [
   {
     number: "02",
     title: "Mobile Applications",
+    slug: "mobile-app-development",
     tagline: "Native iOS & Android apps that your customers will actually use.",
     description:
       "80% of internet usage is mobile. A mobile-optimised website isn't enough — your customers expect a real app. We build fast, intuitive native apps that drive engagement, loyalty, and revenue.",
@@ -46,6 +48,7 @@ const services = [
   {
     number: "03",
     title: "Custom Software & SaaS",
+    slug: "custom-software-saas",
     tagline: "Enterprise-grade software built to run and scale your business.",
     description:
       "Replace the stack of SaaS subscriptions eating your margin with one custom platform built exactly for you. Or launch your own SaaS product. We handle architecture, development, and deployment.",
@@ -62,6 +65,7 @@ const services = [
   {
     number: "04",
     title: "E-Commerce Platforms",
+    slug: "ecommerce-platforms",
     tagline: "Conversion-first e-commerce that generates revenue, not just traffic.",
     description:
       "We build and optimise e-commerce stores — from custom Shopify themes to fully custom platforms — with checkout flows, email integrations, and marketing foundations baked in from day one.",
@@ -78,6 +82,7 @@ const services = [
   {
     number: "05",
     title: "CMS & Content Platforms",
+    slug: "cms-content-platforms",
     tagline: "Update your own website without needing a developer every time.",
     description:
       "Your site shouldn't be a black box. We build CMS-powered platforms that give your team full control over content, pages, and media — with the flexibility to scale as you grow.",
@@ -148,9 +153,10 @@ export default function SoftwareSolutionsPage() {
 
           <div className="space-y-6">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.number}
-                className="border border-border bg-card p-8 lg:p-10 grid lg:grid-cols-[1fr_2fr] gap-10"
+                href={`/services/${service.slug}`}
+                className="group border border-border bg-card p-8 lg:p-10 grid lg:grid-cols-[1fr_2fr] gap-10 transition-colors hover:border-primary/60"
               >
                 {/* Left */}
                 <div>
@@ -209,8 +215,12 @@ export default function SoftwareSolutionsPage() {
                       </div>
                     </div>
                   </div>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    View full details
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
