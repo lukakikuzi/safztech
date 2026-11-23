@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Globe, LineChart, Megaphone, ShoppingBag, ShieldCheck, FlaskConical, Mail, Search, Share2, Store, Users, FileCheck, type LucideIcon } from "lucide-react";
+import { ArrowRight, ChevronDown, ShoppingBag } from "lucide-react";
 
 import { PlanOffer } from "@/components/landing/plan-offer";
 import { SHARED_TERMS, TERM_MONTHS, sixMonthTotal, usd, type Plan } from "@/data/plans";
-
-const ICONS: Record<string, LucideIcon[]> = {
-  "business-growth-program": [Globe, Search, Share2, Megaphone],
-  "ecommerce-growth-program": [Store, Mail, Search, Megaphone],
-  "peptide-growth-program": [ShieldCheck, FlaskConical, LineChart, Users],
-};
 
 const STEPS = [
   ["Free strategy call", "We learn your goals, audience and current setup, then recommend the right tier."],
@@ -18,7 +12,6 @@ const STEPS = [
 ];
 
 export function PlanLanding({ plan }: { plan: Plan }) {
-  const icons = ICONS[plan.slug];
   const from = plan.tiers[0];
   return (
     <main>
@@ -51,27 +44,6 @@ export function PlanLanding({ plan }: { plan: Plan }) {
           <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] border border-white/15">
             <Image src={plan.image} alt={plan.name} fill priority sizes="(min-width: 1024px) 540px, 100vw" className="object-cover" />
             <span className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-primary/10" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding-standard">
-        <div className="layout-standard">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">What is included</p>
-          <h2 className="mb-10 max-w-3xl font-poppins text-3xl font-extrabold tracking-tight text-heading sm:text-5xl">Everything working together, from one team.</h2>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {plan.pillars.map(([title, text], i) => {
-              const Icon = icons[i] ?? FileCheck;
-              return (
-                <div key={title} className="rounded-3xl border border-border bg-card p-6">
-                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FFD84A] to-[#F4A900] text-black">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mb-2 font-poppins text-lg font-semibold text-heading">{title}</h3>
-                  <p className="text-sm leading-relaxed text-paragraph">{text}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

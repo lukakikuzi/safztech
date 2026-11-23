@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { sixMonthTotal, usd, TERM_MONTHS, type Plan } from "@/data/plans";
 import { emailError, fieldError, nameError, phoneError } from "@/lib/form-validation";
+import { diffAgainst } from "@/lib/tier-diff";
 import { toast } from "@/lib/toast";
 
 const gold = "bg-gradient-to-br from-[#FFD84A] to-[#F4A900]";
@@ -102,8 +103,10 @@ export function PlanOffer({ plan }: { plan: Plan }) {
             Every package is an initial payment plus {TERM_MONTHS} monthly retainers. Ad budget is paid separately.
           </p>
           <div className="grid gap-5 lg:grid-cols-3">
-            {plan.tiers.map((t) => {
+            {plan.tiers.map((t, ti) => {
               const on = t.key === tier;
+              const lower = plan.tiers[ti - 1];
+              const rows = diffAgainst(lower, t);
               return (
                 <div
                   key={t.key}
@@ -119,11 +122,20 @@ export function PlanOffer({ plan }: { plan: Plan }) {
                   <p className="mt-1 text-sm text-paragraph">
                     {TERM_MONTHS}-month total: <span className="font-semibold text-white">{usd(sixMonthTotal(t))}</span>
                   </p>
-                  <ul className="mt-6 flex-1 space-y-2.5">
-                    {t.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={3} />
-                        {f}
+                  {lower && (
+                    <p className="mt-5 rounded-xl border border-primary/30 bg-primary/10 px-3 py-2 text-xs text-white">
+                      vs {lower.key} · {lower.name.split(" ").pop()}: <span className="font-semibold text-primary">{rows.filter((r) => r.status !== "same").length} new or increased</span>
+                    </p>
+                  )}
+                  <ul className={`flex-1 space-y-2.5 ${lower ? "mt-4" : "mt-6"}`}>
+                    {rows.map((r) => (
+                      <li key={r.text} className="flex items-start gap-2.5 text-sm text-foreground">
+                        <Check className={`mt-0.5 h-4 w-4 flex-shrink-0 ${r.status === "same" ? "text-white/40" : "text-primary"}`} strokeWidth={3} />
+                        <span className={r.status === "same" ? "" : "font-medium text-white"}>
+                          {r.text}
+                          {r.status === "new" && <span className="ml-2 inline-block whitespace-nowrap rounded-full bg-primary px-2 py-0.5 align-middle text-[10px] font-bold uppercase text-black">New</span>}
+                          {r.status === "up" && <span className="ml-2 inline-block whitespace-nowrap rounded-full border border-primary/60 px-2 py-0.5 align-middle text-[10px] font-semibold text-primary">↑ was {r.was}</span>}
+                        </span>
                       </li>
                     ))}
                   </ul>

@@ -15,7 +15,6 @@ export type Plan = {
   positioning: string;
   audience: string;
   image: string;
-  pillars: [string, string][];
   tiers: Tier[];
   note?: string;
   faqs: [string, string][];
@@ -49,12 +48,6 @@ export const PLANS: Plan[] = [
     positioning: "One team builds your site, ranks it, promotes it and tracks every lead, so you get a steady flow of enquiries instead of a brochure.",
     audience: "For service businesses and brands that want more leads, not just a nicer website.",
     image: "/images/services/seo-organic-growth-v2.webp",
-    pillars: [
-      ["Website that converts", "A custom site with clear copy and lead forms built to turn visits into enquiries."],
-      ["SEO & content", "Keyword research, on-page and technical SEO, and articles that bring in search traffic."],
-      ["Social media", "Posts and short video across the platforms your customers use."],
-      ["Paid advertising", "Campaigns and ad creatives with conversion tracking and monthly reporting."],
-    ],
     tiers: [
       {
         key: "A", name: "Launch", setup: 999, monthly: 500,
@@ -64,7 +57,7 @@ export const PLANS: Plan[] = [
         ],
       },
       {
-        key: "B", name: "Growth", setup: 1999, monthly: 900,
+        key: "B", name: "Growth", setup: 1599, monthly: 900,
         features: [
           "Custom website (up to 8 pages)", "2 landing pages", "Keyword research (50 keywords)", "On-page, technical and local SEO", "4 SEO articles/month",
           "3 social media platforms", "15 social media posts/month", "4 reels/month", "1 advertising platform", "Up to 3 active campaigns", "4 ad creatives/month",
@@ -72,7 +65,7 @@ export const PLANS: Plan[] = [
         ],
       },
       {
-        key: "C", name: "Scale", setup: 3499, monthly: 1500,
+        key: "C", name: "Scale", setup: 2999, monthly: 1500,
         features: [
           "Custom website (up to 12 pages)", "3 conversion-focused landing pages", "Keyword research (100 keywords)", "Advanced SEO and local SEO", "6 SEO articles/month",
           "3 social media platforms", "20 social media posts/month", "8 reels/month", "2 advertising platforms", "Up to 5 active campaigns", "8 ad creatives/month",
@@ -93,12 +86,6 @@ export const PLANS: Plan[] = [
     positioning: "Store design, conversion work, email flows, SEO, paid ads and social, run together to help your brand scale through paid advertising and social media.",
     audience: "For Shopify and WooCommerce brands that want to increase sales and scale.",
     image: "/images/services/ecommerce-platforms-v2.webp",
-    pillars: [
-      ["Store & product pages", "Setup or redesign with conversion-focused product pages and checkout improvements."],
-      ["Email & retention", "Email capture, welcome and abandoned-cart flows, and automation that brings buyers back."],
-      ["SEO & AI search", "Keyword research, articles and optimisation for Google and AI search."],
-      ["Ads & social", "Paid campaigns, retargeting, creatives and reels that drive new customers."],
-    ],
     tiers: [
       {
         key: "A", name: "Ecommerce Launch", setup: 999, monthly: 500,
@@ -109,7 +96,7 @@ export const PLANS: Plan[] = [
         ],
       },
       {
-        key: "B", name: "Ecommerce Growth", setup: 2000, monthly: 900,
+        key: "B", name: "Ecommerce Growth", setup: 1599, monthly: 900,
         features: [
           "Custom Shopify/WooCommerce design", "Up to 50 products", "Advanced product page optimization", "Upsells and product bundles", "Popup and email capture setup",
           "Welcome and abandoned-cart email flows", "6 SEO articles/month", "SEO and AI search optimization", "3 social media platforms", "15 social media posts/month", "8 reels/month",
@@ -117,7 +104,7 @@ export const PLANS: Plan[] = [
         ],
       },
       {
-        key: "C", name: "Ecommerce Scale", setup: 3500, monthly: 1600, badge: "Recommended premium tier",
+        key: "C", name: "Ecommerce Scale", setup: 2999, monthly: 1600, badge: "Recommended premium tier",
         features: [
           "Custom ecommerce website design", "Up to 100 products", "Advanced conversion optimization", "Subscription, loyalty or referral functionality (one selected)", "Advanced email marketing automation",
           "8 SEO articles/month", "Advanced SEO and authority building", "3 social media platforms", "20 social media posts/month", "12 reels/month", "2 advertising platforms",
@@ -138,12 +125,6 @@ export const PLANS: Plan[] = [
     positioning: "Specialized, compliance-conscious website development and marketing systems designed around the unique challenges of the peptide industry.",
     audience: "Exclusive for peptide brands, research-focused businesses and eligible peptide industry operators.",
     image: "/images/services/peptide-research-chemical-store-development-v2.webp",
-    pillars: [
-      ["Compliance-conscious store", "Premium product pages, claims-conscious copy review, legal pages and a disclaimer system."],
-      ["COA & batch library", "Display lab reports and batch information clearly for every product."],
-      ["Educational SEO, AEO & GEO", "Research-led articles and search optimisation for Google and AI search."],
-      ["B2B & wholesale", "Wholesale inquiry functionality, lead funnels and payment setup assistance."],
-    ],
     tiers: [
       {
         key: "A", name: "Peptide Launch", setup: 1500, monthly: 600,
